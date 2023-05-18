@@ -16,7 +16,7 @@ use App\Http\Controllers\UserAuth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo "Welcome";
 });
 
 Route::get('/dashboard', function () {
