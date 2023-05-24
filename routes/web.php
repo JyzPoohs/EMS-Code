@@ -3,9 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuth;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    echo "Welcome to Laravel";
+    return redirect('/login');
 });
 
 Route::get('/dashboard', function () {
@@ -22,7 +23,12 @@ require __DIR__ . '/auth.php';
 
 Route::get('/login', [UserAuth::class, 'login'])->name('login');
 Route::get('/logout', [UserAuth::class, 'logout'])->name('logout');
-Route::get('/register', [UserAuth::class, 'register']);
+Route::get('/userRegister', [UserAuth::class, 'userRegister'])->name('userRegister');
+Route::get('/staffRegister', [UserAuth::class, 'staffRegister'])->name('staffRegister');
 Route::get('/profile', [UserAuth::class, 'profile'])->name('profile');
 Route::post('register-user', [UserAuth::class, 'registerUser'])->name('register-user');
 Route::post('login-user', [UserAuth::class, 'loginUser'])->name('login-user');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

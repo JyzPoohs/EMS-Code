@@ -1,0 +1,47 @@
+h3 {
+    padding-top: 15px;
+}
+
+div .password a {
+    text-decoration: none;
+    color: #2d2d82;
+}
+
+#loginBtn {
+    width: 140px;
+    background-color: #2d67c7;
+    border-radius: 30px;
+}
+
+#loginBtn:hover {
+    border: 1px solid -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
+    background: #83a4d4;
+    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
+    background: linear-gradient(to right, #b6fbff, #83a4d4);
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+
+div .registerBtn {
+    width: 120px;
+    padding-top: 8px;
+    background-color: #A7E8CF;
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.registerBtn:hover {
+    color: black;
+    text-decoration: none;
+    background: #B3FFAB;
+    background: -webkit-linear-gradient(to right, #12FFF7, #B3FFAB);
+    background: linear-gradient(to right, #12FFF7, #B3FFAB);
+}

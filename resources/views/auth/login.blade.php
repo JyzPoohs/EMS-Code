@@ -1,48 +1,111 @@
+@extends('layouts.app')
 
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@section('content')
 
-    <form method="POST" action="{{route('login-user')}}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+<div class="container" style="font-family: 'Times New Roman', Times, serif">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <img src="{{ env('APP_URL') . '/img/indek.png' }}" width="100%" style="align-content: center;" alt="Indek">
         </div>
+        <div class="col-md-4">
+            <div class="card">
+                <h3 class="text-center card-title"><strong>{{ __('Login') }}</strong></h3>
+                
+                <div class="card-body"> 
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                    
+                        <div class="row mb-3">
+                            <label style="padding-top: 0px" for="role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+                            <div class="form-group col-md-6">
+                                <div class="form-check form-check-inline col-md-5">
+                                    <input class="form-check-input" type="radio" name="role"
+                                        id="userRadio">
+                                    <label class="custom-control-label" for="userRadio">User</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="staffRadio"
+                                        id="staffRadio">
+                                    <label class="custom-control-label" for="staffRadio">Staff</label>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('IC Number') }}</label>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+                            <div class="col-md-6">
+                                <input id="ic" type="ic" class="form-control @error('ic') is-invalid @enderror" name="ic" value="{{ old('ic') }}" required autocomplete="ic" autofocus>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+                                @error('ic')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+                        <div class="row mb-3">
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+                        <div class="row mb-3">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary" id="loginBtn">
+                                    {{ __('Login') }}
+                                </button>
+                            </div>
+                            <div class="col-md-10 offset-md-2  password">
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Change Password ') }}
+                                    </a>
+                                @endif
+                                |
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link " href="{{ route('password.request') }}">
+                                        {{ __('Forgot Password') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center">
+                <label for="" class="m-3">No account? Register as</label>
+                <div class="">
+                    @guest
+                @if (Route::has('register'))
+                <a class="btn btn-link registerBtn" href="{{ route('userRegister') }}">{{ __('User') }}</a>
+                <a class="btn btn-link registerBtn" href="{{ route('staffRegister') }}">{{ __('Staff') }}</a>
+                @endif
+                @endguest
+                    
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+@endsection

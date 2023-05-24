@@ -14,9 +14,14 @@ class UserAuth extends Controller
         return view("auth.login");
     }
 
-    public function register()
+    public function userRegister()
     {
-        return view("auth.register");
+        return view("auth.userRegister");
+    }
+
+    public function staffRegister()
+    {
+        return view("auth.staffRegister");
     }
 
     public function registerUser(Request $request)
