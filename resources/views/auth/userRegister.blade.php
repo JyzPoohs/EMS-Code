@@ -32,7 +32,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" placeholder="Enter Name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -40,6 +40,21 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label style="padding-top: 0px" for="role" class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}</label>
+                            <div class="form-group col-md-6">
+                                <div class="form-check form-check-inline col-md-5">
+                                    <input class="form-check-input" type="radio" name="gender"
+                                        id="femaleRadio">
+                                    <label class="custom-control-label" for="femaleRadio">Female</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender"
+                                        id="maleRadio">
+                                    <label class="custom-control-label" for="maleRadio">Male</label>
+                                </div>
+                            </div> 
                         </div>
 
                         <div class="row mb-3">

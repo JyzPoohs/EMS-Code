@@ -24,7 +24,7 @@
                                     <label class="custom-control-label" for="userRadio">User</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="staffRadio"
+                                    <input class="form-check-input" type="radio" name="role"
                                         id="staffRadio">
                                     <label class="custom-control-label" for="staffRadio">Staff</label>
                                 </div>
