@@ -29,6 +29,10 @@ Route::get('/profile', [UserAuth::class, 'profile'])->name('profile');
 Route::post('register-user', [UserAuth::class, 'registerUser'])->name('register-user');
 Route::post('login-user', [UserAuth::class, 'loginUser'])->name('login-user');
 
+Route::get('/mregistration', function () {
+    return view('module3.MR');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
