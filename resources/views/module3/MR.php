@@ -7,7 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h3>hello</h3>
+<div class="container" style="font-family: 'Times New Roman', Times, serif">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <img src="{{ env('APP_URL') . '/img/indek.png' }}" width="100%" style="align-content: center;" alt="Indek">
+        </div>
+    </div>
+</div>
 </body>
 </html>
