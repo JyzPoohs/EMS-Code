@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuth;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -11,9 +13,11 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware('auth')->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile');
+    Route::get('/staff/profile', [StaffController::class, 'profile'])->name('staff.profile');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -21,7 +25,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-Route::get('/login', [UserAuth::class, 'login'])->name('login');
+Route::get('/login', [UserAuth::class, 'show'])->name('login');
 Route::get('/logout', [UserAuth::class, 'logout'])->name('logout');
 Route::get('/userRegister', [UserAuth::class, 'userRegister'])->name('userRegister');
 Route::get('/staffRegister', [UserAuth::class, 'staffRegister'])->name('staffRegister');

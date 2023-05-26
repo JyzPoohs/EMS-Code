@@ -1,3 +1,8 @@
-div input::placeholder {
-    color: rgb(210, 210, 210);
+.textPlaceholder {
+    color: rgb(82, 29, 29);
+}
+
+#registerBtn {
+    width: 130px;
+    border-radius: 30px;
 }

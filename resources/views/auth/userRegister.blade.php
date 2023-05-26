@@ -7,7 +7,7 @@
             <img src="{{ env('APP_URL') . '/img/indek.png' }}" width="100%" style="align-content: center;" alt="Indek">
         </div>
         <div class="col-md-6">
-            <div class="card">
+            <div class="card" style="background-color: aliceblue">
                 <h3 class="text-center card-title"><strong>{{ __('User Registration') }}</strong></h3>
 
                 <div class="card-body">
@@ -18,7 +18,7 @@
                             <label for="ic" class="col-md-4 col-form-label text-md-end">{{ __('IC Number') }}</label>
 
                             <div class="col-md-6">
-                                <input id="ic" type="text" placeholder="Enter IC Number" class="form-control @error('ic') is-invalid @enderror" name="ic" value="{{ old('ic') }}" required autocomplete="ic" autofocus>
+                                <input id="ic" type="text" placeholder="Enter IC Number" class="form-control @error('ic') is-invalid @enderror textPlaceholder" name="ic" value="{{ old('ic') }}" required autocomplete="ic" autofocus>
 
                                 @error('ic')
                                     <span class="invalid-feedback" role="alert">
@@ -61,7 +61,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" placeholder="Enter Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -89,18 +89,21 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Repeat Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" placeholder="Repeat Password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-6 offset-md-5">
+                                <button type="submit" class="btn btn-primary" id="registerBtn" style="background-color: #052d70; border:none; color: white;">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
                     </form>
+                    <div class="col-md-6 offset-md-6">
+                        <a href="{{route('login')}}" style="text-decoration: none">[Back]</a>
+                    </div>
                 </div>
             </div>
         </div>

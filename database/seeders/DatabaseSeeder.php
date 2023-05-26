@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,15 +13,37 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
+        $this->call(UsersTableSeeder::class);
+        $this->registerStaff();
+    }
 
-        \App\Models\User::factory()->create([
-            'ic' => '1111',
-            'name' => 'user',
-            'gender' => 'female',
-            'phone' => '011',
-            'email' => 'user@example.com',
-            'password' => 'password',
-        ]);
+    public function registerStaff()
+    {
+        $staffs = [
+            [
+                'ic' => '1234',
+                'name' => 'staff 1',
+                'department' => 'Marriage Request',
+                'accessCategory' => 'admin',
+                'position' => 'head',
+                'paid' => 'Pahang',
+                'email' => 'staff1@example.com',
+                'password' => 'password',
+            ],
+            [
+                'ic' => '4567',
+                'name' => 'staff 2',
+                'department' => 'Marriage Course',
+                'accessCategory' => 'staff',
+                'position' => 'manager',
+                'paid' => 'Kuantan',
+                'email' => 'staff2@example.com',
+                'password' => 'password'
+            ]
+        ];
+
+        foreach ($staffs as $staff) {
+            DB::table('staffs')->insert($staff);
+        }
     }
 }
