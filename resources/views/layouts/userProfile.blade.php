@@ -12,7 +12,7 @@
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link href="{{ env('APP_URL') . '/css/sidebar.css' }}" rel="stylesheet" />
+    <link href="{{ env('APP_URL') . '/css/user-sidebar.css' }}" rel="stylesheet" />
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -58,7 +58,7 @@
                         <li>
                             <a href="{{ route('user.profile') }}">User Profile</a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
                                 class="dropdown-toggle">Kebenaran Berkahwin</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -80,21 +80,6 @@
                         </li>
                         <li>
                             <a href="#">Insentif</a>
-                        </li>
-                        <li>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                                class="dropdown-toggle">Pages</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="#">Page 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 3</a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <form role="form" method="post" action="{{ route('logout') }}" id="logout-form">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Auth;
+use Hash;
 
 class UserController extends Controller
 {
@@ -33,11 +35,63 @@ class UserController extends Controller
         return response()->json(['success' => true]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        // $roles = Reference::where('name', 'roles')->orderBy('code')->get();
+        $request->validate(
+            [
+                'ic' => 'required|unique:users|max:12',
+                'name' => 'required',
+                'gender' => 'required',
+                'phone' => 'required',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:6|max:12',
+                'cpassword' => 'required|same:password'
+            ],
+            [
+                'cpassword.same' => 'The password must be same'
+            ]
+        );
+        $user = new User();
+        $user->ic = $request->ic;
+        $user->name = $request->name;
+        $user->gender = $request->gender;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $res = $user->save();
 
-        // return view('user.create', compact('roles'));
+        if ($res) {
+            return redirect()->back()->with('success', 'Registered success');
+        } else {
+            return redirect()->back()->with('fail', 'Registered fail');
+        }
+
+        // $request->merge([
+        //     'password' => bcrypt('password')
+        // ]);
+
+        // User::create($request->all());
+
+        // return redirect()->route('user.index')
+        //     ->with('success', "User Successfully Added");
+    }
+
+    public function doLogin(Request $request)
+    {
+        $request->validate(
+            [
+                'role' => 'required',
+                'ic' => 'required|unique:users|max:12',
+                'password' => 'required|min:6|max:12',
+            ]
+        );
+
+        $check = $request->only('role', 'ic', 'password');
+        if (Auth::guard('web')->attempt($check)) {
+            return redirect()->route('user.profile')->with('success', 'Login success');
+        } else {
+            return redirect()->back()->with('fail', 'Login fail');
+        }
     }
 
     public function store(Request $request)

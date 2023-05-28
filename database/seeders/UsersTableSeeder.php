@@ -16,7 +16,8 @@ class UsersTableSeeder extends Seeder
         $users = [
             [
                 'ic' => '1111',
-                'name' => 'user',
+                'name' => 'user 1',
+                'role' => 'user',
                 'gender' => 'female',
                 'phone' => '011',
                 'email' => 'user@example.com',
@@ -24,7 +25,8 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'ic' => '2222',
-                'name' => 'user',
+                'name' => 'user 2',
+                'role' => 'user',
                 'gender' => 'male',
                 'phone' => '012',
                 'email' => 'user2@example.com',

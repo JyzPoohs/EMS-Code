@@ -15,12 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('ic')->unique();
             $table->string('name');
+            $table->string('role');
             $table->string('department');
             $table->string('accessCategory');
             $table->string('position');
             $table->string('paid');
             $table->string('email')->unique();
             $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('staffs');
     }
 };

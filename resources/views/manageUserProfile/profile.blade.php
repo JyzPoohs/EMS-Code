@@ -1,4 +1,4 @@
-@extends('layouts.profile')
+@extends('layouts.userProfile')
 
 @section('content')
     <form action="">
@@ -9,30 +9,30 @@
             <tr>
                 <th class="col-md-4">IC Number</th>
                 <td>:</td>
-                <td>{{ auth()->user()->ic }}</td>
+                <td>{{ Auth::guard('web')->user()->ic }}</td>
             </tr>
             <tr>
                 <th>Name*</th>
                 <td>:</td>
                 <td><input class="form-control" type="text" name="name" id="name"
-                        value="{{ strtoupper(auth()->user()->name) }}"></td>
+                        value="{{ strtoupper(Auth::guard('web')->user()->name) }}"></td>
             </tr>
             <tr>
                 <th>Gender</th>
                 <td>:</td>
-                <td>{{ strtoupper(auth()->user()->gender) }}</td>
+                <td>{{ strtoupper(Auth::guard('web')->user()->gender) }}</td>
             </tr>
             <tr>
                 <th>Phone Number*</th>
                 <td>:</td>
-                <td>{{ auth()->user()->phone }}</td>
+                <td>{{ Auth::guard('web')->user()->phone }}</td>
             </tr>
             <tr>
                 <th>Email</th>
                 <td>:</td>
                 <td>
                     <input class="form-control" type="email" name="email" id="email"
-                        value="{{ auth()->user()->email }}">
+                        value="{{ Auth::guard('web')->user()->email }}">
                 </td>
             </tr>
         </table>

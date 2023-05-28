@@ -12,6 +12,8 @@ class Staff extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'staffs';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -20,12 +22,17 @@ class Staff extends Authenticatable
     protected $fillable = [
         'ic',
         'name',
+        'role',
         'department',
         'accessCategory',
         'position',
         'paid',
         'email',
         'password',
+    ];
+
+    protected $attributes = [
+        'role' => 'staff',
     ];
 
     /**

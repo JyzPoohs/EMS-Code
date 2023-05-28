@@ -7,7 +7,15 @@
                 <img src="{{ env('APP_URL') . '/img/indek.png' }}" width="100%" style="align-content: center;" alt="Indek">
             </div>
             <div class="col-md-4">
+                @error('fail')
+                    <div class="text-center text-white font-bold rounded-t px-4 pt-2 pb-2 mb-3"
+                        style="background-color: rgb(191, 36, 36); border-radius:10px;">
+                        {{ strtoupper('Login Failed') }} <br>
+                        {{ $message }}
+                    </div>
+                @enderror
                 <div class="card" style="background-color: honeydew">
+
                     <h3 class="text-center card-title"><strong>{{ __('Login') }}</strong></h3>
 
                     <div class="card-body">
@@ -20,11 +28,12 @@
                                 <div class="form-group col-md-6">
                                     <div class="form-check form-check-inline col-md-5">
                                         <input class="form-check-input" type="radio" name="role" id="userRadio"
-                                            checked>
+                                            value="user" checked>
                                         <label class="custom-control-label" for="userRadio">User</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="role" id="staffRadio">
+                                        <input class="form-check-input" type="radio" name="role" id="staffRadio"
+                                            value="staff">
                                         <label class="custom-control-label" for="staffRadio">Staff</label>
                                     </div>
                                 </div>
@@ -37,12 +46,6 @@
                                     <input id="ic" type="ic"
                                         class="form-control @error('ic') is-invalid @enderror" name="ic"
                                         value="{{ old('ic') }}" required autocomplete="ic" autofocus>
-
-                                    @error('ic')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                                 </div>
                             </div>
 
@@ -54,12 +57,6 @@
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="current-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                                 </div>
                             </div>
 
@@ -84,7 +81,7 @@
                                     </button>
                                 </div>
                                 <div class="col-md-10 offset-md-2  password">
-                                    <a class="btn btn-link" href="{{ route('password.update') }}">
+                                    <a class="btn btn-link" href="{{ route('change-password') }}">
                                         {{ __('Change Password ') }}
                                     </a>|
                                     <a class="btn btn-link " href="{{ route('password.request') }}">
@@ -100,9 +97,10 @@
                     <div class="">
                         @guest
                             @if (Route::has('register'))
-                                <a class="btn btn-link registerBtn" href="{{ route('userRegister') }}">{{ __('User') }}</a>
                                 <a class="btn btn-link registerBtn"
-                                    href="{{ route('staffRegister') }}">{{ __('Staff') }}</a>
+                                    href="{{ route('user.register') }}">{{ __('User') }}</a>
+                                <a class="btn btn-link registerBtn"
+                                    href="{{ route('staff.register') }}">{{ __('Staff') }}</a>
                             @endif
                         @endguest
 

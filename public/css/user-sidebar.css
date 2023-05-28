@@ -72,11 +72,10 @@ a:focus {
     background: #f8f8f8;
 }
 
-/* #sidebar ul li.active>a,
-a[aria-expanded="true"] {
+#sidebar ul li a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
-} */
+    background: #576CBC;
+}
 
 a[data-toggle="collapse"] {
     position: relative;
