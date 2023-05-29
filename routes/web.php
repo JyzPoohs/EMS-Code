@@ -45,7 +45,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
 
 Route::get('/changePassword', [ChangePasswordController::class, 'showResetForm'])->name('change-password');
 
-
+Route::view('/request', 'auth.module2')->name('request');
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware('auth')->name('dashboard');
