@@ -6,6 +6,7 @@ use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\StaffManageMarriageRegController;
 use Illuminate\Support\Facades\Auth;
 
 //Main page
@@ -41,8 +42,10 @@ Route::prefix('staff')->name('staff.')->group(function () {
         Route::post('/create', [StaffController::class, 'create'])->name('create');
     });
     Route::view('/profile', 'manageStaffProfile.profile')->name('profile');
+    Route::get('/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('manageMarriage');
 });
 
+// Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');
 Route::get('/changePassword', [ChangePasswordController::class, 'showResetForm'])->name('change-password');
 
 
