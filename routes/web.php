@@ -42,7 +42,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
         Route::post('/create', [StaffController::class, 'create'])->name('create');
     });
     Route::view('/profile', 'manageStaffProfile.profile')->name('profile');
-    Route::get('/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('manageMarriage');
+    Route::get('/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('manageValidationMarriage');
 });
 
 // Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');
