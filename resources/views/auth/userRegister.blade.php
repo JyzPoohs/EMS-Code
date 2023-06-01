@@ -7,8 +7,6 @@
                 <img src="{{ env('APP_URL') . '/img/indek.png' }}" width="100%" style="align-content: center;" alt="Indek">
             </div>
             <div class="col-md-6">
-
-
                 <div class="card" style="background-color: aliceblue">
                     <h3 class="text-center card-title"><strong>{{ __('User Registration') }}</strong></h3>
 
@@ -22,7 +20,7 @@
                                 <div class="alert alert-danger">{{ Session::get('fail') }}</div>
                             @endif
 
-                            <div class="row mb-3">
+                            <div class="row mb-3 mt-3">
                                 <label for="ic"
                                     class="col-md-4 col-form-label text-md-end">{{ __('IC Number') }}</label>
 

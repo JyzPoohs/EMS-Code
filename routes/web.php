@@ -1,6 +1,4 @@
 <?php
-
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController;
@@ -18,12 +16,11 @@ Route::get('/', function () {
 Route::get('/login', [UserAuth::class, 'show'])->name('login');
 Route::post('login-user', [UserAuth::class, 'loginUser'])->name('login-user');
 Route::get('/logout', [UserAuth::class, 'logout'])->name('logout');
+Route::get('/changePassword', [ChangePasswordController::class, 'showResetForm'])->name('change-password');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//For showing purpose
 
 
 Route::prefix('user')->name('user.')->group(function () {
@@ -34,7 +31,9 @@ Route::prefix('user')->name('user.')->group(function () {
     });
     Route::middleware(['auth'])->group(function () {
         Route::view('/profile', 'manageUserProfile.profile')->name('profile');
+        
     });
+    Route::put('/profile/{id}/update',  [UserController::class, 'update'])->name('update');
 });
 
 Route::prefix('staff')->name('staff.')->group(function () {
@@ -46,20 +45,29 @@ Route::prefix('staff')->name('staff.')->group(function () {
     Route::middleware(['auth'])->group(function () {
     });
     Route::view('/profile', 'manageStaffProfile.profile')->name('profile');
-<<<<<<< HEAD
-    Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'index'])->name('manageMarriage');
+    Route::put('/profile/{id}/update',  [StaffController::class, 'update'])->name('update');
+
+    //Module 1
     Route::get('/userProfileList', [UserController::class, 'userProfileList'])->name('userProfileList');
     Route::get('/viewUserProfile/{id}',  [UserController::class, 'profileView'])->name('viewUserProfile');
-    Route::get('/userList/profile/{id}/updateView',  [UserController::class, 'profileUpdateView'])->name('profileUpdateView');
+    Route::get('/userList/profile/{id}/updateView',  [UserController::class, 'profileUpdateView'])->name('userProfileUpdateView');
     Route::put('/userList/profile/{id}/update',  [UserController::class, 'profileUpdate'])->name('updateUserProfile');
     Route::get('/userList/profile/{id}/delete',  [UserController::class, 'destroy'])->name('destroyUserProfile');
-=======
-    Route::get('/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('manageValidationMarriage');
->>>>>>> 7f4ed9393cd78483480e4f929bdcd3eeed84c628
+
+    Route::get('/staffProfileList', [StaffController::class, 'staffProfileList'])->name('staffProfileList');
+    Route::get('/viewStaffProfile/{id}',  [StaffController::class, 'profileView'])->name('viewStaffProfile');
+    Route::get('/staffList/profile/{id}/updateView',  [StaffController::class, 'profileUpdateView'])->name('staffProfileUpdateView');
+    Route::put('/staffList/profile/{id}/update',  [StaffController::class, 'profileUpdate'])->name('updateStaffProfile');
+    Route::get('/staffList/profile/{id}/delete',  [StaffController::class, 'destroy'])->name('destroyStaffProfile');
+
+
+    //Module 3
+    Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'index'])->name('manageMarriage');
+    Route::get('/manageValidationMarriage', [StaffManageMarriageRegController::class, 'index'])->name('manageValidationMarriage');
 });
 
 // Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');
-Route::get('/changePassword', [ChangePasswordController::class, 'showResetForm'])->name('change-password');
+
 
 
 // Route::get('/dashboard', function () {

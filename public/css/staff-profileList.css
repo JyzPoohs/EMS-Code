@@ -1,5 +1,11 @@
-.container .tableHeader {
+.container-fluid .tableHeader {
     background: #D2DAFF;
+    line-height: 50px;
+    height: 50px;
+}
+
+.container-fluid .staffTableHeader{
+    background: #66bdba;
     line-height: 50px;
     height: 50px;
 }

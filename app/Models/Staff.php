@@ -29,6 +29,7 @@ class Staff extends Authenticatable
         'paid',
         'email',
         'password',
+        'status',
     ];
 
     protected $attributes = [

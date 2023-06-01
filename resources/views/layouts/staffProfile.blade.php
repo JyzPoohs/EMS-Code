@@ -64,7 +64,7 @@
                                     <a href="{{ route('staff.profile') }}">Profile</a>
                                 </li>
                                 <li>
-                                    <a href="#">Staff Profile</a>
+                                    <a href="{{ route('staff.staffProfileList') }}">Staff Profile</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('staff.userProfileList') }}">User Profile</a>
@@ -89,11 +89,10 @@
                                 class="dropdown-toggle">Pendaftaran Nikah</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <li>
-<<<<<<< HEAD
+
                                     <a href="{{ route('staff.manageMarriage') }}">Mohon Pengesahan Nikah</a>
-=======
-                                    <a href="{{route('staff.manageValidationMarriage')}}">Mohon Pengesahan Nikah</a>
->>>>>>> 7f4ed9393cd78483480e4f929bdcd3eeed84c628
+                                    <a href="{{ route('staff.manageValidationMarriage') }}">Mohon Pengesahan Nikah</a>
+
                                 </li>
                                 <li>
                                     <a href="#">Mohon Daftar Nikah</a>
@@ -133,11 +132,12 @@
         </div>
     </div>
 
+    
+    <!-- jQuery CDN - DataTables -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
@@ -147,11 +147,18 @@
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
     </script>
 
+
     <script>
         $(document).ready(function() {
             $('#sidebarCollapse').on('click', function() {
                 $('#sidebar').toggleClass('active');
             });
+        });
+        
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#list').DataTable();
         });
     </script>
 </body>

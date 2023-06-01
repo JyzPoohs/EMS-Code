@@ -24,17 +24,19 @@ class StaffsTableSeeder extends Seeder
                 'paid' => 'PAID Pekan',
                 'email' => 'staff1@example.com',
                 'password' => 'password',
+                'status' => 'approve'
             ],
             [
                 'ic' => '4444',
-                'name' => 'staff 2',
+                'name' => 'Hafiz Bin Ahmad',
                 'role' => 'staff',
                 'department' => 'Marriage Course',
                 'accessCategory' => 'staff',
                 'position' => 'manager',
                 'paid' => 'PAID Kuantan',
                 'email' => 'staff2@example.com',
-                'password' => 'password'
+                'password' => 'password',
+                'status' => 'approve',
             ],
             [
                 'ic' => '640712116791',
@@ -45,8 +47,21 @@ class StaffsTableSeeder extends Seeder
                 'position' => 'Advisor',
                 'paid' => 'PAID Rompin',
                 'email' => 'nahappan.anita@yahoo.com',
-                'password' => 'password'
-            ]
+                'password' => 'password',
+                'status' => 'pending',
+            ],
+            [
+                'ic' => '871010080214',
+                'name' => 'Jane Sivalingam',
+                'role' => 'staff',
+                'department' => 'Incentive',
+                'accessCategory' => 'staff',
+                'position' => 'Counsultant',
+                'paid' => 'PAID Kuantan Barat',
+                'email' => 'cdevaser@gmail.com',
+                'password' => 'password',
+                'status' => 'pending',
+            ],
         ];
 
         foreach ($staffs as $key => $value) {

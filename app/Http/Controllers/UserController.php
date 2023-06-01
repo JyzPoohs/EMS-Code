@@ -9,32 +9,15 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    //Display user profile page
+    public function profile()
     {
-        //
+        $user = User::find(auth()->user()->id);
+
+        return view('manageUserProfile.profile', compact('user'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        $data = User::find($id)->toArray();
-
-        return view('user.edit', compact('data'));
-    }
-
-
-    public function destroy($id)
-    {
-        User::find($id)->delete();
-
-        return response()->json(['success' => true]);
-    }
-
+    //To register user account
     public function create(Request $request)
     {
         $request->validate(
@@ -55,44 +38,15 @@ class UserController extends Controller
         $user->ic = $request->ic;
         $user->name = $request->name;
         $user->gender = $request->gender;
+        $user->role = 'user';
         $user->phone = $request->phone;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $res = $user->save();
+        $user->save();
 
-        if ($res) {
-            return redirect()->back()->with('success', 'Registered success');
-        } else {
-            return redirect()->back()->with('fail', 'Registered fail');
-        }
-
-        // $request->merge([
-        //     'password' => bcrypt('password')
-        // ]);
-
-        // User::create($request->all());
-
-        // return redirect()->route('user.index')
-        //     ->with('success', "User Successfully Added");
+        return redirect()->route('login')
+            ->with('success', "Registration successful");
     }
-
-    // public function doLogin(Request $request)
-    // {
-    //     $request->validate(
-    //         [
-    //             'role' => 'required',
-    //             'ic' => 'required|unique:users|max:12',
-    //             'password' => 'required|min:6|max:12',
-    //         ]
-    //     );
-
-    //     $check = $request->only('role', 'ic', 'password');
-    //     if (Auth::guard('web')->attempt($check)) {
-    //         return redirect()->route('user.profile')->with('success', 'Login success');
-    //     } else {
-    //         return redirect()->back()->with('fail', 'Login fail');
-    //     }
-    // }
 
     public function store(Request $request)
     {
@@ -106,21 +60,31 @@ class UserController extends Controller
             ->with('success', "User Successfully Added");
     }
 
-    public function update(Request $request, $user)
+    //To update the edited user profile 
+    public function update(Request $request, $id)
     {
-        User::find($user)->update($request->all());
+        $request->validate([
+            'email' => 'required|email|unique:staffs,email,',
+            'name' => 'required|string',
+        ]);
 
-        return redirect()->route('staff.userProfielList')
-            ->with('updated', 'User updated successfully!');
+        User::find($id)->update($request->all());
+
+        return back()->with('success', 'Profile updated successfully.');
     }
 
-    public function profile()
-    {
-        $user = User::find(auth()->user()->id);
+    //Below are functions for staff to manage user profile
 
-        return view('manageUserProfile.profile', compact('user'));
+    //For staff to show the user profile list
+    public function userProfileList()
+    {
+        $users = User::orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        return view('manageUserProfile.userProfileList', compact('users'));
     }
 
+    //For staff to view the selected user profile 
     public function profileView($id)
     {
         $user = User::find($id);
@@ -128,6 +92,7 @@ class UserController extends Controller
         return view('manageUserProfile.viewUserProfile', compact('user'));
     }
 
+    //For staff to view the selected user profile for editing
     public function profileUpdateView($id)
     {
         $user = User::find($id);
@@ -135,37 +100,30 @@ class UserController extends Controller
         return view('manageUserProfile.editUserProfile', compact('user'));
     }
 
+    //For staff to update the selected user profile 
     public function profileUpdate(Request $request, $id)
     {
-        // $request->validate([
-        //     'ic' => 'required|digits:12|unique:users,ic,' . $id,
-        //     'id' => 'required|unique:users,id,' . $id,
-        //     'email' => 'required|email|unique:users,email,' . $id,
-        //     'name' => 'required|string',
-        //     'phone' => 'required|digits_between:10,15|numeric',
-        //     'gender' => 'required|in:male,female',
-        // ]);
+        $request->validate([
+            'ic' => 'required|unique:users,ic,' . $id,
+            'email' => 'required|email|unique:users,email,' . $id,
+            'name' => 'required|string',
+            'phone' => 'required',
+        ]);
 
         $user = User::findOrFail($id);
 
         $user->update($request->all());
 
-        return redirect()->route('staff.userProfileList')->with('updated', 'User updated successfully!');
+        return back()->with('success', 'Profile updated successfully.');
     }
 
-    public function userProfileList()
+    //For staff to delete the selected user profile 
+    public function destroy($id)
     {
-        #Retrieve the necessary data
-        $users = User::orderBy('created_at', 'desc')
-            ->paginate(10);
+        User::find($id)->delete();
 
-
-        # Pass the report data to a view for rendering
-        return view('manageUserProfile.userProfileList', compact('users'));
+        return redirect()->route('staff.userProfileList')->with('delete', 'Selected user profile deleted successfully');
     }
 
-    // public function show()
-    // {
-    //     return view('module1.viewUser');
-    // }
+    
 }

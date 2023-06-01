@@ -1,7 +1,12 @@
 @extends('layouts.staffProfile')
 
 @section('content')
-    <form action="">
+    @if (session('success'))
+        <div class="alert alert-success mt-3">{{ session('success') }}</div>
+    @endif
+    <form action="{{ route('staff.update', Auth::guard('staff')->user()->id) }}" method="post">
+        @csrf
+        @method('PUT')
         <div class="row mt-4" style="background-color: #DDFFBB;">
             <h4 class="font-weight-bold mx-auto mt-2" style="width: fit-content;">Profile</h4>
         </div>
@@ -12,8 +17,8 @@
                 <td>{{ Auth::guard('staff')->user()->ic }}</td>
             </tr>
             <tr>
-                <th>Name*</th>
-                <td>:</td>
+                <th>Name</th>
+                <td>*:</td>
                 <td><input class="form-control" type="text" name="name" id="name"
                         value="{{ strtoupper(Auth::guard('staff')->user()->name) }}"></td>
             </tr>
@@ -39,14 +44,14 @@
             </tr>
             <tr>
                 <th>Email</th>
-                <td>:</td>
+                <td>*:</td>
                 <td>
                     <input class="form-control" type="email" name="email" id="email"
                         value="{{ Auth::guard('staff')->user()->email }}">
                 </td>
             </tr>
         </table>
-        <input class="btn" style="float: right;background-color:#2763C6; color:white; border-radius:25px" type="submit"
-            value="Edit Profile">
+        <input class="btn col-md-2" style="float: right;background-color:#2763C6; color:white; border-radius:25px" type="submit"
+            onclick="return confirm('Confirm to update profile?')" value="Edit Profile">
     </form>
 @endsection

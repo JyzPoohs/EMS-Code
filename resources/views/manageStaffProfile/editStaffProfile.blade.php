@@ -5,7 +5,7 @@
         <div class="alert alert-success mt-3">{{ session('success') }}</div>
     @endif
 
-    <form action="{{ route('staff.updateUserProfile', $user->id) }}" method="post">
+    <form action="{{ route('staff.updateStaffProfile', $user->id) }}" method="post">
         @csrf
         @method('PUT')
         <div class="row mt-4" style="background-color: #cbdcf7;">
@@ -25,15 +25,30 @@
                         value="{{ strtoupper($user['name']) }}"></td>
             </tr>
             <tr>
-                <th>Gender</th>
+                <th>Department</th>
                 <td>:</td>
-                <td><input class="form-control" type="text" name="gender" id="gender"
-                        value="{{ strtoupper($user['gender']) }}"></td>
+                <td><input class="form-control" type="text" name="department" id="department"
+                        value="{{ strtoupper($user['department']) }}"></td>
             </tr>
             <tr>
-                <th>Phone Number</th>
+                <th>PAID</th>
                 <td>*:</td>
-                <td><input class="form-control" type="text" name="phone" id="phone" value="{{ $user['phone'] }}">
+                <td><input class="form-control" type="text" name="paid" id="paid"
+                        value="{{ strtoupper($user['paid']) }}">
+                </td>
+            </tr>
+            <tr>
+                <th>Access Category</th>
+                <td>*:</td>
+                <td><input class="form-control" type="text" name="accessCategory" id="accessCategory"
+                        value="{{ $user['accessCategory'] }}">
+                </td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td>*:</td>
+                <td><input class="form-control" type="text" name="position" id="position"
+                        value="{{ strtoupper($user['position']) }}">
                 </td>
             </tr>
             <tr>
@@ -48,10 +63,17 @@
                 <td><input disabled class="form-control" type="text" name="date" id="date"
                         value="{{ $user['created_at']->format('Y/m/d') }}"></td>
             </tr>
+            <tr>
+                <th>Status</th>
+                <td>*:</td>
+                <td><input class="form-control" type="text" name="status" id="status"
+                        value="{{ strtoupper($user['status']) }}">
+                </td>
+            </tr>
 
         </table>
         <a class="btn btn-secondary"; style="float: right;  color: white; border-radius: 25px; margin-left:5px"
-            href="{{ route('staff.userProfileList') }}">Back</a>
+            href="{{ route('staff.staffProfileList') }}">Back</a>
         <button type="submit" class="btn col-sm-2"
             style="float: right; background-color: #2763C6; color: white; border-radius: 25px"
             onclick="return confirm('Confirm to update profile?')">Edit Profile</button>

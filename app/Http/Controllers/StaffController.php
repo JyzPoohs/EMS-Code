@@ -20,7 +20,6 @@ class StaffController extends Controller
             [
                 'ic' => 'required|unique:users|max:12',
                 'name' => 'required',
-                'role' => 'required',
                 'department' => 'required',
                 'accessCategory' => 'required',
                 'position' => 'required',
@@ -36,28 +35,70 @@ class StaffController extends Controller
         $staff = new Staff();
         $staff->ic = $request->ic;
         $staff->name = $request->name;
-        $staff->role = $request->role;
+        $staff->role = 'staff';
         $staff->department = $request->department;
         $staff->accessCategory = $request->accessCategory;
         $staff->position = $request->position;
         $staff->paid = $request->paid;
         $staff->email = $request->email;
-        $staff->password = Hash::make($request->password);
-        $res = $staff->save();
+        $staff->password = bcrypt($request->password);
+        $staff->status = 'pending';
+        $staff->save();
+    }
 
-        if ($res) {
-            return redirect()->back()->with('success', 'Registered success');
-        } else {
-            return redirect()->back()->with('fail', 'Registered fail');
-        }
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'email' => 'required|email|unique:staffs,email,',
+            'name' => 'required|string',
+        ]);
 
-        // $request->merge([
-        //     'password' => bcrypt('password')
-        // ]);
+        Staff::find($id)->update($request->all());
 
-        // User::create($request->all());
+        return back()->with('success', 'Profile updated successfully.');
+    }
 
-        // return redirect()->route('user.index')
-        //     ->with('success', "User Successfully Added");
+    public function profileView($id)
+    {
+        $user = Staff::find($id);
+
+        return view('manageStaffProfile.viewStaffProfile', compact('user'));
+    }
+
+    public function profileUpdateView($id)
+    {
+        $user = Staff::find($id);
+
+        return view('manageStaffProfile.editStaffProfile', compact('user'));
+    }
+
+    public function profileUpdate(Request $request, $id)
+    {
+        $request->validate([
+            'ic' => 'required|unique:staffs,ic,' . $id,
+            'email' => 'required|email|unique:staffs,email,' . $id,
+            'name' => 'required|string',
+        ]);
+
+        $user = Staff::findOrFail($id);
+
+        $user->update($request->all());
+
+        return back()->with('success', 'Profile updated successfully.');
+    }
+
+    public function staffProfileList()
+    {
+        $users = Staff::orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        return view('manageStaffProfile.staffProfileList', compact('users'));
+    }
+
+    public function destroy($id)
+    {
+        Staff::find($id)->delete();
+
+        return redirect()->route('staff.staffProfileList')->with('delete', 'Selected staff profile deleted successfully');
     }
 }
