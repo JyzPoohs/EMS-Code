@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Auth;
-use Hash;
+// use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -28,9 +28,9 @@ class UserController extends Controller
     }
 
 
-    public function destroy($user)
+    public function destroy($id)
     {
-        User::find($user)->delete();
+        User::find($id)->delete();
 
         return response()->json(['success' => true]);
     }
@@ -57,7 +57,7 @@ class UserController extends Controller
         $user->gender = $request->gender;
         $user->phone = $request->phone;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password);
+        $user->password = bcrypt($request->password);
         $res = $user->save();
 
         if ($res) {
@@ -76,23 +76,23 @@ class UserController extends Controller
         //     ->with('success', "User Successfully Added");
     }
 
-    public function doLogin(Request $request)
-    {
-        $request->validate(
-            [
-                'role' => 'required',
-                'ic' => 'required|unique:users|max:12',
-                'password' => 'required|min:6|max:12',
-            ]
-        );
+    // public function doLogin(Request $request)
+    // {
+    //     $request->validate(
+    //         [
+    //             'role' => 'required',
+    //             'ic' => 'required|unique:users|max:12',
+    //             'password' => 'required|min:6|max:12',
+    //         ]
+    //     );
 
-        $check = $request->only('role', 'ic', 'password');
-        if (Auth::guard('web')->attempt($check)) {
-            return redirect()->route('user.profile')->with('success', 'Login success');
-        } else {
-            return redirect()->back()->with('fail', 'Login fail');
-        }
-    }
+    //     $check = $request->only('role', 'ic', 'password');
+    //     if (Auth::guard('web')->attempt($check)) {
+    //         return redirect()->route('user.profile')->with('success', 'Login success');
+    //     } else {
+    //         return redirect()->back()->with('fail', 'Login fail');
+    //     }
+    // }
 
     public function store(Request $request)
     {
@@ -110,8 +110,8 @@ class UserController extends Controller
     {
         User::find($user)->update($request->all());
 
-        return redirect()->route('user.index')
-            ->with('success', "User Successfully Updated");
+        return redirect()->route('staff.userProfielList')
+            ->with('updated', 'User updated successfully!');
     }
 
     public function profile()
@@ -121,20 +121,47 @@ class UserController extends Controller
         return view('manageUserProfile.profile', compact('user'));
     }
 
-    // public function profileView($id)
-    // {
-    //     $user = User::with(['role', 'posts', 'likes'])->find($id);
-
-    //     return view('module2.user-profile-view', compact('user'));
-    // }
-
-    public function profileUpdate(Request $request)
+    public function profileView($id)
     {
-        $user = User::find(auth()->user()->id);
+        $user = User::find($id);
+
+        return view('manageUserProfile.viewUserProfile', compact('user'));
+    }
+
+    public function profileUpdateView($id)
+    {
+        $user = User::find($id);
+
+        return view('manageUserProfile.editUserProfile', compact('user'));
+    }
+
+    public function profileUpdate(Request $request, $id)
+    {
+        // $request->validate([
+        //     'ic' => 'required|digits:12|unique:users,ic,' . $id,
+        //     'id' => 'required|unique:users,id,' . $id,
+        //     'email' => 'required|email|unique:users,email,' . $id,
+        //     'name' => 'required|string',
+        //     'phone' => 'required|digits_between:10,15|numeric',
+        //     'gender' => 'required|in:male,female',
+        // ]);
+
+        $user = User::findOrFail($id);
 
         $user->update($request->all());
 
-        return redirect()->back()->with('success', "Profile Successfully Updated!");
+        return redirect()->route('staff.userProfileList')->with('updated', 'User updated successfully!');
+    }
+
+    public function userProfileList()
+    {
+        #Retrieve the necessary data
+        $users = User::orderBy('created_at', 'desc')
+            ->paginate(10);
+
+
+        # Pass the report data to a view for rendering
+        return view('manageUserProfile.userProfileList', compact('users'));
     }
 
     // public function show()

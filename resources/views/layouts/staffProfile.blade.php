@@ -8,11 +8,12 @@
     <title>e-Munakahat</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 
     <link href="{{ env('APP_URL') . '/css/staff-sidebar.css' }}" rel="stylesheet" />
+    <link href="{{ env('APP_URL') . '/css/staff-profileList.css' }}" rel="stylesheet" />
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -21,7 +22,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
-
     <style>
         * {
             font-family: 'Times New Roman', Times, serif
@@ -40,18 +40,18 @@
     </div>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-4 mt-3">
+            <div class="col-md-3 mt-3">
                 <div class="row">
                     <label class="col-md-3" for="ID">ID</label>
-                    <p class="col-md-4">: {{ Auth::guard('staff')->user()->ic }}</p>
+                    <p class="col-md-8">: {{ Auth::guard('staff')->user()->ic }}</p>
                 </div>
                 <div class="row">
                     <label class="col-md-3" for="Name">Name</label>
-                    <p class="col-md-4">: {{ strtoupper(Auth::guard('staff')->user()->name) }}</p>
+                    <p class="col-md-8">: {{ strtoupper(Auth::guard('staff')->user()->name) }}</p>
                 </div>
                 <div class="row">
                     <label class="col-md-3" for="Name">Jawatan</label>
-                    <p class="col-md-4">: {{ strtoupper(Auth::guard('staff')->user()->position) }}</p>
+                    <p class="col-md-7">: {{ strtoupper(Auth::guard('staff')->user()->position) }}</p>
                 </div>
                 <nav id="sidebar">
 
@@ -67,7 +67,7 @@
                                     <a href="#">Staff Profile</a>
                                 </li>
                                 <li>
-                                    <a href="#">User Profile</a>
+                                    <a href="{{ route('staff.userProfileList') }}">User Profile</a>
                                 </li>
                             </ul>
                         </li>
@@ -89,7 +89,7 @@
                                 class="dropdown-toggle">Pendaftaran Nikah</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <li>
-                                    <a href="{{route('staff.manageMarriage')}}">Mohon Pengesahan Nikah</a>
+                                    <a href="{{ route('staff.manageMarriage') }}">Mohon Pengesahan Nikah</a>
                                 </li>
                                 <li>
                                     <a href="#">Mohon Daftar Nikah</a>
@@ -123,7 +123,7 @@
                     </ul>
                 </nav>
             </div>
-            <main class="col-md-8">
+            <main class="col-md-9">
                 @yield('content')
             </main>
         </div>

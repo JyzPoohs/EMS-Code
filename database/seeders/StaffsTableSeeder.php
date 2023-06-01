@@ -16,12 +16,12 @@ class StaffsTableSeeder extends Seeder
         $staffs = [
             [
                 'ic' => '3333',
-                'name' => 'staff 1',
+                'name' => 'Muhammed Nik Ishaq bin Wazzirul Firdaus',
                 'role' => 'staff',
                 'department' => 'Marriage Request',
                 'accessCategory' => 'admin',
                 'position' => 'head',
-                'paid' => 'Pahang',
+                'paid' => 'PAID Pekan',
                 'email' => 'staff1@example.com',
                 'password' => 'password',
             ],
@@ -32,8 +32,19 @@ class StaffsTableSeeder extends Seeder
                 'department' => 'Marriage Course',
                 'accessCategory' => 'staff',
                 'position' => 'manager',
-                'paid' => 'Kuantan',
+                'paid' => 'PAID Kuantan',
                 'email' => 'staff2@example.com',
+                'password' => 'password'
+            ],
+            [
+                'ic' => '640712116791',
+                'name' => 'Ninian Raj Kaur',
+                'role' => 'staff',
+                'department' => 'Marriage Register',
+                'accessCategory' => 'staff',
+                'position' => 'Advisor',
+                'paid' => 'PAID Rompin',
+                'email' => 'nahappan.anita@yahoo.com',
                 'password' => 'password'
             ]
         ];

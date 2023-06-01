@@ -15,7 +15,6 @@ Route::get('/', function () {
 });
 
 //Module 1
-
 Route::get('/login', [UserAuth::class, 'show'])->name('login');
 Route::post('login-user', [UserAuth::class, 'loginUser'])->name('login-user');
 Route::get('/logout', [UserAuth::class, 'logout'])->name('logout');
@@ -23,6 +22,9 @@ Route::get('/logout', [UserAuth::class, 'logout'])->name('logout');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//For showing purpose
+
 
 Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['guest'])->group(function () {
@@ -41,8 +43,15 @@ Route::prefix('staff')->name('staff.')->group(function () {
         Route::view('/register', 'auth.staffRegister')->name('register');
         Route::post('/create', [StaffController::class, 'create'])->name('create');
     });
+    Route::middleware(['auth'])->group(function () {
+    });
     Route::view('/profile', 'manageStaffProfile.profile')->name('profile');
-    Route::get('/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('manageMarriage');
+    Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'index'])->name('manageMarriage');
+    Route::get('/userProfileList', [UserController::class, 'userProfileList'])->name('userProfileList');
+    Route::get('/viewUserProfile/{id}',  [UserController::class, 'profileView'])->name('viewUserProfile');
+    Route::get('/userList/profile/{id}/updateView',  [UserController::class, 'profileUpdateView'])->name('profileUpdateView');
+    Route::put('/userList/profile/{id}/update',  [UserController::class, 'profileUpdate'])->name('updateUserProfile');
+    Route::get('/userList/profile/{id}/delete',  [UserController::class, 'destroy'])->name('destroyUserProfile');
 });
 
 // Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');

@@ -43,11 +43,11 @@
             <div class="col-md-4 mt-3">
                 <div class="row">
                     <label class="col-md-2" for="ID">ID</label>
-                    <p class="col-md-4">: {{ auth()->user()->ic }}</p>
+                    <p class="col-md-8">: {{ auth()->user()->ic }}</p>
                 </div>
                 <div class="row">
                     <label class="col-md-2" for="Name">Name</label>
-                    <p class="col-md-4">: {{ strtoupper(auth()->user()->name) }}</p>
+                    <p class="col-md-9">: {{ strtoupper(auth()->user()->name) }}</p>
                 </div>
                 <nav id="sidebar">
                     {{-- <div class="sidebar-header">
