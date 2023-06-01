@@ -46,12 +46,16 @@ Route::prefix('staff')->name('staff.')->group(function () {
     Route::middleware(['auth'])->group(function () {
     });
     Route::view('/profile', 'manageStaffProfile.profile')->name('profile');
+<<<<<<< HEAD
     Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'index'])->name('manageMarriage');
     Route::get('/userProfileList', [UserController::class, 'userProfileList'])->name('userProfileList');
     Route::get('/viewUserProfile/{id}',  [UserController::class, 'profileView'])->name('viewUserProfile');
     Route::get('/userList/profile/{id}/updateView',  [UserController::class, 'profileUpdateView'])->name('profileUpdateView');
     Route::put('/userList/profile/{id}/update',  [UserController::class, 'profileUpdate'])->name('updateUserProfile');
     Route::get('/userList/profile/{id}/delete',  [UserController::class, 'destroy'])->name('destroyUserProfile');
+=======
+    Route::get('/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('manageValidationMarriage');
+>>>>>>> 7f4ed9393cd78483480e4f929bdcd3eeed84c628
 });
 
 // Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');
