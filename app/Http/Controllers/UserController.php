@@ -34,6 +34,7 @@ class UserController extends Controller
                 'cpassword.same' => 'The password must be same'
             ]
         );
+
         $user = new User();
         $user->ic = $request->ic;
         $user->name = $request->name;
@@ -44,8 +45,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
-        return redirect()->route('login')
-            ->with('success', "Registration successful");
+        return redirect()->route('user.registerMessage');
     }
 
     public function store(Request $request)
@@ -124,6 +124,4 @@ class UserController extends Controller
 
         return redirect()->route('staff.userProfileList')->with('delete', 'Selected user profile deleted successfully');
     }
-
-    
 }

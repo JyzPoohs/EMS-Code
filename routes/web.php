@@ -1,8 +1,10 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StaffManageMarriageRegController;
@@ -28,20 +30,21 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['guest'])->group(function () {
 
         Route::view('/register', 'auth.userRegister')->name('register');
+        Route::view('/register/message', 'Message.registerMessage')->name('registerMessage');
         Route::post('/create', [UserController::class, 'create'])->name('create');
     });
     Route::middleware(['auth'])->group(function () {
         Route::view('/profile', 'manageUserProfile.profile')->name('profile');
         Route::view('/consult', 'manageConsultation(user).consult')->name('consult');
-        
     });
     Route::put('/profile/{id}/update',  [UserController::class, 'update'])->name('update');
 });
 
 Route::prefix('staff')->name('staff.')->group(function () {
     Route::middleware(['guest'])->group(function () {
-
         Route::view('/register', 'auth.staffRegister')->name('register');
+        Route::view('/accessCode', 'manageRegister.accessCode')->name('accessCode');
+        Route::get('/validateCode',  [RegisterController::class, 'validateCode'])->name('validateCode');
         Route::post('/create', [StaffController::class, 'create'])->name('create');
     });
     Route::middleware(['auth'])->group(function () {

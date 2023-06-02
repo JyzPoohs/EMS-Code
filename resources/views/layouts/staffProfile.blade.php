@@ -33,7 +33,6 @@
 </head>
 
 <body>
-
     <!-- Sidebar  -->
     <div class="container">
         <header class="row justify-content-center">
@@ -94,7 +93,8 @@
                                 <li>
 
                                     <a href="{{ route('staff.manageMarriage') }}">Mohon Pengesahan Nikah</a>
-                                    <a href="{{ route('staff.manageValidationMarriage') }}">Senarai Pengesahan Nikah</a>
+                                    <a href="{{ route('staff.manageValidationMarriage') }}">Senarai Pengesahan
+                                        Nikah</a>
                                 </li>
                                 <li>
                                     <a href="#">Mohon Daftar Nikah</a>

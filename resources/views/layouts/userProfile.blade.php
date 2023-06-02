@@ -30,17 +30,14 @@
             font-family: 'Times New Roman', Times, serif
         }
     </style>
+
+    <header class="row justify-content-center">
+        <img src="{{ env('APP_URL') . '/img/Header.png' }}" style="align-content: center; width:80%" alt="Header EMS">
+    </header>
 </head>
 
 <body>
-
     <!-- Sidebar  -->
-    <div class="container">
-        <header class="row justify-content-center">
-            <img src="{{ env('APP_URL') . '/img/Header.png' }}" width="100%" style="align-content: center;"
-                alt="Header EMS">
-        </header>
-    </div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 mt-3">
@@ -53,10 +50,6 @@
                     <p class="col-md-9">: {{ strtoupper(auth()->user()->name) }}</p>
                 </div>
                 <nav id="sidebar">
-                    {{-- <div class="sidebar-header">
-                        <h5>e-Munakahat</h5>
-                    </div> --}}
-
                     <ul class="list-unstyled">
                         <li>
                             <a href="{{ route('user.profile') }}">User Profile</a>

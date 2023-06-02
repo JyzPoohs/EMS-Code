@@ -16,10 +16,6 @@
                             @if (Session::has('success'))
                                 <div class="alert alert-success">{{ Session::get('success') }}</div>
                             @endif
-                            @if (Session::has('fail'))
-                                <div class="alert alert-danger">{{ Session::get('fail') }}</div>
-                            @endif
-
                             <div class="row mb-3 mt-3">
                                 <label for="ic"
                                     class="col-md-4 col-form-label text-md-end">{{ __('IC Number') }}</label>
@@ -70,6 +66,22 @@
                                 </div>
                             </div>
 
+                            <div class="row mb-3">
+                                <label for="email"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Phone Number') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="phone" type="phone" placeholder="Enter Phone"
+                                        class="form-control @error('phone') is-invalid @enderror" name="phone"
+                                        value="{{ old('phone') }}" required autocomplete="phone">
+
+                                    @error('phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                             <div class="row mb-3">
                                 <label for="email"
                                     class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
