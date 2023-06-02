@@ -27,8 +27,15 @@
             <tr>
                 <th>Gender</th>
                 <td>:</td>
-                <td><input class="form-control" type="text" name="gender" id="gender"
-                        value="{{ strtoupper($user['gender']) }}"></td>
+                <td>
+                    <div class="form-group">
+                        <select class="form-select" name="gender">
+                            <option disabled selected>Select gender</option>
+                            <option value="MALE" @if ($user['gender'] == 'MALE') selected @endif>MALE</option>
+                            <option value="FEMALE" @if ($user['gender'] == 'FEMALE') selected @endif>FEMALE</option>
+                        </select>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <th>Phone Number</th>

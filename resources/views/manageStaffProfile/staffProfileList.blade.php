@@ -11,12 +11,12 @@
             <table class="table table-bordered" id="list">
                 <thead style="background-color: #9ED5C5; color: #29231c">
                     <tr>
-                        <th style="width: 80px">IC Number</th>
-                        <th class="col-md-2">Staff Name</th>
-                        <th>PAID</th>
-                        <th class="col-md-2">Email</th>
-                        <th class="col-md-2">Date Register</th>
-                        <th style="width: 120px">Operation</th>
+                        <th class="text-center">IC Number/Staff Name</th>
+                        <th class="text-center">PAID</th>
+                        <th class="col-md-2 text-center">Email</th>
+                        <th class="text-center" style="width: 95px">Date Register</th>
+                        <th class="col-md-1 text-center">Status</th>
+                        <th class="text-center" style="width: 120px">Operation</th>
                     </tr>
                 </thead>
                 <tbody style="background-color: #DEF5E5">
@@ -26,19 +26,19 @@
                             @php $counter++; @endphp
                             <tr>
                                 <td>
-                                    {{ $user['ic'] }}
+                                    {{ $user['ic'] }} <br> {{ strtoupper($user['name']) }}
                                 </td>
-                                <td>
-                                    {{ $user['name'] }}
-                                </td>
-                                <td>
+                                <td class="text-center">
                                     {{ strtoupper($user['paid']) }}
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     {{ $user['email'] }}
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     {{ $user['created_at']->format('Y/m/d') }}
+                                </td>
+                                <td class="text-center">
+                                    {{ strtoupper($user['status']) }}
                                 </td>
                                 <td>
                                     <a href="{{ route('staff.viewStaffProfile', ['id' => $user->id]) }}"

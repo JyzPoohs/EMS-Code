@@ -27,28 +27,92 @@
             <tr>
                 <th>Department</th>
                 <td>:</td>
-                <td><input class="form-control" type="text" name="department" id="department"
-                        value="{{ strtoupper($user['department']) }}"></td>
+                <td>
+                    <div class="form-group">
+                        <select class="form-select" name="department">
+                            <option disabled selected>Select department</option>
+                            <option value="MARRIAGE REQUEST" @if ($user['department'] == 'MARRIAGE REQUEST') selected @endif>MARRIAGE
+                                REQUEST</option>
+                            <option value="MARRIAGE REGISTER" @if ($user['department'] == 'MARRIAGE REGISTER') selected @endif>MARRIAGE
+                                REGISTER</option>
+                            <option value="MARRIAGE COURSE" @if ($user['department'] == 'MARRIAGE COURSE') selected @endif>MARRIAGE
+                                COURSE</option>
+                            <option value="CARD NIKAH" @if ($user['department'] == 'CARD NIKAH') selected @endif>CARD NIKAH</option>
+                            <option value="INCENTIVE" @if ($user['department'] == 'INCENTIVE') selected @endif>INCENTIVE</option>
+                            <option value="CONSULTATION" @if ($user['department'] == 'CONSULTATION') selected @endif>CONSULTATION
+                            </option>
+                            <option value="SYSTEM MANAGEMENT" @if ($user['department'] == 'SYSTEM MANAGEMENT') selected @endif>SYSTEM
+                                MANAGEMENT</option>
+                        </select>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <th>PAID</th>
                 <td>*:</td>
-                <td><input class="form-control" type="text" name="paid" id="paid"
-                        value="{{ strtoupper($user['paid']) }}">
+                <td>
+                    <div class="form-group">
+                        <select class="form-select" name="paid">
+                            <option disabled selected>Select PAID</option>
+                            <option value="paid pekan" @if (strtoupper($user['paid']) == 'PAID PEKAN') selected @endif>PAID PEKAN</option>
+                            <option value="paid kuantan" @if (strtoupper($user['paid']) == 'PAID KUANTAN') selected @endif>PAID KUANTAN
+                            </option>
+                            <option value="paid rompin" @if (strtoupper($user['paid']) == 'PAID ROMPIN') selected @endif>PAID ROMPIN
+                            </option>
+                            <option value="paid muadzam" @if (strtoupper($user['paid']) == 'PAID MUADZAM SHAH') selected @endif>PAID MUADZAM
+                                SHAH</option>
+                            <option value="paid maran" @if (strtoupper($user['paid']) == 'PAID MARAN') selected @endif>PAID MARAN
+                            </option>
+                            <option value="paid jengka" @if (strtoupper($user['paid']) == 'PAID JENGKA') selected @endif>PAID JENGKA
+                            </option>
+                            <option value="paid barat" @if (strtoupper($user['paid']) == 'PAID KUANTAN BARAT') selected @endif>PAID KUANTAN
+                                BARAT</option>
+                            <option value="paid temerloh" @if (strtoupper($user['paid']) == 'PAID TEMERLOH') selected @endif>PAID TEMERLOH
+                            </option>
+                            <option value="paid bentong" @if (strtoupper($user['paid']) == 'PAID BENTONG') selected @endif>PAID BENTONG
+                            </option>
+                            <option value="paid jerantut" @if (strtoupper($user['paid']) == 'PAID JERANTUT') selected @endif>PAID JERANTUT
+                            </option>
+                            <option value="paid raub" @if (strtoupper($user['paid']) == 'PAID RAUB') selected @endif>PAID RAUB</option>
+                            <option value="paid lipis" @if (strtoupper($user['paid']) == 'PAID KUALA LIPIS') selected @endif>PAID KUALA LIPIS
+                            </option>
+                            <option value="paid bera" @if (strtoupper($user['paid']) == 'PAID BERA') selected @endif>PAID BERA</option>
+                            <option value="paid cameron" @if (strtoupper($user['paid']) == 'PAID CAMERON HIGHLAND') selected @endif>PAID CAMERON
+                                HIGHLAND</option>
+                        </select>
+                    </div>
                 </td>
             </tr>
             <tr>
                 <th>Access Category</th>
                 <td>*:</td>
-                <td><input class="form-control" type="text" name="accessCategory" id="accessCategory"
-                        value="{{ $user['accessCategory'] }}">
+                <td>
+                    <div class="form-group">
+                        <select class="form-select" name="accessCategory">
+                            <option disabled selected>Select access category</option>
+                            <option value="ADMINISTRATOR" @if($user['accessCategory'] == 'ADMINISTRATOR') selected @endif>ADMINISTRATOR</option>
+                            <option value="STAFF" @if($user['accessCategory'] == 'STAFF') selected @endif>STAFF</option>
+                        </select>
+                    </div>
+                    
                 </td>
             </tr>
             <tr>
                 <th>Position</th>
                 <td>*:</td>
-                <td><input class="form-control" type="text" name="position" id="position"
-                        value="{{ strtoupper($user['position']) }}">
+                <td>
+                    <div class="form-group">
+                        <select class="form-select" name="position">
+                            <option disabled selected>Select position</option>
+                            <option value="MARRIAGE REQUEST OFFICER" @if($user['position'] == 'MARRIAGE REQUEST OFFICER') selected @endif>MARRIAGE REQUEST OFFICER</option>
+                            <option value="MARRIAGE COURSE OFFICER" @if($user['position'] == 'MARRIAGE COURSE OFFICER') selected @endif>MARRIAGE COURSE OFFICER</option>
+                            <option value="MARRIAGE REGISTER OFFICER" @if($user['position'] == 'MARRIAG REGISTER OFFICER') selected @endif>MARRIAGE REGISTER OFFICER</option>
+                            <option value="MARRIAGE COORDINATOR" @if($user['position'] == 'MARRIAGE COORDINATOR') selected @endif>MARRIAGE COORDINATOR</option>
+                            <option value="MARRIAGE COUNSELOR" @if($user['position'] == 'MARRIAGE COUNSELOR') selected @endif>'MARRIAGE COUNSELOR</option>
+                            <option value="MARRIAGE ADMINISTRATOR" @if($user['position'] == 'MARRIAGE ADMINISTRATOR') selected @endif>MARRIAGE ADMINISTRATOR</option>
+                        </select>
+                    </div>
+                    
                 </td>
             </tr>
             <tr>
@@ -66,9 +130,17 @@
             <tr>
                 <th>Status</th>
                 <td>*:</td>
-                <td><input class="form-control" type="text" name="status" id="status"
-                        value="{{ strtoupper($user['status']) }}">
+                <td>
+                    <div class="form-group">
+                        <select class="form-select" name="status">
+                            <option disabled selected>Select status</option>
+                            <option value="approve" @if ($user['status'] == 'approve') selected @endif>APPROVE</option>
+                            <option value="reject" @if ($user['status'] == 'reject') selected @endif>REJECT</option>
+                            <option value="pending" @if ($user['status'] == 'pending') selected @endif>PENDING</option>
+                        </select>
+                    </div>
                 </td>
+
             </tr>
 
         </table>

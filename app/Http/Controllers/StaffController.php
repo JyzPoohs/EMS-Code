@@ -16,37 +16,34 @@ class StaffController extends Controller
 
     public function create(Request $request)
     {
-        // $request->validate(
-        //     [
-        //         'ic' => 'required|unique:staffs|max:12',
-        //         'name' => 'required',
-        //         'department' => 'required',
-        //         'accessCategory' => 'required',
-        //         'position' => 'required',
-        //         'paid' => 'required',
-        //         'email' => 'required|email|unique:staffs',
-        //         'password' => 'required|min:6|max:12',
-        //         'cpassword' => 'required|same:password'
-        //     ],
-        //     [
-        //         'cpassword.same' => 'The password must be same'
-        //     ]
-        // );
+        $request->validate(
+            [
+                'ic' => 'required|unique:staffs|max:12',
+                'name' => 'required',
+                'department' => 'required',
+                'accessCategory' => 'required',
+                'position' => 'required',
+                'paid' => 'required',
+                'email' => 'required|email|unique:staffs',
+                'password' => 'required|min:6|max:12',
+                'cpassword' => 'required|same:password'
+            ],
+        );
 
         $staff = new Staff();
         $staff->ic = $request->ic;
         $staff->name = $request->name;
-        $staff->role = 'staff';
+        $staff->role = 'STAFF';
         $staff->department = $request->department;
         $staff->accessCategory = $request->accessCategory;
         $staff->position = $request->position;
         $staff->paid = $request->paid;
         $staff->email = $request->email;
         $staff->password = bcrypt($request->password);
-        $staff->status = 'pending';
+        $staff->status = 'PENDING';
         $staff->save();
 
-        return redirect()->route('user.registerMessage');
+        return redirect()->route('staff.registerMessage');
     }
 
     public function update(Request $request, $id)

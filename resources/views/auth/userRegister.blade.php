@@ -13,18 +13,15 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('user.create') }}">
                             @csrf
-                            @if (Session::has('success'))
-                                <div class="alert alert-success">{{ Session::get('success') }}</div>
-                            @endif
+
                             <div class="row mb-3 mt-3">
                                 <label for="ic"
                                     class="col-md-4 col-form-label text-md-end">{{ __('IC Number') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="ic" type="text" placeholder="Enter IC Number"
+                                    <input id="ic" type="text" placeholder="e.g 650515071028"
                                         class="form-control @error('ic') is-invalid @enderror textPlaceholder"
                                         name="ic" value="{{ old('ic') }}" required autocomplete="ic" autofocus>
-
                                     @error('ic')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -55,12 +52,12 @@
                                 <div class="form-group col-md-6">
                                     <div class="form-check form-check-inline col-md-5">
                                         <input class="form-check-input" type="radio" name="gender" id="femaleRadio"
-                                            value="female">
+                                            value="FEMALE">
                                         <label class="custom-control-label" for="femaleRadio">Female</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="gender" id="maleRadio"
-                                            value="male">
+                                            value="MALE">
                                         <label class="custom-control-label" for="maleRadio">Male</label>
                                     </div>
                                 </div>
@@ -71,7 +68,7 @@
                                     class="col-md-4 col-form-label text-md-end">{{ __('Phone Number') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="phone" type="phone" placeholder="Enter Phone"
+                                    <input id="phone" type="phone" placeholder="e.g 016-5419875"
                                         class="form-control @error('phone') is-invalid @enderror" name="phone"
                                         value="{{ old('phone') }}" required autocomplete="phone">
 
@@ -87,7 +84,7 @@
                                     class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" placeholder="Enter Email"
+                                    <input id="email" type="email" placeholder="e.g test@example.com"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email">
 
@@ -104,7 +101,7 @@
                                     class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" placeholder="Must more than 6 characters"
+                                    <input id="password" type="password" placeholder="6 - 12 characters/digits"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password">
 

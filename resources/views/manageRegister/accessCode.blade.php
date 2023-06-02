@@ -6,13 +6,9 @@
                 <img src="{{ env('APP_URL') . '/img/indek.png' }}" width="100%" style="align-content: center;" alt="Indek">
             </div>
             <div class="col-md-4">
-                @error('fail')
-                    <div class="text-center text-white font-bold rounded-t px-4 pt-2 pb-2 mb-3"
-                        style="background-color: rgb(191, 36, 36); border-radius:10px;">
-                        {{ strtoupper('Access Code Failed') }} <br>
-                        {{ $message }}
-                    </div>
-                @enderror
+                @if (session('fail'))
+                    <div class="alert alert-danger mt-3">{{ session('fail') }}</div>
+                @endif
                 <div class="card" style="background-color: #c6f3f267">
 
                     <h3 class="text-center card-title"><strong>{{ __('Access Code') }}</strong></h3>
@@ -38,7 +34,8 @@
                         </form>
                     </div>
                 </div>
-                <p style="color:darkred; text-align:center">*Note: Only JAIP admin/staff is able to access the staff registration</p>
+                <p style="color:darkred; text-align:center">*Note: Only JAIP admin/staff is able to access the staff
+                    registration</p>
             </div>
         </div>
     </div>

@@ -30,7 +30,7 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['guest'])->group(function () {
 
         Route::view('/register', 'auth.userRegister')->name('register');
-        Route::view('/register/message', 'Message.registerMessage')->name('registerMessage');
+        Route::view('/register/message', 'message.registerMessage')->name('registerMessage');
         Route::post('/create', [UserController::class, 'create'])->name('create');
     });
     Route::middleware(['auth'])->group(function () {
@@ -43,6 +43,7 @@ Route::prefix('user')->name('user.')->group(function () {
 Route::prefix('staff')->name('staff.')->group(function () {
     Route::middleware(['guest'])->group(function () {
         Route::view('/register', 'auth.staffRegister')->name('register');
+        Route::view('/register/message', 'message.staffRegisterMessage')->name('registerMessage');
         Route::view('/accessCode', 'manageRegister.accessCode')->name('accessCode');
         Route::get('/validateCode',  [RegisterController::class, 'validateCode'])->name('validateCode');
         Route::post('/create', [StaffController::class, 'create'])->name('create');
@@ -72,22 +73,6 @@ Route::prefix('staff')->name('staff.')->group(function () {
 });
 
 // Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');
-
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware('auth')->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/staff/profile', [StaffController::class, 'profile'])->name('staff.profile');
-//     Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile');
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-// Route::post('register-user', [UserAuth::class, 'registerUser'])->name('register-user');
 
 require __DIR__ . '/auth.php';
 

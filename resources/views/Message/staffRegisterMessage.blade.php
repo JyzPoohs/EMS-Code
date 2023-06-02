@@ -12,8 +12,9 @@
                     <div class="card-body">
                         <div class="row">
                             <p class="text-center">
-                                {{ 'You have successfully registered.' }} <br>
-                                {{ 'Please click <<LOGIN>> to back to login page.' }}
+                                {{ 'You registration request has been sent.' }} <br>
+                                {{ 'Please check your email to know the approval status.' }} <br>
+                                {{ 'Click <<Login>> to return to login page.' }}
                             </p>
                         </div>
                         <div class="row justify-content-center">
@@ -21,7 +22,7 @@
                                 style="background: #161D6F; color:white; border-radius:20px">Login</a>
                         </div>
                         <div class="row justify-content-center text-center">
-                            <a href="{{ route('user.register') }}" style="text-decoration: none">[Back]</a>
+                            <a href="{{ route('staff.register') }}" style="text-decoration: none">[Back]</a>
                         </div>
                     </div>
                 </div>

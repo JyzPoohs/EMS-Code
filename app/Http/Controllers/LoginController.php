@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function show()
     {
-        return view("auth.login");
+        return view("manageLogin.login");
     }
 
     public function loginUser(Request $request)
@@ -19,11 +19,12 @@ class LoginController extends Controller
             'ic' => 'required',
             'password' => 'required|min:6|max:12'
         ]);
+        
 
         if ($request->role == 'user') {
             if (Auth::guard('web')->attempt(['ic' => $request->ic, 'password' => $request->password])) {
                 $request->session()->regenerate();
-                return redirect()->route('user.profile')->with('success', 'Login success');
+                return redirect()->route('user.profile')->with('success', 'You\'re logged in');
             }
         } elseif ($request->role == 'staff') {
             if (Auth::guard('staff')->attempt(['ic' => $request->ic, 'password' => $request->password])) {
@@ -34,6 +35,7 @@ class LoginController extends Controller
 
         return back()->withErrors([
             'fail' => 'The provided credentials do not match our records.',
+            'password' => 'The password must be between 6 and 12 characters.',
         ]);
     }
 
