@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>e-Munakahat</title>
 
+    <link rel="icon" href="{{ env('APP_URL') . '/img/logo.png' }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ env('APP_URL') . '/img/logo.png' }}" type="image/x-icon">
+
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -76,7 +79,7 @@
                         </li>
 
                         <li>
-                            <a href="#">Aduan/Khidmat Nasihat</a>
+                            <a href="{{ route('user.consult') }}">Aduan/Khidmat Nasihat</a>
                         </li>
                         <li>
                             <a href="#">Insentif</a>

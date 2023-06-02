@@ -1,7 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserAuth;
+//use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StaffManageMarriageRegController;
@@ -13,9 +14,9 @@ Route::get('/', function () {
 });
 
 //Module 1
-Route::get('/login', [UserAuth::class, 'show'])->name('login');
-Route::post('login-user', [UserAuth::class, 'loginUser'])->name('login-user');
-Route::get('/logout', [UserAuth::class, 'logout'])->name('logout');
+Route::get('/login', [LoginController::class, 'show'])->name('login');
+Route::post('login-user', [LoginController::class, 'loginUser'])->name('login-user');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/changePassword', [ChangePasswordController::class, 'showResetForm'])->name('change-password');
 
 Auth::routes();
@@ -31,6 +32,7 @@ Route::prefix('user')->name('user.')->group(function () {
     });
     Route::middleware(['auth'])->group(function () {
         Route::view('/profile', 'manageUserProfile.profile')->name('profile');
+        Route::view('/consult', 'manageConsultation(user).consult')->name('consult');
         
     });
     Route::put('/profile/{id}/update',  [UserController::class, 'update'])->name('update');
