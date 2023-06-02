@@ -100,7 +100,7 @@
                                     <a href="#">Mohon Daftar Nikah</a>
                                 </li>
                                 <li>
-                                    <a href="#">Sijil Dan Kad Nikah</a>
+                                    <a href="{{ route('staff.manageMarriageCardApp') }}">Sijil Dan Kad Nikah</a>
                                 </li>
                             </ul>
                         </li>
