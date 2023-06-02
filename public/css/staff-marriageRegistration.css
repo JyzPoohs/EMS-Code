@@ -22,3 +22,7 @@ table {
   tr:not(:first-child) {
     background-color: white;
   }
+
+  .white-row {
+    background-color: white;
+}
