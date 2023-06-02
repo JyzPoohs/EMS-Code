@@ -65,7 +65,7 @@
                             </div>
                         </div> --}}
                             <div class="mt-2">
-                                <table id="list">
+                                <table class="table w-100" id="list">
                                     <thead>
                                         <tr>
                                             <th>Bil</th>
