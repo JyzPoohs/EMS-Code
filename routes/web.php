@@ -64,8 +64,8 @@ Route::prefix('staff')->name('staff.')->group(function () {
 
 
     //Module 3
-    Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'index'])->name('manageMarriage');
-    Route::get('/manageValidationMarriage', [StaffManageMarriageRegController::class, 'index'])->name('manageValidationMarriage');
+    Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'manage'])->name('manageMarriage');
+    Route::get('/manageValidationMarriage', [StaffManageMarriageRegController::class, 'validationList'])->name('manageValidationMarriage');
 });
 
 // Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');

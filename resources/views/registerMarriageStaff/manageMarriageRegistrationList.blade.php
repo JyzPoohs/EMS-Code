@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="{{ asset('css/staff-marriageRegistration.css') }}">
-
 @extends('layouts.staffProfile')
 
 @section('content')
@@ -24,7 +23,7 @@
                         </div>
 
 
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">No. K/P Suami</label>
@@ -49,8 +48,8 @@
                                     <input class="form-control" type="text">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row align-items-center">
+                        </div> --}}
+                        {{-- <div class="row align-items-center">
                             <div class="col-md-3 d-flex align-items-end">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Kategori</label>
@@ -92,43 +91,54 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <table>
-                                <tr>
-                                    <td>Bil</td>
-                                    <td>No. Pendaftaran /Sijil</td>
-                                    <td>No. KP/Nama Suami</td>
-                                    <td>No. KP/Nama Isteri</td>
-                                    <td>No. AKaun Terima</td>
-                                    <td>Tarikh Terima</td>
-                                    <td>Status</td>
-                                    <td>Operasi</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>(PN)MS/0077/
-                                        2022-D1-
-                                        SN06220001</td>
-                                    <td>870930065551
-                                        ALI BIN IDRIS</td>
-                                    <td>890930065551
-                                        SITI BINTI ABU BAKAR</td>
-                                    <td>KTN1M4/2022-00011</td>
-                                    <td>15/12/2022</td>
-                                    <td>LULUS</td>
-                                    <td>edit, print</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
+                        </div> --}}
+                        <div class="mt-2">
+                            <table class="table w-100" id="list">
+                                <thead>
+                                    <tr>
+                                        <th>Bil</th>
+                                        <th>No. Pendaftaran /Sijil</th>
+                                        <th>No. KP/Nama Suami</th>
+                                        <th>No. KP/Nama Isteri</th>
+                                        <th>No. AKaun Terima</th>
+                                        <th>Tarikh Terima</th>
+                                        <th>Status</th>
+                                        <th class="col-md-2">Operasi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>(PN)MS/0077/
+                                            2022-D1-
+                                            SN06220001</td>
+                                        <td>870930065551<br>
+                                            ALI BIN IDRIS</td>
+                                        <td>890930065551 <br>
+                                            SITI BINTI ABU BAKAR</td>
+                                        <td>KTN1M4/2022-00011</td>
+                                        <td>15/12/2022</td>
+                                        <td>LULUS</td>
+                                        <td>
+                                            <a href="#" class="btn btn-primary">
+                                                <i class="fas fa-eye"></i></a>
+                                            <a href="#" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                            <a href="#" class="btn btn-danger"
+                                                onclick="return confirm('Confirm to delete?')"><i
+                                                    class="fas fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>

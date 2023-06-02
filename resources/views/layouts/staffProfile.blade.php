@@ -94,8 +94,7 @@
                                 <li>
 
                                     <a href="{{ route('staff.manageMarriage') }}">Mohon Pengesahan Nikah</a>
-                                    <a href="{{ route('staff.manageValidationMarriage') }}">Mohon Pengesahan Nikah</a>
-
+                                    <a href="{{ route('staff.manageValidationMarriage') }}">Senarai Pengesahan Nikah</a>
                                 </li>
                                 <li>
                                     <a href="#">Mohon Daftar Nikah</a>
@@ -135,7 +134,7 @@
         </div>
     </div>
 
-    
+
     <!-- jQuery CDN - DataTables -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
@@ -157,7 +156,6 @@
                 $('#sidebar').toggleClass('active');
             });
         });
-        
     </script>
     <script>
         $(document).ready(function() {
