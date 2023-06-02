@@ -97,10 +97,8 @@
                     <div class="">
                         @guest
                             @if (Route::has('register'))
-                                <a class="btn btn-link registerBtn"
-                                    href="{{ route('user.register') }}">{{ __('User') }}</a>
-                                <a class="btn btn-link registerBtn"
-                                    href="{{ route('staff.register') }}">{{ __('Staff') }}</a>
+                                <a class="btn registerBtn" href="{{ route('user.register') }}">{{ __('User') }}</a>
+                                <a class="btn registerBtn" href="{{ route('staff.accessCode') }}">{{ __('Staff') }}</a>
                             @endif
                         @endguest
 

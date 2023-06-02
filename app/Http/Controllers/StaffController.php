@@ -16,22 +16,23 @@ class StaffController extends Controller
 
     public function create(Request $request)
     {
-        $request->validate(
-            [
-                'ic' => 'required|unique:users|max:12',
-                'name' => 'required',
-                'department' => 'required',
-                'accessCategory' => 'required',
-                'position' => 'required',
-                'paid' => 'required',
-                'email' => 'required|email|unique:users',
-                'password' => 'required|min:6|max:12',
-                'cpassword' => 'required|same:password'
-            ],
-            [
-                'cpassword.same' => 'The password must be same'
-            ]
-        );
+        // $request->validate(
+        //     [
+        //         'ic' => 'required|unique:staffs|max:12',
+        //         'name' => 'required',
+        //         'department' => 'required',
+        //         'accessCategory' => 'required',
+        //         'position' => 'required',
+        //         'paid' => 'required',
+        //         'email' => 'required|email|unique:staffs',
+        //         'password' => 'required|min:6|max:12',
+        //         'cpassword' => 'required|same:password'
+        //     ],
+        //     [
+        //         'cpassword.same' => 'The password must be same'
+        //     ]
+        // );
+
         $staff = new Staff();
         $staff->ic = $request->ic;
         $staff->name = $request->name;
@@ -44,6 +45,8 @@ class StaffController extends Controller
         $staff->password = bcrypt($request->password);
         $staff->status = 'pending';
         $staff->save();
+
+        return redirect()->route('user.registerMessage');
     }
 
     public function update(Request $request, $id)
