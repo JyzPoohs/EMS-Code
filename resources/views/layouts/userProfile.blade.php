@@ -31,8 +31,11 @@
         }
     </style>
 
-    <header class="row justify-content-center">
-        <img src="{{ env('APP_URL') . '/img/Header.png' }}" style="align-content: center; width:80%" alt="Header EMS">
+    <header class="container">
+        <a href="{{ route('user.profile') }}">
+            <img src="{{ env('APP_URL') . '/img/Header.png' }}" width="100%" style="align-content: center;"
+                alt="Header EMS">
+        </a>
     </header>
 </head>
 
@@ -41,13 +44,13 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 mt-3">
-                <div class="row">
-                    <label class="col-md-2" for="ID">ID</label>
-                    <p class="col-md-8">: {{ auth()->user()->ic }}</p>
+                <div class="row mb-3">
+                    <label class="col-md-2" for="ID">ID</label>:
+                    <p class="col-md-8 text-muted"> {{ auth()->user()->ic }}</p>
                 </div>
-                <div class="row">
-                    <label class="col-md-2" for="Name">Name</label>
-                    <p class="col-md-9">: {{ strtoupper(auth()->user()->name) }}</p>
+                <div class="row mb-3">
+                    <label class="col-md-2" for="Name">Name</label>:
+                    <p class="col-md-9 text-muted"> {{ strtoupper(auth()->user()->name) }}</p>
                 </div>
                 <nav id="sidebar">
                     <ul class="list-unstyled">

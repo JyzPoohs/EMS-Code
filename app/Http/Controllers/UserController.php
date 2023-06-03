@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -28,24 +26,25 @@ class UserController extends Controller
                 'phone' => 'required',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:6|max:12',
-                'cpassword' => 'required|same:password'
+                'cpassword' => 'required|min:6|max:12'
             ],
-            [
-                'cpassword.same' => 'The password must be same'
-            ]
         );
 
-        $user = new User();
-        $user->ic = $request->ic;
-        $user->name = $request->name;
-        $user->gender = $request->gender;
-        $user->role = 'user';
-        $user->phone = $request->phone;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->save();
+        if ($request->cpassword === $request->password) {
+            $user = new User();
+            $user->ic = $request->ic;
+            $user->name = $request->name;
+            $user->gender = $request->gender;
+            $user->role = 'user';
+            $user->phone = $request->phone;
+            $user->email = $request->email;
+            $user->password = bcrypt($request->password);
+            $user->save();
 
-        return redirect()->route('user.registerMessage');
+            return redirect()->route('user.registerMessage');
+        }
+
+        return back()->with('fail', 'Registration is unsuccessful. Ensure your info are correct');
     }
 
     public function store(Request $request)

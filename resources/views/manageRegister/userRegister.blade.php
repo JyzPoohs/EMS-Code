@@ -7,6 +7,11 @@
                 <img src="{{ env('APP_URL') . '/img/indek.png' }}" width="100%" style="align-content: center;" alt="Indek">
             </div>
             <div class="col-md-6">
+                @if (session('fail'))
+                    <div class="alert alert-danger">
+                        {{ session('fail') }}
+                    </div>
+                @endif
                 <div class="card" style="background-color: aliceblue">
                     <h3 class="text-center card-title"><strong>{{ __('User Registration') }}</strong></h3>
 
@@ -104,28 +109,17 @@
                                     <input id="password" type="password" placeholder="6 - 12 characters/digits"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="password-confirm"
+                                <label for="cpassword"
                                     class="col-md-4 col-form-label text-md-end">{{ __('Repeat Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password-confirm" type="password" placeholder="Repeat Password"
-                                        class="form-control" name="cpassword" required autocomplete="new-password">
+                                    <input id="cpassword" type="password" placeholder="Repeat Password"
+                                        class="form-control" name="cpassword" required autocomplete="cpassword">
                                 </div>
-                                @error('cpassword')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
 
                             <div class="row mb-0">

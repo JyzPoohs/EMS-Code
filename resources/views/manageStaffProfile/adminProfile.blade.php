@@ -7,8 +7,8 @@
     <form action="{{ route('staff.update', Auth::guard('staff')->user()->id) }}" method="post">
         @csrf
         @method('PUT')
-        <div class="row mt-4" style="background-color: #A0D8B3;">
-            <h4 class="font-weight-bold mx-auto mt-2" style="width: fit-content;">Staff Profile</h4>
+        <div class="row mt-4" style="background-color: #DDFFBB;">
+            <h4 class="font-weight-bold mx-auto mt-2" style="width: fit-content;">Admin Profile</h4>
         </div>
         <table class="table mt-3">
             <tr>

@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StaffManageMarriageRegController;
 use App\Http\Controllers\StaffManageCardAppController;
@@ -17,10 +16,15 @@ Route::get('/', function () {
 });
 
 //Module 1
-Route::get('/login', [LoginController::class, 'show'])->name('login');
-Route::post('login-user', [LoginController::class, 'loginUser'])->name('login-user');
+Route::post('login/submit', [LoginController::class, 'loginUser'])->name('login-user');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/changePassword', [ChangePasswordController::class, 'showResetForm'])->name('change-password');
+
+//Password
+Route::get('/change', [PasswordController::class, 'showChangePasswordForm'])->name('change-password.get');
+Route::get('/forgot', [PasswordController::class, 'showForgotPasswordForm'])->name('forgot-password.get');
+Route::post('/forgot/submit', [PasswordController::class, 'submitForgotPasswordForm'])->name('forgot-password.post');
+Route::post('/change/submit', [PasswordController::class, 'submitChangePasswordForm'])->name('change-password.post');
+
 
 Auth::routes();
 
@@ -30,7 +34,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['guest'])->group(function () {
 
-        Route::view('/register', 'auth.userRegister')->name('register');
+        Route::view('/register', 'manageRegister.userRegister')->name('register');
         Route::view('/register/message', 'message.registerMessage')->name('registerMessage');
         Route::post('/create', [UserController::class, 'create'])->name('create');
     });
@@ -43,7 +47,7 @@ Route::prefix('user')->name('user.')->group(function () {
 
 Route::prefix('staff')->name('staff.')->group(function () {
     Route::middleware(['guest'])->group(function () {
-        Route::view('/register', 'auth.staffRegister')->name('register');
+        Route::view('/register', 'manageRegister.staffRegister')->name('register');
         Route::view('/register/message', 'message.staffRegisterMessage')->name('registerMessage');
         Route::view('/accessCode', 'manageRegister.accessCode')->name('accessCode');
         Route::get('/validateCode',  [RegisterController::class, 'validateCode'])->name('validateCode');
@@ -52,6 +56,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
     Route::middleware(['auth'])->group(function () {
     });
     Route::view('/profile', 'manageStaffProfile.profile')->name('profile');
+    Route::view('/admin/profile', 'manageStaffProfile.adminProfile')->name('admin.profile');
     Route::put('/profile/{id}/update',  [StaffController::class, 'update'])->name('update');
 
     //Module 1
@@ -79,28 +84,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
 
 // Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');
 
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware('auth')->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/staff/profile', [StaffController::class, 'profile'])->name('staff.profile');
-//     Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile');
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-// Route::post('register-user', [UserAuth::class, 'registerUser'])->name('register-user');
-
-
 require __DIR__ . '/auth.php';
-
-
-
-
 
 Route::get('/mregistration', function () {
     return view('module3.MR');

@@ -14,6 +14,13 @@
                         {{ $message }}
                     </div>
                 @enderror
+
+                @if (Session::has('reset'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('reset') }}
+                    </div>
+                @endif
+
                 <div class="card" style="background-color: #E9FADD">
 
                     <h3 class="text-center card-title"><strong>{{ __('Login') }}</strong></h3>
@@ -59,7 +66,7 @@
                                 <label for="password"
                                     class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
                                 <div class="col-md-7">
-                                    <input id="password" type="password" placeholder="Must be more than 6 characters"
+                                    <input id="password" type="password" placeholder="6 - 12 characters/digits"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="current-password">
                                     @error('password')
@@ -79,12 +86,18 @@
                                     </button>
                                 </div>
                                 <div class="col-md-10 offset-md-2  password">
-                                    <a class="btn btn-link" href="{{ route('change-password') }}">
-                                        {{ __('Change Password ') }}
-                                    </a>|
-                                    <a class="btn btn-link " href="{{ route('password.request') }}">
-                                        {{ __('Forgot Password') }}
-                                    </a>
+                                    @if (Route::has('change-password.get'))
+                                        <a class="btn btn-link"
+                                            href="{{ route('change-password.get') }}">
+                                            {{ __('Change Password') }}
+                                        </a>
+                                    @endif
+                                        |
+                                    @if (Route::has('forgot-password.get'))
+                                        <a class="btn" href="{{ route('forgot-password.get') }}">
+                                            {{ __('Forgot Password?') }}
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                         </form>

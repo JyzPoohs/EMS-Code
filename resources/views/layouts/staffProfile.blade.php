@@ -30,30 +30,31 @@
             font-family: 'Times New Roman', Times, serif
         }
     </style>
+
+    <header class="container">
+        <a class="nav-link" href="{{ route('staff.profile') }}">
+            <img src="{{ env('APP_URL') . '/img/Header.png' }}" width="100%" style="align-content: center;"
+                alt="Header EMS">
+        </a>
+    </header>
 </head>
 
 <body>
     <!-- Sidebar  -->
     <div class="container">
-        <header class="row justify-content-center">
-            <img src="{{ env('APP_URL') . '/img/Header.png' }}" width="100%" style="align-content: center;"
-                alt="Header EMS">
-        </header>
-    </div>
-    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-3 mt-3">
-                <div class="row">
-                    <label class="col-md-3" for="ID">ID</label>
-                    <p class="col-md-8">: {{ Auth::guard('staff')->user()->ic }}</p>
+                <div class="row mb-3">
+                    <label class="col-md-3" for="ID">ID</label>:
+                    <small class="col-md-8 text-muted"> {{ Auth::guard('staff')->user()->ic }}</small>
                 </div>
-                <div class="row">
-                    <label class="col-md-3" for="Name">Name</label>
-                    <p class="col-md-8">: {{ strtoupper(Auth::guard('staff')->user()->name) }}</p>
+                <div class="row mb-3">
+                    <label class="col-md-3" for="Name">Name</label>:
+                    <small class="col-md-8 text-muted"> {{ strtoupper(Auth::guard('staff')->user()->name) }}</small>
                 </div>
-                <div class="row">
-                    <label class="col-md-3" for="Name">Jawatan</label>
-                    <p class="col-md-7">: {{ strtoupper(Auth::guard('staff')->user()->position) }}</p>
+                <div class="row mb-3">
+                    <label class="col-md-3" for="Name">Jawatan</label>:
+                    <small class="col-md-8 text-muted"> {{ strtoupper(Auth::guard('staff')->user()->position) }}</small>
                 </div>
                 <nav id="sidebar">
 

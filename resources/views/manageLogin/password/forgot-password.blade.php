@@ -6,19 +6,38 @@
                 <img src="{{ env('APP_URL') . '/img/indek.png' }}" width="100%" style="align-content: center;" alt="Indek">
             </div>
             <div class="col-md-4">
+                @if (session('reset'))
+                    <div class="alert alert-success text-center">
+                        {{ strtoupper('Reset Email') }} <br>
+                        {{ session('reset') }}
+                    </div>
+                @endif
                 <div class="card" style="background-color: honeydew">
 
                     <h3 class="text-center card-title"><strong>{{ __('Forgot Password') }}</strong></h3>
 
                     <div class="card-body">
 
-                        <form method="POST" action="{{ route('password.email') }}">
+                        <form method="POST" action="{{ route('forgot-password.post') }}">
                             @csrf
-                            @if (session('status'))
-                                <div class="alert alert-success">
-                                    {{ session('status') }}
+
+
+                            <div class="row mb-3">
+                                <label style="padding-top: 0px" for="role"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+                                <div class="form-group col-md-6">
+                                    <div class="form-check form-check-inline col-md-5">
+                                        <input class="form-check-input" type="radio" name="role" id="userRadio"
+                                            value="user" checked>
+                                        <label class="custom-control-label" for="userRadio">User</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="role" id="staffRadio"
+                                            value="staff">
+                                        <label class="custom-control-label" for="staffRadio">Staff</label>
+                                    </div>
                                 </div>
-                            @endif
+                            </div>
 
                             <div class="row mb-3">
                                 <label for="email"
@@ -76,30 +95,3 @@
         </div>
     </div>
 @endsection
-
-{{-- <x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-    </div>
-
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout> --}}

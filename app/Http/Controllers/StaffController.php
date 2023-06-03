@@ -18,7 +18,7 @@ class StaffController extends Controller
     {
         $request->validate(
             [
-                'ic' => 'required|unique:staffs|max:12',
+                'ic' => 'required|max:12|unique:staffs',
                 'name' => 'required',
                 'department' => 'required',
                 'accessCategory' => 'required',
@@ -26,24 +26,28 @@ class StaffController extends Controller
                 'paid' => 'required',
                 'email' => 'required|email|unique:staffs',
                 'password' => 'required|min:6|max:12',
-                'cpassword' => 'required|same:password'
+                'cpassword' => 'required|min:6|max:12'
             ],
         );
 
-        $staff = new Staff();
-        $staff->ic = $request->ic;
-        $staff->name = $request->name;
-        $staff->role = 'STAFF';
-        $staff->department = $request->department;
-        $staff->accessCategory = $request->accessCategory;
-        $staff->position = $request->position;
-        $staff->paid = $request->paid;
-        $staff->email = $request->email;
-        $staff->password = bcrypt($request->password);
-        $staff->status = 'PENDING';
-        $staff->save();
+        if ($request->cpassword === $request->password) {
+            $staff = new Staff();
+            $staff->ic = $request->ic;
+            $staff->name = $request->name;
+            $staff->role = 'STAFF';
+            $staff->department = $request->department;
+            $staff->accessCategory = $request->accessCategory;
+            $staff->position = $request->position;
+            $staff->paid = $request->paid;
+            $staff->email = $request->email;
+            $staff->password = bcrypt($request->password);
+            $staff->status = 'PENDING';
+            $staff->save();
 
-        return redirect()->route('staff.registerMessage');
+            return redirect()->route('staff.registerMessage');
+        }
+
+        return back()->with('fail', 'Registration is unsuccessful. Ensure your info are correct');
     }
 
     public function update(Request $request, $id)

@@ -15,7 +15,7 @@
                         <th class="text-center">Gender</th>
                         <th class="text-center">Email</th>
                         <th class="text-center">Date Register</th>
-                        <th class="text-center" style="width: 120px">Operation</th>
+                        <th class="text-center col-md-2">Operation</th>
                     </tr>
                 </thead>
                 <tbody style="background-color: #eef1ffa7">
@@ -41,11 +41,13 @@
                                     <a href="{{ route('staff.viewUserProfile', ['id' => $user->id]) }}"
                                         class="btn btn-primary">
                                         <i class="fas fa-eye"></i></a>
-                                    <a href="{{ route('staff.userProfileUpdateView', ['id' => $user->id]) }}"
-                                        class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="{{ route('staff.destroyUserProfile', ['id' => $user->id]) }}"
-                                        class="btn btn-danger" onclick="return confirm('Confirm to delete?')"><i
-                                            class="fas fa-trash-alt"></i></a>
+                                    @if (Auth::guard('staff')->user()->accessCategory === 'ADMINISTRATOR')
+                                        <a href="{{ route('staff.userProfileUpdateView', ['id' => $user->id]) }}"
+                                            class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="{{ route('staff.destroyUserProfile', ['id' => $user->id]) }}"
+                                            class="btn btn-danger" onclick="return confirm('Confirm to delete?')"><i
+                                                class="fas fa-trash-alt"></i></a>
+                                    @endif
                                 </td>
                                 </td>
                             </tr>
@@ -58,6 +60,6 @@
             </div>
         </div>
     </div>
-    
-    
+
+
 @endsection

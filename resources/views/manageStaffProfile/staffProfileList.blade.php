@@ -16,7 +16,7 @@
                         <th class="col-md-2 text-center">Email</th>
                         <th class="text-center" style="width: 95px">Date Register</th>
                         <th class="col-md-1 text-center">Status</th>
-                        <th class="text-center" style="width: 120px">Operation</th>
+                        <th class="text-center col-md-2">Operation</th>
                     </tr>
                 </thead>
                 <tbody style="background-color: #DEF5E5">
@@ -44,11 +44,13 @@
                                     <a href="{{ route('staff.viewStaffProfile', ['id' => $user->id]) }}"
                                         class="btn btn-primary">
                                         <i class="fas fa-eye"></i></a>
-                                    <a href="{{ route('staff.staffProfileUpdateView', ['id' => $user->id]) }}"
-                                        class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="{{ route('staff.destroyStaffProfile', ['id' => $user->id]) }}"
-                                        class="btn btn-danger" onclick="return confirm('Confirm to delete?')"><i
-                                            class="fas fa-trash-alt"></i></a>
+                                    @if (Auth::guard('staff')->user()->accessCategory === 'ADMINISTRATOR')
+                                        <a href="{{ route('staff.staffProfileUpdateView', ['id' => $user->id]) }}"
+                                            class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="{{ route('staff.destroyStaffProfile', ['id' => $user->id]) }}"
+                                            class="btn btn-danger" onclick="return confirm('Confirm to delete?')"><i
+                                                class="fas fa-trash-alt"></i></a>
+                                    @endif
                                 </td>
                                 </td>
                             </tr>
