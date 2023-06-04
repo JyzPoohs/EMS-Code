@@ -48,6 +48,10 @@ Route::prefix('user')->name('user.')->group(function () {
 
     //Module 3
     Route::get('/manageMarriageRegistration', [UserManageMarriageRegController::class, 'manage'])->name('manageMarriageRegistration');
+    Route::get('/marriageRegistrationWithApproval', [UserManageMarriageRegController::class, 'marriageRegistrationWithApproval'])->name('marriageRegistrationWithApproval');
+    Route::get('/eFormsGrooms', [UserManageMarriageRegController::class, 'eFormsGrooms'])->name('eFormsGrooms');
+    Route::get('/eFormsBrides', [UserManageMarriageRegController::class, 'eFormsBrides'])->name('eFormsBrides');
+    Route::get('/eFormsMarriage', [UserManageMarriageRegController::class, 'eFormsMarriage'])->name('eFormsMarriage');
     Route::get('/manageMarriageCardApp', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');   
 });
 
