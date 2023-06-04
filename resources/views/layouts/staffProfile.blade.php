@@ -92,8 +92,7 @@
                                 class="dropdown-toggle">Pendaftaran Nikah</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <li>       
-                                    <a href="{{ route('staff.manageValidationMarriage') }}">Senarai Pengesahan
-                                        Nikah</a>
+                                    <a href="{{ route('staff.manageValidationMarriage') }}">Senarai Pengesahan Nikah</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('staff.manageMarriage') }}">Senarai Permohonan Pendaftaran Nikah</a>
