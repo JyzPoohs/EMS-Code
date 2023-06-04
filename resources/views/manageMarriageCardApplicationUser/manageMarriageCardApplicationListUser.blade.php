@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('css/staff-marriageRegistration.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user-marriageRegistration.css') }}">
 @extends('layouts.userProfile')
 
 @section('content')

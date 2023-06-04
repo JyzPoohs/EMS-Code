@@ -74,10 +74,10 @@
                                 class="dropdown-toggle">Pendaftaran Nikah</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <li>
-                                    <a href="{{ route('staff.manageMarriage') }}">Mohon Pendaftaran Nikah</a>
+                                    <a href="{{ route('user.manageMarriageRegistration') }}">Mohon Pendaftaran Nikah</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('staff.manageMarriage') }}">Mohon Sijil Dan Kad Nikah</a>
+                                    <a href="{{ route('user.manageMarriageCardApp') }}">Mohon Sijil Dan Kad Nikah</a>
                                 </li>
                             </ul>
                         </li>
