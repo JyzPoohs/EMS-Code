@@ -68,8 +68,19 @@
                                     <a href="#">Senarai Pemohon</a>
                                 </li>
                             </ul>
+                        </li>      
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                                class="dropdown-toggle">Pendaftaran Nikah</a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <a href="{{ route('staff.manageMarriage') }}">Mohon Pendaftaran Nikah</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('staff.manageMarriage') }}">Mohon Sijil Dan Kad Nikah</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li><a href="">Pendaftaran Nikah</a></li>
                         <li>
                             <a href="#">Semakan Ruju'</a>
                         </li>

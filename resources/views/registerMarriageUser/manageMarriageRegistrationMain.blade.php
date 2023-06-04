@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('css/staff-marriageRegistration.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user-marriageRegistration.css') }}">
 @extends('layouts.userProfile')
 
 @section('content')
@@ -7,7 +7,7 @@
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card mb-4">
                     <div class="card-header pb-0" style="background-color: #66bdba";>
-                        <h6>PERMOHONAN PENGESAHAN NIKAH >> SENARAI PERMOHONAN</h6>
+                        <h6>PERMOHONAN PENDAFTARAN NIKAH >> SENARAI PERMOHONAN</h6>
                     </div>
                     <div class="card-body p-3" style="background-color: #e2fbfb";>
 
@@ -21,7 +21,6 @@
                                     style="background-color: #179591; border:none; color: white;">Pengesahan Online</button>
                             </div>
                         </div>
-                        
                     </div>
 
                 </div>

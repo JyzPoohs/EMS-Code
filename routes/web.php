@@ -6,6 +6,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\UserManageMarriageRegController;
+use App\Http\Controllers\UserManageCardAppController;
 use App\Http\Controllers\StaffManageMarriageRegController;
 use App\Http\Controllers\StaffManageCardAppController;
 use Illuminate\Support\Facades\Auth;
@@ -43,6 +45,10 @@ Route::prefix('user')->name('user.')->group(function () {
         Route::view('/consult', 'manageConsultation(user).consult')->name('consult');
     });
     Route::put('/profile/{id}/update',  [UserController::class, 'update'])->name('update');
+
+    //Module 3
+    Route::get('/manageMarriageRegistration', [UserManageMarriageRegController::class, 'manage'])->name('manageMarriageRegistration');
+    Route::get('/manageMarriageCardApp', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');   
 });
 
 Route::prefix('staff')->name('staff.')->group(function () {
