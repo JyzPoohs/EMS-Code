@@ -9,14 +9,18 @@ class Marriage_Registration extends Model
 {
     use HasFactory;
     protected $fillable = [
-    'id',
-    'MR_Status',
+        'id',
+        'MR_noDaftarSijil',
+        'MR_suami_ic',
+        'MR_suami_nama',
+        'MR_isteri_ic',
+        'MR_isteri_nama',
+        'MR_noAkaunTerima',
+        'MR_Status',
     ];
 
 
     public function staff()
     {
     }
-
-
 }

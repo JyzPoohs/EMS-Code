@@ -24,7 +24,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 
     <header class="container">
         <a class="nav-link" href="{{ route('login') }}">

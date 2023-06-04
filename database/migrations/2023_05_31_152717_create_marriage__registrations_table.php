@@ -13,8 +13,15 @@ return new class extends Migration
     {
         Schema::create('marriage__registrations', function (Blueprint $table) {
             $table->id();
+            $table->string('MR_noDaftarSijil');
+            $table->string('MR_suami_ic');
+            $table->string('MR_suami_nama');
+            $table->string('MR_isteri_ic');
+            $table->string('MR_isteri_nama');
+            $table->string('MR_noAkaunTerima');
             $table->timestamps();
             $table->string('MR_Status')->nullable();
+           
         });
     }
 
