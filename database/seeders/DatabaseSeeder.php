@@ -14,37 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(StaffsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(MarriageRegistrationSeeder::class);
     }
-
-    // public function registerStaff()
-    // {
-    //     $staffs = [
-    //         [
-    //             'ic' => '3333',
-    //             'name' => 'staff 1',
-    //             'role' => 'staff',
-    //             'department' => 'Marriage Request',
-    //             'accessCategory' => 'admin',
-    //             'position' => 'head',
-    //             'paid' => 'Pahang',
-    //             'email' => 'staff1@example.com',
-    //             'password' => 'password',
-    //         ],
-    //         [
-    //             'ic' => '4444',
-    //             'name' => 'staff 2',
-    //             'role' => 'staff',
-    //             'department' => 'Marriage Course',
-    //             'accessCategory' => 'staff',
-    //             'position' => 'manager',
-    //             'paid' => 'Kuantan',
-    //             'email' => 'staff2@example.com',
-    //             'password' => 'password'
-    //         ]
-    //     ];
-
-    //     foreach ($staffs as $staff) {
-    //         DB::table('staffs')->insert($staff);
-    //     }
-    // }
 }
