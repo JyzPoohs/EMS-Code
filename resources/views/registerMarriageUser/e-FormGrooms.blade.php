@@ -11,38 +11,103 @@
                 <br>
                 <div class="card mb-4">
                     <div class="card-body p-3" style="background-color: #ECF3FF";>               
-                        <div class="mt-2">
-                            <div style="text-align: center;">
-                                <label for="name">No. K/P Pasangan :</label><br>
-                                <input type="text" id="name" name="name" placeholder="870930065551">
-                            </div>
-                            <br>
-                            <div style="text-align: center;">
-                                <label for="category">Kategori Pendaftaran Nikah :</label><br>
-                                <select id="category" name="category" style="width: 100%;">
-                                    <option value="1">PENDAFTARAN NIKAH DENGAN KEBENARAN</option>
-                                    <option value="2">PENDAFTARAN NIKAH TANPA KEBENARAN</option>
-                                </select>
-                            </div>
-                            <br>
-                            <div style="text-align: center;">
-                                <label for="receipt">No. Akuan Terima Kebenaran Berkahwin :</label><br>
-                                <input type="text" id="receipt" name="receipt" placeholder="Enter receipt number">
-                            </div>
-                        </div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>No. Kad Pengenalan</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>No. Polis/Tentera </td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Suami</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Tarikh Lahir</td>
+                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Umur</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Bangsa</td>
+                                    <td>:
+                                        <select>
+                                            <option value="MELAYU">MELAYU</option>
+                                            <option value="CINA">CINA</option>
+                                            <option value="INDIA">INDIA</option>
+                                            <option value="ORANG ASLI">ORANG ASLI</option>
+                                            <option value="LAIN-LAIN">LAIN-LAIN</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Warganegara</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Taraf Pendidkan</td>
+                                    <td>:
+                                        <select>
+                                            <option value="UPSR">UPSR</option>
+                                            <option value="PMR/PT3">PMR/PT3</option>
+                                            <option value="SPM">SPM</option>
+                                            <option value="IJAZAH">IJAZAH</option>
+                                            <option value="LAIN-LAIN">LAIN-LAIN</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Perkerjaan/Jawatan</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Pendapatan</td>
+                                    <td>: RM <input type="float" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Perkerjaan/Jawatan</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat Dalam K/P</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>No. Telefon</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat Semasa</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Status Sebelum Perkahwinan</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                                <tr>
+                                    <td>No. Sijil Kursus Pra Perkahwinan</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
-                                <a href="{{ route('user.eFormsBrides') }}" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">NEXT</a>
+                                <a href="{{ route('user.manageMarriageRegistration') }}" class="btn btn-primary btn-block"
+                                    style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
                                 <a href="#" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">SAVE</a>
                             </div>
                             <div class="col-md-3">
-                                <a href="{{ route('user.manageMarriageRegistration') }}" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">BACK</a>
+                                <a href="{{ route('user.eFormsBrides') }}" class="btn btn-primary btn-block"
+                                    style="background-color: #0050d1; border:none; color: white;">NEXT</a>
                             </div>
                         </div>
                     </div>

@@ -10,4 +10,9 @@ class UserManageCardAppController extends Controller
     {
         return view("manageMarriageCardApplicationUser.manageMarriageCardApplicationListUser"); 
     }
+
+    public function fillCardAppUser()
+    {
+        return view("manageMarriageCardApplicationUser.marriageCardApplicationInfo"); 
+    }
 }

@@ -53,6 +53,7 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/eFormsBrides', [UserManageMarriageRegController::class, 'eFormsBrides'])->name('eFormsBrides');
     Route::get('/eFormsMarriage', [UserManageMarriageRegController::class, 'eFormsMarriage'])->name('eFormsMarriage');
     Route::get('/manageMarriageCardApp', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');   
+    Route::get('/marriageCardAppInfo', [UserManageCardAppController::class, 'fillCardAppUser'])->name('marriageCardAppInfo');   
 });
 
 Route::prefix('staff')->name('staff.')->group(function () {
