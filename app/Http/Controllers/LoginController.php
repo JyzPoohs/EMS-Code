@@ -9,19 +9,26 @@ class LoginController extends Controller
 {
     public function loginUser(Request $request)
     {
-        $request->validate([
-            'role' => 'required',
-            'ic' => 'required',
-            'password' => 'required|min:6|max:12'
-        ]);
-
-
         if ($request->role == 'user') {
+
+            $request->validate([
+                'role' => 'required',
+                'ic' => 'required|exists:users',
+                'password' => 'required|min:6|max:12'
+            ]);
+
             if (Auth::guard('web')->attempt(['ic' => $request->ic, 'password' => $request->password])) {
                 $request->session()->regenerate();
                 return redirect()->route('user.profile')->with('success', 'You\'re logged in');
             }
         } elseif ($request->role == 'staff') {
+
+            $request->validate([
+                'role' => 'required',
+                'ic' => 'required|exists:staffs',
+                'password' => 'required|min:6|max:12'
+            ]);
+
             if (Auth::guard('staff')->attempt(['ic' => $request->ic, 'password' => $request->password])) {
                 $request->session()->regenerate();
                 $staff = Auth::guard('staff')->user();

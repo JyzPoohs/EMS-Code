@@ -8,8 +8,8 @@
     <form action="{{ route('staff.updateStaffProfile', $user->id) }}" method="post">
         @csrf
         @method('PUT')
-        <div class="row mt-4" style="background-color: #cbdcf7;">
-            <h4 class="font-weight-bold mx-auto mt-2" style="width: fit-content;">User Profile</h4>
+        <div class="row mt-4" style="background-color: #9ED5C5;">
+            <h4 class="font-weight-bold mx-auto mt-2" style="width: fit-content;">Staff Profile</h4>
         </div>
         <table class="table mt-3">
             <tr>
@@ -90,11 +90,12 @@
                     <div class="form-group">
                         <select class="form-select" name="accessCategory">
                             <option disabled selected>Select access category</option>
-                            <option value="ADMINISTRATOR" @if($user['accessCategory'] == 'ADMINISTRATOR') selected @endif>ADMINISTRATOR</option>
-                            <option value="STAFF" @if($user['accessCategory'] == 'STAFF') selected @endif>STAFF</option>
+                            <option value="ADMINISTRATOR" @if ($user['accessCategory'] == 'ADMINISTRATOR') selected @endif>ADMINISTRATOR
+                            </option>
+                            <option value="STAFF" @if ($user['accessCategory'] == 'STAFF') selected @endif>STAFF</option>
                         </select>
                     </div>
-                    
+
                 </td>
             </tr>
             <tr>
@@ -104,15 +105,21 @@
                     <div class="form-group">
                         <select class="form-select" name="position">
                             <option disabled selected>Select position</option>
-                            <option value="MARRIAGE REQUEST OFFICER" @if($user['position'] == 'MARRIAGE REQUEST OFFICER') selected @endif>MARRIAGE REQUEST OFFICER</option>
-                            <option value="MARRIAGE COURSE OFFICER" @if($user['position'] == 'MARRIAGE COURSE OFFICER') selected @endif>MARRIAGE COURSE OFFICER</option>
-                            <option value="MARRIAGE REGISTER OFFICER" @if($user['position'] == 'MARRIAG REGISTER OFFICER') selected @endif>MARRIAGE REGISTER OFFICER</option>
-                            <option value="MARRIAGE COORDINATOR" @if($user['position'] == 'MARRIAGE COORDINATOR') selected @endif>MARRIAGE COORDINATOR</option>
-                            <option value="MARRIAGE COUNSELOR" @if($user['position'] == 'MARRIAGE COUNSELOR') selected @endif>'MARRIAGE COUNSELOR</option>
-                            <option value="MARRIAGE ADMINISTRATOR" @if($user['position'] == 'MARRIAGE ADMINISTRATOR') selected @endif>MARRIAGE ADMINISTRATOR</option>
+                            <option value="MARRIAGE REQUEST OFFICER" @if ($user['position'] == 'MARRIAGE REQUEST OFFICER') selected @endif>
+                                MARRIAGE REQUEST OFFICER</option>
+                            <option value="MARRIAGE COURSE OFFICER" @if ($user['position'] == 'MARRIAGE COURSE OFFICER') selected @endif>
+                                MARRIAGE COURSE OFFICER</option>
+                            <option value="MARRIAGE REGISTER OFFICER" @if ($user['position'] == 'MARRIAG REGISTER OFFICER') selected @endif>
+                                MARRIAGE REGISTER OFFICER</option>
+                            <option value="MARRIAGE COORDINATOR" @if ($user['position'] == 'MARRIAGE COORDINATOR') selected @endif>
+                                MARRIAGE COORDINATOR</option>
+                            <option value="MARRIAGE COUNSELOR" @if ($user['position'] == 'MARRIAGE COUNSELOR') selected @endif>'MARRIAGE
+                                COUNSELOR</option>
+                            <option value="MARRIAGE ADMINISTRATOR" @if ($user['position'] == 'MARRIAGE ADMINISTRATOR') selected @endif>
+                                MARRIAGE ADMINISTRATOR</option>
                         </select>
                     </div>
-                    
+
                 </td>
             </tr>
             <tr>
@@ -134,9 +141,9 @@
                     <div class="form-group">
                         <select class="form-select" name="status">
                             <option disabled selected>Select status</option>
-                            <option value="approve" @if ($user['status'] == 'approve') selected @endif>APPROVE</option>
-                            <option value="reject" @if ($user['status'] == 'reject') selected @endif>REJECT</option>
-                            <option value="pending" @if ($user['status'] == 'pending') selected @endif>PENDING</option>
+                            <option value="APPROVE" @if ($user['status'] == 'APPROVE') selected @endif>APPROVE</option>
+                            <option value="REJECT" @if ($user['status'] == 'REJECT') selected @endif>REJECT</option>
+                            <option value="PENDING" @if ($user['status'] == 'PENDING') selected @endif>PENDING</option>
                         </select>
                     </div>
                 </td>

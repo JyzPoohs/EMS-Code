@@ -132,7 +132,7 @@
                                     <label for="paid"
                                         class="col-md-4 col-form-label text-md-end">{{ __('PAID') }}</label>
                                     <div class="col-md-6 form-group">
-                                        <select class="form-select" name="paid">
+                                        <select class="form-control @error('paid') is-invalid @enderror" name="paid">
                                             <option disabled selected>Select PAID</option>
                                             <option value="PAID PEKAN" {{ old('paid') == 'PAID PEKAN' ? 'selected' : '' }}>
                                                 PAID
@@ -179,6 +179,11 @@
                                                 {{ old('paid') == 'PAID CAMERON HIGHLAND' ? 'selected' : '' }}>PAID CAMERON
                                                 HIGHLAND</option>
                                         </select>
+                                        @error('paid')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -221,7 +226,13 @@
 
                                     <div class="col-md-6">
                                         <input id="cpassword" type="password" placeholder="Repeat Password"
-                                            class="form-control" name="cpassword" required autocomplete="cpassword">
+                                            class="form-control @error('cpassword') is-invalid @enderror" name="cpassword"
+                                            required autocomplete="cpassword">
+                                        @error('cpassword')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
 

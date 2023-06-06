@@ -11,14 +11,14 @@ class StaffController extends Controller
     {
         $staff = Staff::find(auth()->user()->id);
 
-        return view('manageStaffProfile.profile', compact('staff'));
+        return view('manageStaffProfile.profile-view', compact('staff'));
     }
 
     public function create(Request $request)
     {
         $request->validate(
             [
-                'ic' => 'required|max:12|unique:staffs',
+                'ic' => 'required|digits_between:12,12|unique:staffs',
                 'name' => 'required',
                 'department' => 'required',
                 'accessCategory' => 'required',
@@ -26,8 +26,17 @@ class StaffController extends Controller
                 'paid' => 'required',
                 'email' => 'required|email|unique:staffs',
                 'password' => 'required|min:6|max:12',
-                'cpassword' => 'required|min:6|max:12'
+                'cpassword' => 'required|min:6|max:12|same:password',
             ],
+            [
+                'ic.required' => 'The IC field is required.',
+                'ic.digits_between' => 'The IC must be exactly 12 digits.',
+                'ic.unique' => 'The IC No. has been registered.',
+                'cpassword.required' => 'The repeat password field is required.',
+                'cpassword.min' => 'The repeat password must be at least 6 characters.',
+                'cpassword.max' => 'The repeat password may not be greater than 12 characters.',
+                'cpassword.same' => 'The password and repeat password must match.',
+            ]
         );
 
         if ($request->cpassword === $request->password) {
@@ -40,7 +49,7 @@ class StaffController extends Controller
             $staff->position = $request->position;
             $staff->paid = $request->paid;
             $staff->email = $request->email;
-            $staff->password = bcrypt($request->password);
+            $staff->password = $request->password;
             $staff->status = 'PENDING';
             $staff->save();
 
@@ -66,14 +75,14 @@ class StaffController extends Controller
     {
         $user = Staff::find($id);
 
-        return view('manageStaffProfile.viewStaffProfile', compact('user'));
+        return view('manageStaffProfile.viewStaffProfile-view', compact('user'));
     }
 
     public function profileUpdateView($id)
     {
         $user = Staff::find($id);
 
-        return view('manageStaffProfile.editStaffProfile', compact('user'));
+        return view('manageStaffProfile.editStaffProfile-view', compact('user'));
     }
 
     public function profileUpdate(Request $request, $id)
@@ -96,7 +105,7 @@ class StaffController extends Controller
         $users = Staff::orderBy('created_at', 'desc')
             ->paginate(10);
 
-        return view('manageStaffProfile.staffProfileList', compact('users'));
+        return view('manageStaffProfile.staffProfileList-view', compact('users'));
     }
 
     public function destroy($id)

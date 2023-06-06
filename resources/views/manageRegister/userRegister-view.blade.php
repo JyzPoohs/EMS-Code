@@ -57,7 +57,7 @@
                                 <div class="form-group col-md-6">
                                     <div class="form-check form-check-inline col-md-5">
                                         <input class="form-check-input" type="radio" name="gender" id="femaleRadio"
-                                            value="FEMALE">
+                                            value="FEMALE" checked>
                                         <label class="custom-control-label" for="femaleRadio">Female</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -65,6 +65,11 @@
                                             value="MALE">
                                         <label class="custom-control-label" for="maleRadio">Male</label>
                                     </div>
+                                    @error('gender')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -109,6 +114,11 @@
                                     <input id="password" type="password" placeholder="6 - 12 characters/digits"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password">
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -118,7 +128,13 @@
 
                                 <div class="col-md-6">
                                     <input id="cpassword" type="password" placeholder="Repeat Password"
-                                        class="form-control" name="cpassword" required autocomplete="cpassword">
+                                        class="form-control @error('cpassword') is-invalid @enderror" name="cpassword"
+                                        required autocomplete="cpassword">
+                                    @error('cpassword')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 

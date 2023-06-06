@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         $user = User::find(auth()->user()->id);
 
-        return view('manageUserProfile.profile', compact('user'));
+        return view('manageUserProfile.profile-view', compact('user'));
     }
 
     //To register user account
@@ -20,14 +20,24 @@ class UserController extends Controller
     {
         $request->validate(
             [
-                'ic' => 'required|unique:users|max:12',
+                'ic' => 'required|digits_between:12,12|unique:users',
                 'name' => 'required',
                 'gender' => 'required',
                 'phone' => 'required',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:6|max:12',
-                'cpassword' => 'required|min:6|max:12'
+                'cpassword' => 'required|min:6|max:12|same:password',
             ],
+            [
+                'ic.required' => 'The IC field is required.',
+                'ic.digits_between' => 'The IC must be exactly 12 digits.',
+                'ic.unique' => 'The IC No. has been registered.',
+                'gender.required' => 'Please select a gender.',
+                'cpassword.required' => 'The repeat password field is required.',
+                'cpassword.min' => 'The repeat password must be at least 6 characters.',
+                'cpassword.max' => 'The repeat password may not be greater than 12 characters.',
+                'cpassword.same' => 'The password and repeat password must match.',
+            ]
         );
 
         if ($request->cpassword === $request->password) {
@@ -38,7 +48,7 @@ class UserController extends Controller
             $user->role = 'user';
             $user->phone = $request->phone;
             $user->email = $request->email;
-            $user->password = bcrypt($request->password);
+            $user->password = $request->password;
             $user->save();
 
             return redirect()->route('user.registerMessage');
@@ -80,7 +90,7 @@ class UserController extends Controller
         $users = User::orderBy('created_at', 'desc')
             ->paginate(10);
 
-        return view('manageUserProfile.userProfileList', compact('users'));
+        return view('manageUserProfile.userProfileList-view', compact('users'));
     }
 
     //For staff to view the selected user profile 
@@ -88,7 +98,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view('manageUserProfile.viewUserProfile', compact('user'));
+        return view('manageUserProfile.viewUserProfile-view', compact('user'));
     }
 
     //For staff to view the selected user profile for editing
@@ -96,7 +106,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view('manageUserProfile.editUserProfile', compact('user'));
+        return view('manageUserProfile.editUserProfile-view', compact('user'));
     }
 
     //For staff to update the selected user profile 

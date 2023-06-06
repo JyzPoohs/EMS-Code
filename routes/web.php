@@ -36,12 +36,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['guest'])->group(function () {
 
-        Route::view('/register', 'manageRegister.userRegister')->name('register');
-        Route::view('/register/message', 'message.registerMessage')->name('registerMessage');
+        Route::view('/register', 'manageRegister.userRegister-view')->name('register');
+        Route::view('/register/message', 'message.registerMessage-view')->name('registerMessage');
         Route::post('/create', [UserController::class, 'create'])->name('create');
     });
     Route::middleware(['auth'])->group(function () {
-        Route::view('/profile', 'manageUserProfile.profile')->name('profile');
+        Route::view('/profile', 'manageUserProfile.profile-view')->name('profile');
         Route::view('/consult', 'manageConsultation(user).consult')->name('consult');
     });
     Route::put('/profile/{id}/update',  [UserController::class, 'update'])->name('update');
@@ -58,16 +58,16 @@ Route::prefix('user')->name('user.')->group(function () {
 
 Route::prefix('staff')->name('staff.')->group(function () {
     Route::middleware(['guest'])->group(function () {
-        Route::view('/register', 'manageRegister.staffRegister')->name('register');
-        Route::view('/register/message', 'message.staffRegisterMessage')->name('registerMessage');
-        Route::view('/accessCode', 'manageRegister.accessCode')->name('accessCode');
+        Route::view('/register', 'manageRegister.staffRegister-view')->name('register');
+        Route::view('/register/message', 'message.staffRegisterMessage-view')->name('registerMessage');
+        Route::view('/accessCode', 'manageRegister.accessCode-view')->name('accessCode');
         Route::get('/validateCode',  [RegisterController::class, 'validateCode'])->name('validateCode');
         Route::post('/create', [StaffController::class, 'create'])->name('create');
     });
     Route::middleware(['auth'])->group(function () {
     });
-    Route::view('/profile', 'manageStaffProfile.profile')->name('profile');
-    Route::view('/admin/profile', 'manageStaffProfile.adminProfile')->name('admin.profile');
+    Route::view('/profile', 'manageStaffProfile.profile-view')->name('profile');
+    Route::view('/admin/profile', 'manageStaffProfile.adminProfile-view')->name('admin.profile');
     Route::put('/profile/{id}/update',  [StaffController::class, 'update'])->name('update');
 
     //Module 1

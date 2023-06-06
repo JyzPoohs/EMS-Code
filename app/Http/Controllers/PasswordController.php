@@ -15,12 +15,12 @@ class PasswordController extends Controller
 {
     public function showForgotPasswordForm()
     {
-        return view('manageLogin.password.forgot-password');
+        return view('manageLogin.password.forgot-password-view');
     }
 
     public function showChangePasswordForm()
     {
-        return view('manageLogin.password.change-password');
+        return view('manageLogin.password.change-password-view');
     }
 
     //To send the new random generate password 
@@ -56,7 +56,7 @@ class PasswordController extends Controller
         $user->password = $newPassword;
         $user->save();
 
-        Mail::send('manageLogin.password.email', ['newPassword' => $newPassword], function ($message) use ($request) {
+        Mail::send('manageLogin.password.email-view', ['newPassword' => $newPassword], function ($message) use ($request) {
             $message->to($request->input('email'));
             $message->subject('Reset Passowrd');
         });
