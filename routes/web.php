@@ -37,7 +37,7 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['guest'])->group(function () {
 
         Route::view('/register', 'manageRegister.userRegister-view')->name('register');
-        Route::view('/register/message', 'message.registerMessage-view')->name('registerMessage');
+        Route::view('/register/message', 'manageRegister.registerMessage-view')->name('registerMessage');
         Route::post('/create', [UserController::class, 'create'])->name('create');
     });
     Route::middleware(['auth'])->group(function () {
@@ -59,7 +59,7 @@ Route::prefix('user')->name('user.')->group(function () {
 Route::prefix('staff')->name('staff.')->group(function () {
     Route::middleware(['guest'])->group(function () {
         Route::view('/register', 'manageRegister.staffRegister-view')->name('register');
-        Route::view('/register/message', 'message.staffRegisterMessage-view')->name('registerMessage');
+        Route::view('/register/message', 'manageRegister.staffRegisterMessage-view')->name('registerMessage');
         Route::view('/accessCode', 'manageRegister.accessCode-view')->name('accessCode');
         Route::get('/validateCode',  [RegisterController::class, 'validateCode'])->name('validateCode');
         Route::post('/create', [StaffController::class, 'create'])->name('create');

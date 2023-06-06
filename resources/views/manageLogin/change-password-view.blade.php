@@ -55,7 +55,7 @@
                                 <div class="col-md-6">
                                     <input id="password" type="password" placeholder="Enter Current Password"
                                         value="{{ old('password') }}"
-                                        class="form-control @error('password') is-invalid @enderror" name="password" 
+                                        class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="password">
                                 </div>
                             </div>
@@ -77,8 +77,8 @@
                                 <div class="col-md-6">
                                     <input id="repeatPassword" type="password" placeholder="Repeat New Password"
                                         value="{{ old('repeatPassword') }}"
-                                        class="form-control @error('repeatPassword') is-invalid @enderror" name="repeatPassword"
-                                        required autocomplete="repeatPassword">
+                                        class="form-control @error('repeatPassword') is-invalid @enderror"
+                                        name="repeatPassword" required autocomplete="repeatPassword">
                                 </div>
                             </div>
                             <div class="row mb-0">

@@ -15,12 +15,12 @@ class PasswordController extends Controller
 {
     public function showForgotPasswordForm()
     {
-        return view('manageLogin.password.forgot-password-view');
+        return view('manageLogin.forgot-password-view');
     }
 
     public function showChangePasswordForm()
     {
-        return view('manageLogin.password.change-password-view');
+        return view('manageLogin.change-password-view');
     }
 
     //To send the new random generate password 
@@ -56,7 +56,7 @@ class PasswordController extends Controller
         $user->password = $newPassword;
         $user->save();
 
-        Mail::send('manageLogin.password.email-view', ['newPassword' => $newPassword], function ($message) use ($request) {
+        Mail::send('manageLogin.email-view', ['newPassword' => $newPassword], function ($message) use ($request) {
             $message->to($request->input('email'));
             $message->subject('Reset Passowrd');
         });
@@ -85,12 +85,11 @@ class PasswordController extends Controller
 
         if ($request->role === 'staff') {
             $user = Staff::where('ic', $request->input('ic'))->first();
-            
         } else {
             $user = User::where('ic', $request->input('ic'))->first();
         }
 
-        if(!$user){
+        if (!$user) {
             return back()->with('reset', 'Change password failed. Ensure your info are correct');
         }
 

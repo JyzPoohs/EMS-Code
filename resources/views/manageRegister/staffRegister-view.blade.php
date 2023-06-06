@@ -51,7 +51,7 @@
                                     <label for="department"
                                         class="col-md-4 col-form-label text-md-end">{{ __('Department') }}</label>
                                     <div class="col-md-6 form-group">
-                                        <select class="form-select" name="department">
+                                        <select class="form-select @error('department') is-invalid @enderror" name="department">
                                             <option disabled selected>Select department</option>
                                             <option value="MARRIAGE REQUEST"
                                                 {{ old('department') == 'MARRIAGE REQUEST' ? 'selected' : '' }}>MARRIAGE
@@ -77,14 +77,19 @@
                                                 {{ old('department') == 'SYSTEM MANAGEMENT' ? 'selected' : '' }}>SYSTEM
                                                 MANAGEMENT</option>
                                         </select>
+                                        @error('department')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
-
                                 </div>
+
                                 <div class="row mb-3">
                                     <label for="accessCategory"
                                         class="col-md-4 col-form-label text-md-end">{{ __('Access Category') }}</label>
                                     <div class="col-md-6 form-group">
-                                        <select class="form-select" name="accessCategory">
+                                        <select class="form-select @error('accessCategory') is-invalid @enderror" name="accessCategory">
                                             <option disabled selected>Select access categoty</option>
                                             <option value="ADMINISTRATOR"
                                                 {{ old('accessCategory') === 'ADMINISTRATOR' ? 'selected' : '' }}>
@@ -94,13 +99,19 @@
                                                 {{ old('accessCategory') === 'STAFF' ? 'selected' : '' }}>
                                                 STAFF</option>
                                         </select>
+                                        @error('accessCategory')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
+
                                 <div class="row mb-3">
                                     <label for="position"
                                         class="col-md-4 col-form-label text-md-end">{{ __('Position') }}</label>
                                     <div class="col-md-6 form-group">
-                                        <select class="form-select" name="position">
+                                        <select class="form-select @error('position') is-invalid @enderror" name="position">
                                             <option disabled selected>Select position</option>
                                             <option value="MARRIAGE REQUEST OFFICER"
                                                 {{ old('position') == 'MARRIAGE REQUEST OFFICER' ? 'selected' : '' }}>
@@ -125,6 +136,11 @@
                                                 MARRIAGE
                                                 ADMINISTRATOR</option>
                                         </select>
+                                        @error('position')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
 
