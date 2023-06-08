@@ -12,7 +12,7 @@
                     <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
-                                <a href="{{ route('user.marriageRegistrationWithApproval') }}" class="btn btn-primary"
+                                <a href="{{ route('user.eFormsGrooms') }}" class="btn btn-primary"
                                     style="background-color: #0050d1; border:none; color: white;">Daftar Baru</a>
                             </div>
                         </div>                        

@@ -15,10 +15,23 @@ class StaffManageMarriageRegController extends Controller
         return view("registerMarriageStaff.manageMarriageRegistrationList", compact('datas'));
     }
 
-    public function validationList()
+    public function eFormsGrooms()
     {
+        return view('registerMarriageStaff.e-FormGrooms');
+    }
 
+    public function eFormsBrides()
+    {
+        return view('registerMarriageStaff.e-FormBrides');
+    }
 
-        return view("registerMarriageStaff.manageMarriageValidationList");
+    public function eFormsMarriage()
+    {
+        return view('registerMarriageStaff.e-FormMarriage');
+    }
+    
+    public function approveMarriageRegistration()
+    {
+        return view('registerMarriageStaff.approveMarriageRegistration');
     }
 }

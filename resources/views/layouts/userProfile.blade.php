@@ -43,7 +43,7 @@
     <!-- Sidebar  -->
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-4 mt-3">
+            <div class="col-md-3 mt-3">
                 <div class="row mb-3">
                     <label class="col-md-2" for="ID">ID</label>:
                     <p class="col-md-8 text-muted"> {{ auth()->user()->ic }}</p>
@@ -103,7 +103,7 @@
                     </ul>
                 </nav>
             </div>
-            <main class="col-md-8">
+            <main class="col-md-9">
                 @yield('content')
             </main>
         </div>

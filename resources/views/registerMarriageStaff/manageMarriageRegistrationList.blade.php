@@ -10,18 +10,9 @@
                         <h6>PERMOHONAN PENDAFTARAN NIKAH >> SENARAI PERMOHONAN</h6>
                     </div>
                     <div class="card-body p-3" style="background-color: #e2fbfb";>
-
-                        <div class="row justify-content-center text-center">
-                            <div class="col-md-3">
-                                <button class="btn btn-primary btn-block" type="button"
-                                    style="background-color: #179591; border:none; color: white;">Daftar Baru</button>
-                            </div>
-                            <div class="col-md-3">
-                                <button class="btn btn-primary btn-block" type="button"
-                                    style="background-color: #179591; border:none; color: white;">Pengesahan Online</button>
-                            </div>
-                        </div>
                         <div class="mt-2">
+                            <a href="{{ route('staff.eFormsGrooms') }}" class="btn btn-primary">
+                                <i class="fas fa-eye"></i></a>
                             <table class="table w-100" id="list">
                                 <thead>
                                     <tr>
@@ -40,12 +31,13 @@
                                     @foreach ($datas as $data)
                                         @php $counter++; @endphp
                                         <tr>
-                                            <td>{{$counter}}</td>
+                                            <td>{{ $counter }}</td>
                                             <td>
                                                 {{ $data['MR_noDaftarSijil'] }}
                                             </td>
                                             <td>
-                                                {{ $data['MR_suami_ic'] }} <br> {{ strtoupper($data['MR_suami_nama']) }}</td>
+                                                {{ $data['MR_suami_ic'] }} <br> {{ strtoupper($data['MR_suami_nama']) }}
+                                            </td>
                                             <td>
                                                 {{ $data['MR_isteri_ic'] }} <br> {{ strtoupper($data['MR_isteri_nama']) }}
                                             </td>

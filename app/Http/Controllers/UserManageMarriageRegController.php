@@ -11,11 +11,6 @@ class UserManageMarriageRegController extends Controller
         return view("registerMarriageUser.manageMarriageRegistrationMain"); 
     }
 
-    public function marriageRegistrationWithApproval()
-    {
-        return view('registerMarriageUser.marriageRegistrationWithApproval');
-    }
-
     public function eFormsGrooms()
     {
         return view('registerMarriageUser.e-FormGrooms');
