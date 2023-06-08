@@ -15,7 +15,7 @@ class StaffsTableSeeder extends Seeder
     {
         $staffs = [
             [
-                'ic' => '3333',
+                'ic' => '333333333333',
                 'name' => 'Muhammed Nik Ishaq bin Wazzirul Firdaus',
                 'role' => 'staff',
                 'department' => 'MARRIAGE REQUEST',
@@ -27,7 +27,7 @@ class StaffsTableSeeder extends Seeder
                 'status' => 'APPROVE'
             ],
             [
-                'ic' => '4444',
+                'ic' => '444444444444',
                 'name' => 'Hafiz Bin Ahmad',
                 'role' => 'staff',
                 'department' => 'MARRIAGE COURSE',

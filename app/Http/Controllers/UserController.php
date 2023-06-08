@@ -57,17 +57,17 @@ class UserController extends Controller
         return back()->with('fail', 'Registration is unsuccessful. Ensure your info are correct');
     }
 
-    public function store(Request $request)
-    {
-        $request->merge([
-            'password' => bcrypt('password')
-        ]);
+    // public function store(Request $request)
+    // {
+    //     $request->merge([
+    //         'password' => bcrypt('password')
+    //     ]);
 
-        User::create($request->all());
+    //     User::create($request->all());
 
-        return redirect()->route('user.index')
-            ->with('success', "User Successfully Added");
-    }
+    //     return redirect()->route('user.index')
+    //         ->with('success', "User Successfully Added");
+    // }
 
     //To update the edited user profile 
     public function update(Request $request, $id)

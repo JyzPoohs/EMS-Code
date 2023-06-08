@@ -88,7 +88,7 @@ class StaffController extends Controller
     public function profileUpdate(Request $request, $id)
     {
         $request->validate([
-            'ic' => 'required|unique:staffs,ic,' . $id,
+            'ic' => 'required|digits_between:12,12|unique:staffs,ic,' . $id,
             'email' => 'required|email|unique:staffs,email,' . $id,
             'name' => 'required|string',
         ]);

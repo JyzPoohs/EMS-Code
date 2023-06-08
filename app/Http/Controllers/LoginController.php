@@ -7,13 +7,17 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function index(){
+        return redirect()->route('login');
+    }
+
     public function loginUser(Request $request)
     {
         if ($request->role == 'user') {
 
             $request->validate([
                 'role' => 'required',
-                'ic' => 'required|exists:users',
+                'ic' => 'required|digits_between:12,12|exists:users',
                 'password' => 'required|min:6|max:12'
             ]);
 
@@ -25,18 +29,14 @@ class LoginController extends Controller
 
             $request->validate([
                 'role' => 'required',
-                'ic' => 'required|exists:staffs',
+                'ic' => 'required|digits_between:12,12|exists:staffs',
                 'password' => 'required|min:6|max:12'
             ]);
 
             if (Auth::guard('staff')->attempt(['ic' => $request->ic, 'password' => $request->password])) {
                 $request->session()->regenerate();
-                $staff = Auth::guard('staff')->user();
-                if ($staff->accessCategory == 'ADMINISTRATOR') {
-                    return redirect()->route('staff.admin.profile');
-                } elseif ($staff->accessCategory == 'STAFF') {
-                    return redirect()->route('staff.profile');
-                }
+                return redirect()->route('staff.profile');
+                
             }
         }
 

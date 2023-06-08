@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     {
         $users = [
             [
-                'ic' => '1111',
+                'ic' => '111111111111',
                 'name' => 'Hadfina Binti Effendi',
                 'role' => 'user',
                 'gender' => 'FEMALE',
@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
                 'password' => 'password',
             ],
             [
-                'ic' => '2222',
+                'ic' => '222222222222',
                 'name' => 'John Hairunnezam',
                 'role' => 'user',
                 'gender' => 'MALE',

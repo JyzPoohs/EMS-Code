@@ -18,20 +18,18 @@ Route::get('/', function () {
 });
 
 //Module 1
-Route::post('login/submit', [LoginController::class, 'loginUser'])->name('login-user');
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::view('/login', 'manageLogin.login-view')->middleware('guest')->name('login');
+Route::post('login/submit', [LoginController::class, 'loginUser'])->middleware('guest')->name('login-user');
+Route::get('/logout', [LoginController::class, 'logout'])->middleware('guest')->name('logout');
 
 //Password
-Route::get('/change', [PasswordController::class, 'showChangePasswordForm'])->name('change-password.get');
-Route::get('/forgot', [PasswordController::class, 'showForgotPasswordForm'])->name('forgot-password.get');
-Route::post('/forgot/submit', [PasswordController::class, 'submitForgotPasswordForm'])->name('forgot-password.post');
-Route::post('/change/submit', [PasswordController::class, 'submitChangePasswordForm'])->name('change-password.post');
+Route::get('/change', [PasswordController::class, 'showChangePasswordForm'])->middleware('guest')->name('change-password.get');
+Route::get('/forgot', [PasswordController::class, 'showForgotPasswordForm'])->middleware('guest')->name('forgot-password.get');
+Route::post('/forgot/submit', [PasswordController::class, 'submitForgotPasswordForm'])->middleware('guest')->name('forgot-password.post');
+Route::post('/change/submit', [PasswordController::class, 'submitChangePasswordForm'])->middleware('guest')->name('change-password.post');
 
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['guest'])->group(function () {
@@ -67,7 +65,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
     Route::middleware(['auth'])->group(function () {
     });
     Route::view('/profile', 'manageStaffProfile.profile-view')->name('profile');
-    Route::view('/admin/profile', 'manageStaffProfile.adminProfile-view')->name('admin.profile');
+    // Route::view('/admin/profile', 'manageStaffProfile.adminProfile-view')->name('admin.profile');
     Route::put('/profile/{id}/update',  [StaffController::class, 'update'])->name('update');
 
     //Module 1
