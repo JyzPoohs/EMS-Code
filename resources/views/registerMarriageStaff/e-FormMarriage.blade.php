@@ -5,15 +5,14 @@
     <div class="container-fluid py-4">
         <div class="row mt-4">
             <div class="col-lg-12 mb-lg-0 mb-4">
-                <div class="card-header pb-0" style="background-color: #819CCE";>
-                    <h6>PERMOHONAN PENDAFTARAN PERKHAWINAN >> E-FORMS >> MARRIAGE</h6>
-                </div>
-                <br>
-                <div class="card-header pb-0" style="background-color: #D9D9D9";>
-                    <h6>MAKLUMAT PERKAHWINAN</h6>
-                </div>
                 <div class="card mb-4">
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>
+                    <div class="card-header pb-0" style="background-color: #66bdba";>
+                        <h6>PERMOHONAN PENDAFTARAN PERKHAWINAN >> E-FORMS >> MARRIAGE</h6>
+                    </div>
+                    <div class="card-header pb-0" style="background-color: #D9D9D9";>
+                        <h6>MAKLUMAT PERKAHWINAN</h6>
+                    </div>
+                    <div class="card-body p-3" style="background-color: #e2fbfb";>
                         <table>
                             <tbody>
                                 <tr>
@@ -39,7 +38,7 @@
                     <div class="card-header pb-0" style="background-color: #D9D9D9";>
                         <h6>MAKLUMAT PEMOHON</h6>
                     </div>
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>
+                    <div class="card-body p-3" style="background-color: #e2fbfb";>
                         <table>
                             <tbody>
                                 <tr>
@@ -65,7 +64,7 @@
                     <div class="card-header pb-0" style="background-color: #D9D9D9";>
                         <h6>MAKLUMAT CADANGAN MAJLIS AKAD NIKAH</h6>
                     </div>
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>
+                    <div class="card-body p-3" style="background-color: #e2fbfb";>
                         <table>
                             <tbody>
                                 <tr>
@@ -136,7 +135,7 @@
                     <div class="card-header pb-0" style="background-color: #D9D9D9";>
                         <h6>MAKLUMAT WALI</h6>
                     </div>
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>
+                    <div class="card-body p-3" style="background-color: #e2fbfb";>
                         <table>
                             <tbody>
                                 <tr>
@@ -174,7 +173,7 @@
                     <div class="card-header pb-0" style="background-color: #D9D9D9";>
                         <h6>MAKLUMAT SAKSI</h6>
                     </div>
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>
+                    <div class="card-body p-3" style="background-color: #e2fbfb";>
                         <table>
                             <tbody>
                                 <tr>
@@ -224,7 +223,7 @@
                     <div class="card-header pb-0" style="background-color: #D9D9D9";>
                         <h6>MAKLUMAT SAKSI (KELUARGA)</h6>
                     </div>
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>
+                    <div class="card-body p-3" style="background-color: #e2fbfb";>
                         <table>
                             <tbody>
                                 <tr>
@@ -265,15 +264,15 @@
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
                                 <a href="{{ route('staff.eFormsBrides') }}" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">BACK</a>
+                                    style="background-color: #179591; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
                                 <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">SAVE</a>
+                                    style="background-color: #179591; border:none; color: white;">SAVE</a>
                             </div>
                             <div class="col-md-3">
                                 <a href="{{ route('staff.approveMarriageRegistration') }}" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">NEXT</a>
+                                    style="background-color: #179591; border:none; color: white;">NEXT</a>
                             </div>
                         </div>
                     </div>

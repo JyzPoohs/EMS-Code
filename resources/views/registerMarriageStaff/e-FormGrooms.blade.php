@@ -5,13 +5,13 @@
     <div class="container-fluid py-4">
         <div class="row mt-4">
             <div class="col-lg-12 mb-lg-0 mb-4">
-                <div class="card-header pb-0" style="background-color: #819CCE";>
-                    <h6>PERMOHONAN PENDAFTARAN PERKHAWINAN >> E-FORMS >> GROOMS</h6>
-                </div>
-                <br>
                 <div class="card mb-4">
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>               
-                        <table>
+                    <div class="card-header pb-0 " style="background-color: #66bdba";>
+                        <h6>PERMOHONAN PENDAFTPERKHAWINAN >> E-FORMS >> GROOMS</h6>
+                    </div>
+                    <div class="card-body p-3" style="background-color: #e2fbfb";>               
+                        <div>
+                            <table>
                             <tbody>
                                 <tr>
                                     <td>No. Kad Pengenalan</td>
@@ -95,19 +95,20 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
                                 <a href="{{ route('staff.manageMarriage') }}" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">BACK</a>
+                                    style="background-color: #179591; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
                                 <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">SAVE</a>
+                                    style="background-color: #179591; border:none; color: white;">SAVE</a>
                             </div>
                             <div class="col-md-3">
                                 <a href="{{ route('staff.eFormsBrides') }}" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">NEXT</a>
+                                    style="background-color: #179591; border:none; color: white;">NEXT</a>
                             </div>
                         </div>
                     </div>

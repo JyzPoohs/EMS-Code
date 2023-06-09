@@ -2,27 +2,3 @@
     background-color: #179591;
     color: white;
 }
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th,
-  td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  tr:first-child {
-    background-color: #ABD6D5;
-  }
-
-  tr:not(:first-child) {
-    background-color: white;
-  }
-
-  .white-row {
-    background-color: white;
-}
