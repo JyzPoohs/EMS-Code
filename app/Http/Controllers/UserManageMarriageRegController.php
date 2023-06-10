@@ -8,21 +8,21 @@ class UserManageMarriageRegController extends Controller
 {
     public function manage()
     {
-        return view("registerMarriageUser.manageMarriageRegistrationMain"); 
+        return view("registerMarriageUser.marriageRegistrationList"); 
     }
 
     public function eFormsGrooms()
     {
-        return view('registerMarriageUser.e-FormGrooms');
+        return view('registerMarriageUser.editE-FormGrooms-view');
     }
 
     public function eFormsBrides()
     {
-        return view('registerMarriageUser.e-FormBrides');
+        return view('registerMarriageUser.editE-FormBrides-view');
     }
 
     public function eFormsMarriage()
     {
-        return view('registerMarriageUser.e-FormMarriage');
+        return view('registerMarriageUser.editE-FormMarriage-view');
     }
 }

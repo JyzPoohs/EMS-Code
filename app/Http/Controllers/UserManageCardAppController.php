@@ -8,11 +8,11 @@ class UserManageCardAppController extends Controller
 {
     public function manageCardAppUser()
     {
-        return view("manageMarriageCardApplicationUser.manageMarriageCardApplicationListUser"); 
+        return view("manageMarriageCardApplicationUser.viewMarriageCardApplicationListUser-view"); 
     }
 
     public function fillCardAppUser()
     {
-        return view("manageMarriageCardApplicationUser.marriageCardApplicationInfo"); 
+        return view("manageMarriageCardApplicationUser.editMarriageCardApplicationInfo-view"); 
     }
 }

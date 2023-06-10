@@ -16,7 +16,7 @@
                         </div>
                     </div>                        
                     <div class="col-md-3">
-                        <a>Nombor Kad Pengenalan :<input type="text"></a>
+                        <a>Nombor Kad Pengenalan : <input type="text" id="name" name="name" placeholder=""></a>
                     </div>
                     <div class="mt-2">
                         <table class="table w-100" id="list">
