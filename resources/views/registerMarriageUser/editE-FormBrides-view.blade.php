@@ -18,10 +18,6 @@
                                     <td>: <input type="text" id="name" name="name" placeholder=""></td>
                                 </tr>
                                 <tr>
-                                    <td>No. Polis/Tentera </td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
                                     <td>Nama Suami</td>
                                     <td>: <input type="text" id="name" name="name" placeholder=""></td>
                                 </tr>

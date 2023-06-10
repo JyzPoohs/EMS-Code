@@ -1,18 +1,19 @@
-<link rel="stylesheet" href="{{ asset('css/staff-marriageRegistration.css') }}">
-@extends('layouts.staffProfile')
+<link rel="stylesheet" href="{{ asset('css/user-marriageRegistration.css') }}">
+@extends('layouts.userProfile')
 
 @section('content')
     <div class="container-fluid py-4">
         <div class="row mt-4">
             <div class="col-lg-12 mb-lg-0 mb-4">
+                <div class="card-header pb-0" style="background-color: #819CCE";>
+                    <h6>PERMOHONAN PENDAFTARAN PERKHAWINAN >> E-FORMS >> MARRIAGE</h6>
+                </div>
+                <br>
+                <div class="card-header pb-0" style="background-color: #D9D9D9";>
+                    <h6>MAKLUMAT PERKAHWINAN</h6>
+                </div>
                 <div class="card mb-4">
-                    <div class="card-header pb-0" style="background-color: #66bdba";>
-                        <h6>PERMOHONAN PENDAFTARAN PERKHAWINAN >> E-FORMS >> MARRIAGE</h6>
-                    </div>
-                    <div class="card-header pb-0" style="background-color: #D9D9D9";>
-                        <h6>MAKLUMAT PERKAHWINAN</h6>
-                    </div>
-                    <div class="card-body p-3" style="background-color: #e2fbfb";>
+                    <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <table>
                             <tbody>
                                 <tr>
@@ -31,30 +32,8 @@
                                     <td>Kategori Perintah</td>
                                     <td>: <input type="text" id="name" name="name" placeholder=""></td>
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="card-header pb-0" style="background-color: #D9D9D9";>
-                        <h6>MAKLUMAT PEMOHON</h6>
-                    </div>
-                    <div class="card-body p-3" style="background-color: #e2fbfb";>
-                        <table>
-                            <tbody>
                                 <tr>
-                                    <td>Nama Permohon</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. K/P Permohon</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat Permohon</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Telefon Pemohon</td>
+                                    <td>Resit Pendaftaran Perkhawinan</td>
                                     <td>: <input type="text" id="name" name="name" placeholder=""></td>
                                 </tr>
                             </tbody>
@@ -64,7 +43,7 @@
                     <div class="card-header pb-0" style="background-color: #D9D9D9";>
                         <h6>MAKLUMAT CADANGAN MAJLIS AKAD NIKAH</h6>
                     </div>
-                    <div class="card-body p-3" style="background-color: #e2fbfb";>
+                    <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <table>
                             <tbody>
                                 <tr>
@@ -90,10 +69,6 @@
                                 <tr>
                                     <td>Hantaran</td>
                                     <td>: RM <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Pemberian Lain</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
                                 </tr>
                                 <tr>
                                     <td>Nama Jurunikah</td>
@@ -135,7 +110,7 @@
                     <div class="card-header pb-0" style="background-color: #D9D9D9";>
                         <h6>MAKLUMAT WALI</h6>
                     </div>
-                    <div class="card-body p-3" style="background-color: #e2fbfb";>
+                    <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <table>
                             <tbody>
                                 <tr>
@@ -173,7 +148,7 @@
                     <div class="card-header pb-0" style="background-color: #D9D9D9";>
                         <h6>MAKLUMAT SAKSI</h6>
                     </div>
-                    <div class="card-body p-3" style="background-color: #e2fbfb";>
+                    <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <table>
                             <tbody>
                                 <tr>
@@ -223,7 +198,7 @@
                     <div class="card-header pb-0" style="background-color: #D9D9D9";>
                         <h6>MAKLUMAT SAKSI (KELUARGA)</h6>
                     </div>
-                    <div class="card-body p-3" style="background-color: #e2fbfb";>
+                    <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <table>
                             <tbody>
                                 <tr>
@@ -263,16 +238,16 @@
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
-                                <a href="{{ route('staff.eFormsBrides') }}" class="btn btn-primary btn-block"
-                                    style="background-color: #179591; border:none; color: white;">BACK</a>
+                                <a href="{{ route('user.eFormsBrides') }}" class="btn btn-primary btn-block"
+                                    style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
                                 <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #179591; border:none; color: white;">SAVE</a>
+                                    style="background-color: #0050d1; border:none; color: white;">SAVE</a>
                             </div>
                             <div class="col-md-3">
-                                <a href="{{ route('staff.approveMarriageRegistration') }}" class="btn btn-primary btn-block"
-                                    style="background-color: #179591; border:none; color: white;">NEXT</a>
+                                <a href="#" class="btn btn-primary btn-block"
+                                    style="background-color: #0050d1; border:none; color: white;">SUBMIT</a>
                             </div>
                         </div>
                     </div>

@@ -8,11 +8,11 @@ class StaffManageCardAppController extends Controller
 {
     public function manageCardAppStaff()
     {
-        return view("manageMarriageCardApplicationStaff.manageMarriageCardApplicationListStaff"); 
+        return view("manageMarriageCardApplicationStaff.marriageCardApplicationListStaff-view"); 
     }
 
     public function approveCardAppStaff()
     {
-        return view('manageMarriageCardApplicationStaff.approveMarriageCardApplication');
+        return view('manageMarriageCardApplicationStaff.editApprovalMarriageCardApplication-view');
     }
 }

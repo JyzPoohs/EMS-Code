@@ -51,10 +51,6 @@
                                     <td>: <input type="text" id="name" name="name" placeholder=""></td>
                                 </tr>
                                 <tr>
-                                    <td>Dokumen Resit Bayaran</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
                                     <td>Pilihan Penghantaran</td>
                                     <td>:
                                         <input type="checkbox" id="checkbox1" name="Penghantaran" onchange="handleCheckboxChange(1)">
