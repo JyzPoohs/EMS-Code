@@ -89,15 +89,11 @@ class PasswordController extends Controller
             $user = User::where('ic', $request->input('ic'))->first();
         }
 
-        if (!$user) {
-            return back()->with('reset', 'Change password failed. Ensure your info are correct');
-        }
-
         if (Hash::check($request->password, $user->password)) {
             $user->password = ($request->newPassword);
             $user->save();
         }
 
-        return redirect()->route('login')->with('reset', "Reset Password Success");
+        return redirect()->route('login')->with('reset', "Change Password Success");
     }
 }

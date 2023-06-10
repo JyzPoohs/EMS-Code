@@ -42,14 +42,14 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('staff.viewStaffProfile', ['id' => $user->id]) }}"
-                                        class="btn btn-primary">
+                                        class="btn btn-primary" title="View">
                                         <i class="fas fa-eye"></i></a>
                                     @if (Auth::guard('staff')->user()->accessCategory === 'ADMINISTRATOR')
                                         <a href="{{ route('staff.staffProfileUpdateView', ['id' => $user->id]) }}"
-                                            class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                            class="btn btn-warning" title="Edit"><i class="fas fa-pencil-alt"></i></a>
                                         <a href="{{ route('staff.destroyStaffProfile', ['id' => $user->id]) }}"
                                             class="btn btn-danger" onclick="return confirm('Confirm to delete?')"><i
-                                                class="fas fa-trash-alt"></i></a>
+                                                class="fas fa-trash-alt" title="Delete"></i></a>
                                     @endif
                                 </td>
                                 </td>

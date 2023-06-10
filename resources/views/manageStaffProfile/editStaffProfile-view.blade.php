@@ -2,7 +2,8 @@
 
 @section('content')
     @if (session('success'))
-        <div class="alert alert-success mt-3">{{ session('success') }}</div>
+        <div class="alert alert-success mt-3">
+            {{ session('success') }}</div>
     @endif
 
     <form action="{{ route('staff.updateStaffProfile', $user->id) }}" method="post">
@@ -21,15 +22,21 @@
             <tr>
                 <th>Name</th>
                 <td>*:</td>
-                <td><input class="form-control" type="text" name="name" id="name"
-                        value="{{ strtoupper($user['name']) }}"></td>
+                <td><input class="form-control @error('name') is-invalid @enderror" type="text" name="name"
+                        id="name" value="{{ strtoupper($user['name']) }}">
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </td>
             </tr>
             <tr>
                 <th>Department</th>
                 <td>:</td>
                 <td>
                     <div class="form-group">
-                        <select class="form-select" name="department">
+                        <select class="form-select " name="department">
                             <option disabled selected>Select department</option>
                             <option value="MARRIAGE REQUEST" @if ($user['department'] == 'MARRIAGE REQUEST') selected @endif>MARRIAGE
                                 REQUEST</option>
@@ -125,7 +132,14 @@
             <tr>
                 <th>Email</th>
                 <td>*:</td>
-                <td><input class="form-control" type="text" name="email" id="email" value="{{ $user['email'] }}">
+                <td>
+                    <input class="form-control @error('email') is-invalid @enderror" type="text" name="email"
+                        id="email" value="{{ $user['email'] }}">
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </td>
             </tr>
             <tr>
@@ -139,6 +153,7 @@
                 <td>*:</td>
                 <td>
                     <div class="form-group">
+                        <input type="text" hidden name="requestStatus" value="{{$user['status']}}">
                         <select class="form-select" name="status">
                             <option disabled selected>Select status</option>
                             <option value="APPROVE" @if ($user['status'] == 'APPROVE') selected @endif>APPROVE</option>

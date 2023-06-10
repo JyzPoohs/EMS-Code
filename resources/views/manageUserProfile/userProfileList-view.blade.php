@@ -55,9 +55,6 @@
                     @endif
                 </tbody>
             </table>
-            <div class="px-3 pt-4">
-                {{ $users->links() }}
-            </div>
         </div>
     </div>
 

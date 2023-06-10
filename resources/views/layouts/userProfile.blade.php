@@ -32,7 +32,7 @@
     </style>
 
     <header class="container">
-        <a href="{{ route('user.profile') }}">
+        <a href="{{ route('login') }}">
             <img src="{{ env('APP_URL') . '/img/Header.png' }}" width="100%" style="align-content: center;"
                 alt="Header EMS">
         </a>

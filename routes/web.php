@@ -36,7 +36,7 @@ Route::prefix('user')->name('user.')->group(function () {
 
         Route::view('/register', 'manageRegister.userRegister-view')->name('register');
         Route::view('/register/message', 'manageRegister.registerMessage-view')->name('registerMessage');
-        Route::post('/create', [UserController::class, 'create'])->name('create');
+        Route::post('/create', [RegisterController::class, 'createUser'])->name('create');
     });
     Route::middleware(['auth'])->group(function () {
         Route::view('/profile', 'manageUserProfile.profile-view')->name('profile');
@@ -60,12 +60,11 @@ Route::prefix('staff')->name('staff.')->group(function () {
         Route::view('/register/message', 'manageRegister.staffRegisterMessage-view')->name('registerMessage');
         Route::view('/accessCode', 'manageRegister.accessCode-view')->name('accessCode');
         Route::get('/validateCode',  [RegisterController::class, 'validateCode'])->name('validateCode');
-        Route::post('/create', [StaffController::class, 'create'])->name('create');
+        Route::post('/create', [RegisterController::class, 'createStaff'])->name('create');
     });
     Route::middleware(['auth'])->group(function () {
     });
     Route::view('/profile', 'manageStaffProfile.profile-view')->name('profile');
-    // Route::view('/admin/profile', 'manageStaffProfile.adminProfile-view')->name('admin.profile');
     Route::put('/profile/{id}/update',  [StaffController::class, 'update'])->name('update');
 
     //Module 1
