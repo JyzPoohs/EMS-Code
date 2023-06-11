@@ -94,7 +94,7 @@
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
-                                <a href="{{ route('user.eFormsGrooms') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.editEFormsGrooms') }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
@@ -102,7 +102,7 @@
                                     style="background-color: #0050d1; border:none; color: white;">SAVE</a>
                             </div>
                             <div class="col-md-3">
-                                <a href="{{ route('user.eFormsMarriage') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.editEFormsMarriage') }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">NEXT</a>
                             </div>
                         </div>
