@@ -3,21 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CardApplication;
 
 class UserManageCardAppController extends Controller
 {
-    public function manageCardAppUser()
+    public function manageCardAppUser($id)
     {
-        return view("manageMarriageCardApplicationUser.marriageCardApplicationListUser-view"); 
+        $datas = CardApplication::where('U_IC_No', $id)->get();
+        return view("manageMarriageCardApplicationUser.marriageCardApplicationListUser-view", compact('datas')); 
     }
 
-    public function fillCardAppUser()
+    public function fillCardAppUser($id)
     {
-        return view("manageMarriageCardApplicationUser.editMarriageCardApplicationInfo-view"); 
+        $data = CardApplication::where('U_IC_No', $id)->first();
+        return view("manageMarriageCardApplicationUser.editMarriageCardApplicationInfo-view", compact('data')); 
     }
 
-    public function viewCardAppUser()
+    public function viewCardAppUser($id)
     {
-        return view("manageMarriageCardApplicationUser.viewMarriageCardApplicationInfo-view"); 
+        $data = CardApplication::where('U_IC_No', $id)->first();
+        return view("manageMarriageCardApplicationUser.viewMarriageCardApplicationInfo-view", compact('data')); 
     }
 }

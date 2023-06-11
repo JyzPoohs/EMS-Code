@@ -16,16 +16,16 @@ class UsersTableSeeder extends Seeder
         $users = [
             [
                 'ic' => '111111111111',
-                'name' => 'Hadfina Binti Effendi',
+                'name' => 'HADI BIN EFFIZ',
                 'role' => 'user',
-                'gender' => 'FEMALE',
+                'gender' => 'MALE',
                 'phone' => '015-9656390',
                 'email' => 'user@example.com',
                 'password' => 'password',
             ],
             [
                 'ic' => '222222222222',
-                'name' => 'John Hairunnezam',
+                'name' => 'JOHN HARINUMENA',
                 'role' => 'user',
                 'gender' => 'MALE',
                 'phone' => '017-9386565',
@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'ic' => '830805104983',
-                'name' => 'Mohammad Hj Fazal bin Zainudin',
+                'name' => 'MOHAMMAD HJ FAZAL BIN ZAINUDDIN',
                 'role' => 'user',
                 'gender' => 'MALE',
                 'phone' => '015-1176912',
@@ -43,7 +43,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'ic' => '491219088510',
-                'name' => 'Krishnamurthi a/l Mohanadas',
+                'name' => 'KRISTHMAN a/l MOHANADES',
                 'role' => 'user',
                 'gender' => 'MALE',
                 'phone' => '018-4066217',
