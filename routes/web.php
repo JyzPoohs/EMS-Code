@@ -55,7 +55,8 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/viewEFormsMarriage', [UserManageMarriageRegController::class, 'viewEFormsMarriage'])->name('viewEFormsMarriage');
 
     Route::get('/manageMarriageCardApp', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');   
-    Route::get('/marriageCardAppInfo', [UserManageCardAppController::class, 'fillCardAppUser'])->name('marriageCardAppInfo');   
+    Route::get('/editMarriageCardAppInfo', [UserManageCardAppController::class, 'fillCardAppUser'])->name('editMarriageCardAppInfo');   
+    Route::get('/viewMarriageCardAppInfo', [UserManageCardAppController::class, 'viewCardAppUser'])->name('viewMarriageCardAppInfo');   
 });
 
 Route::prefix('staff')->name('staff.')->group(function () {

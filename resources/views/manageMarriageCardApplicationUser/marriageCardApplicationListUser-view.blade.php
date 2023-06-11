@@ -11,7 +11,7 @@
                 <div class="card-body p-3" style="background-color: #ECF3FF";>
                     <div class="row justify-content-center text-center">
                         <div class="col-md-3">
-                            <a href="{{ route('user.marriageCardAppInfo') }}" class="btn btn-primary"
+                            <a href="{{ route('user.editMarriageCardAppInfo') }}" class="btn btn-primary"
                             style="background-color: #0050d1; border:none; color: white;">Daftar Baru</a>
                         </div>
                     </div>                        
@@ -46,7 +46,7 @@
                                     <td>21/12/2022</td>
                                     <td>UNTUK DILULUSKAN</td>
                                     <td>
-                                        <a href="#" class="btn btn-primary">
+                                        <a href="{{ route('user.viewMarriageCardAppInfo') }}" class="btn btn-primary">
                                             <i class="fas fa-eye"></i></a>
                                         <a href="#" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
                                         <a href="#" class="btn btn-danger"

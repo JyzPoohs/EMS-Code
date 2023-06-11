@@ -98,10 +98,6 @@
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
-                                <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">SAVE</a>
-                            </div>
-                            <div class="col-md-3">
                                 <a href="{{ route('user.viewEFormsMarriage') }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">NEXT</a>
                             </div>

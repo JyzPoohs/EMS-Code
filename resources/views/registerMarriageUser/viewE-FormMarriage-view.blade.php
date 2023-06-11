@@ -242,12 +242,8 @@
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
-                                <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">SAVE</a>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">SUBMIT</a>
+                                <a href="{{ route('user.manageMarriageRegistration') }}" class="btn btn-primary btn-block"
+                                    style="background-color: #0050d1; border:none; color: white;">LIST PAGE</a>
                             </div>
                         </div>
                     </div>

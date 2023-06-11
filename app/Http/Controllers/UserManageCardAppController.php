@@ -15,4 +15,9 @@ class UserManageCardAppController extends Controller
     {
         return view("manageMarriageCardApplicationUser.editMarriageCardApplicationInfo-view"); 
     }
+
+    public function viewCardAppUser()
+    {
+        return view("manageMarriageCardApplicationUser.viewMarriageCardApplicationInfo-view"); 
+    }
 }
