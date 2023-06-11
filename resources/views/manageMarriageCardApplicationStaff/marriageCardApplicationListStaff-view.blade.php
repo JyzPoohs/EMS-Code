@@ -38,9 +38,8 @@
                                         <td>15/12/2022</td>
                                         <td>LULUS</td>
                                         <td>
-                                            <a href="{{ route('staff.approveMarriageCardApp') }}" class="btn btn-primary">
-                                                <i class="fas fa-eye"></i></a>                                                                            
-                                            <a href="#" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                            <a href="{{ route('staff.approveMarriageCardApp') }}" class="btn btn-warning"><i
+                                                    class="fas fa-pencil-alt"></i></a>
                                             <a href="#" class="btn btn-danger"
                                                 onclick="return confirm('Confirm to delete?')"><i
                                                     class="fas fa-trash-alt"></i></a>
@@ -59,8 +58,8 @@
                                 </tbody>
                             </table>
                         </div>
-                        
-                        
+
+
                     </div>
 
                 </div>
