@@ -25,36 +25,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>(PN)MS/0077/
-                                            2022-D1-
-                                            SN06220001</td>
-                                        <td>870930065551<br>
-                                            ALI BIN IDRIS</td>
-                                        <td>890930065551 <br>
-                                            SITI BINTI ABU BAKAR</td>
-                                        <td>KTN1M4/2022-00011</td>
-                                        <td>15/12/2022</td>
-                                        <td>LULUS</td>
-                                        <td>
-                                            <a href="{{ route('staff.approveMarriageCardApp') }}" class="btn btn-warning"><i
-                                                    class="fas fa-pencil-alt"></i></a>
-                                            <a href="#" class="btn btn-danger"
-                                                onclick="return confirm('Confirm to delete?')"><i
-                                                    class="fas fa-trash-alt"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
+                                    @php $counter = 0; @endphp
+                                    @foreach ($datas as $data)
+                                        @php $counter++; @endphp
+                                        <tr>
+                                            <td>{{ $counter }}</td>
+                                            <td>{{ $data->user->daftar->MR_noDaftarSijil }}</td>
+                                            <td>{{ $data->U_IC_No }}<br>
+                                                {{ strtoupper($data->user->name) }}</td>
+                                            <td>{{ $data->user->daftar->MR_isteri_ic }} <br>
+                                                {{ $data->user->daftar->MR_isteri_nama }}</td>
+                                            <td>KTN1M4/2022-00011</td>
+                                            <td>{{ $data['created_at']->format('Y/m/d') }}</td>
+                                            <td>{{ $data['Card_App_Approval_Status'] }}</td>
+                                            <td>
+                                                <a href="{{ route('staff.approveMarriageCardApp', ['id' => $data->MR_Card_ID]) }}"
+                                                    class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="#" class="btn btn-danger"
+                                                    onclick="return confirm('Confirm to delete?')"><i
+                                                        class="fas fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -95,7 +95,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
     Route::get('/approveMarriageRegistration', [StaffManageMarriageRegController::class, 'approveMarriageRegistration'])->name('approveMarriageRegistration');
 
     Route::get('/manageMarriageCardApp', [StaffManageCardAppController::class, 'manageCardAppStaff'])->name('manageMarriageCardApp');
-    Route::get('/approveMarriageCardApp', [StaffManageCardAppController::class, 'approveCardAppStaff'])->name('approveMarriageCardApp');
+    Route::get('/approveMarriageCardApp/{id}', [StaffManageCardAppController::class, 'approveCardAppStaff'])->where('id', '.*')->name('approveMarriageCardApp');
 });
 
 // Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');
