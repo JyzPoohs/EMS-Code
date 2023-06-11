@@ -238,7 +238,7 @@
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
-                                <a href="{{ route('user.eFormsBrides') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.editEFormsBrides') }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
