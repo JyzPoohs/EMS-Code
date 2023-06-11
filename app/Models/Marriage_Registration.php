@@ -20,7 +20,9 @@ class Marriage_Registration extends Model
     ];
 
 
-    public function staff()
+    public function user()
     {
+        return $this->belongsTo(User::class, 'MR_suami_ic', 'ic');
     }
+   
 }

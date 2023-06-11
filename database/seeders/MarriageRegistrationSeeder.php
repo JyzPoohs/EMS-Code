@@ -34,16 +34,16 @@ class MarriageRegistrationSeeder extends Seeder
             ],
             [
                 'MR_noDaftarSijil' => '(PN)MS/0077/2022-D2-SN06220011',
-                'MR_suami_ic' => '870930065551',
-                'MR_suami_nama' => 'ALI BIN IDRIS',
-                'MR_isteri_ic' => '010930065551',
-                'MR_isteri_nama' => 'SITI BINTI ABU BAKAR',
+                'MR_suami_ic' => '870930065552',
+                'MR_suami_nama' => 'AKMAL BIN IDRIS',
+                'MR_isteri_ic' => '011030065551',
+                'MR_isteri_nama' => 'YANTI BINTI ABU BAKAR',
                 'MR_noAkaunTerima' => 'KTN1M4/2022-00013',
                 'MR_Status' => 'LULUS'
             ],
             [
                 'MR_noDaftarSijil' => '(PN)MS/0077/2022-D1-SN06220021',
-                'MR_suami_ic' => '630712065551',
+                'MR_suami_ic' => '111111111111',
                 'MR_suami_nama' => 'UMAH BIN ABDULLAH',
                 'MR_isteri_ic' => '640510065551',
                 'MR_isteri_nama' => 'ROSE BINTI LUQMAN',
@@ -52,7 +52,7 @@ class MarriageRegistrationSeeder extends Seeder
             ],
             [
                 'MR_noDaftarSijil' => '(PN)MS/0077/2022-D1-SN06220031',
-                'MR_suami_ic' => '891221071011',
+                'MR_suami_ic' => '990909060331',
                 'MR_suami_nama' => 'MUHAMMAD BIN MUIN',
                 'MR_isteri_ic' => '841015141645',
                 'MR_isteri_nama' => 'KAISAH BINTI HAFIZ',
