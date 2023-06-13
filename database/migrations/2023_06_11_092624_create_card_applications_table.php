@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('MM_Card_Applications', function (Blueprint $table) {
-            $table->id('MR_Card_ID', 30);
+            $table->id('MR_Card_ID');
             $table->string('Card_App_Address')->nullable();
             $table->string('Card_App_Approval_Status', 20)->nullable();
             $table->string('Card_App_Delivery_Options', 50)->nullable();

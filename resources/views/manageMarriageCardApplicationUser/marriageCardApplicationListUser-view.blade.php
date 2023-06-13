@@ -44,8 +44,19 @@
                                         class="btn btn-primary">
                                         <i class="fas fa-eye"></i></a>
                                     <a href="#" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                    <form id="delete-form-{{ $data->MR_Card_ID }}"
+                                        action="{{ route('user.deleteMarriageCardApp', $data->MR_Card_ID) }}" method="POST"
+                                        style="display: none;">
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
+
                                     <a href="#" class="btn btn-danger"
-                                        onclick="return confirm('Confirm to delete?')"><i class="fas fa-trash-alt"></i></a>
+                                        onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this record?')) { document.getElementById('delete-form-{{ $data->MR_Card_ID}}').submit(); }">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                    {{-- <a href="#" class="btn btn-danger"
+                                        onclick="return confirm('Confirm to delete?')"><i class="fas fa-trash-alt"></i></a> --}}
                                 </td>
                             </tr>
                         @endforeach

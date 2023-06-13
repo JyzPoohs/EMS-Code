@@ -23,18 +23,18 @@
                             <tr>
                                 <td>Nama Suami</td>
                                 <td>:</td>
-                                <td>{{ strtoupper($data->user->name) }} ({{ $data->U_IC_No }})</td>
+                                <td>{{ strtoupper($data->name) }} ({{ $data->U_IC_No }})</td>
                             </tr>
                             <tr>
                                 <td>Nama Isteri</td>
                                 <td>:</td>
-                                <td>{{ $data->user->daftar->MR_isteri_nama }}
-                                    ({{ $data->user->daftar->MR_isteri_ic }})</td>
+                                <td>{{ $data->daftar->MR_isteri_nama }}
+                                    ({{ $data->daftar->MR_isteri_ic }})</td>
                             </tr>
                             <tr>
                                 <td>No.Pendaftaran/Sijil</td>
                                 <td>:</td>
-                                <td>{{ $data->user->daftar->MR_noDaftarSijil }}</td>
+                                <td>{{ $data->daftar->MR_noDaftarSijil }}</td>
                             </tr>
                             <tr>
                                 <td>No. Permohonan Online</td>
@@ -44,7 +44,7 @@
                             <tr>
                                 <td>Status Pendaftaran Nikah</td>
                                 <td>:</td>
-                                <td>{{ $data->user->daftar->MR_Status }}</td>
+                                <td>{{ $data->daftar->MR_Status }}</td>
                             </tr>
                             <tr>
                                 <td>Pilihan Sijil Dan Kad Nikah</td>

@@ -15,7 +15,8 @@ class UserManageCardAppController extends Controller
 
     public function fillCardAppUser($id)
     {
-        $data = CardApplication::where('U_IC_No', $id)->first();
+        $data = auth()->user();
+        // $data = CardApplication::where('U_IC_No', $id)->first();
         return view("manageMarriageCardApplicationUser.editMarriageCardApplicationInfo-view", compact('data'));
     }
 
@@ -67,5 +68,18 @@ class UserManageCardAppController extends Controller
         // dd($request);
         CardApplication::create($request->all());
         return redirect()->route('user.manageMarriageCardApp',$id);
+    }
+
+    public function destroy($id)
+    {
+        $card = CardApplication::where('MR_Card_ID',$id);
+        
+        if (!$card) {
+            return redirect()->back()->with('error', 'card not found.');
+        }
+        
+        $card->delete();
+        $id = auth()->user()->ic;
+        return redirect()->route('user.manageMarriageCardApp',$id)->with('success', 'card deleted successfully.');
     }
 }
