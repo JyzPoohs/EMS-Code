@@ -57,6 +57,7 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/manageMarriageCardApp/{id}', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');   
     Route::get('/editMarriageCardAppInfo/{id}', [UserManageCardAppController::class, 'fillCardAppUser'])->name('editMarriageCardAppInfo');   
     Route::get('/viewMarriageCardAppInfo/{id}', [UserManageCardAppController::class, 'viewCardAppUser'])->where('id', '.*')->name('viewMarriageCardAppInfo');   
+    Route::post('/createCardApp', [UserManageCardAppController::class, 'createCardApp'])->name('createCardApp');
 });
 
 Route::prefix('staff')->name('staff.')->group(function () {

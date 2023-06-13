@@ -18,7 +18,7 @@ class CardApplicationTableSeeder extends Seeder
 
         $datas = [
             [
-                'MR_Card_ID' => 'M3/2023-00001',
+                // 'MR_Card_ID' => 'M3/2023-00001',
                 'Card_App_Address' => '123-A, TAMAN TAS, KUANTAN, PAHANG',
                 'Card_App_Approval_Status' => 'LULUS',
                 'Card_App_Delivery_Options' => 'PENGHANTARAN',
@@ -32,7 +32,7 @@ class CardApplicationTableSeeder extends Seeder
                 'created_at' => '2023-3-15',
             ],
             [
-                'MR_Card_ID' => 'M3/2023-00002',
+                // 'MR_Card_ID' => 'M3/2023-00002',
                 'Card_App_Address' => '',
                 'Card_App_Approval_Status' => 'LULUS',
                 'Card_App_Delivery_Options' => 'PUNGUTAN',
@@ -47,7 +47,7 @@ class CardApplicationTableSeeder extends Seeder
                 'created_at' => '2023-5-15',
             ],
             [
-                'MR_Card_ID' => 'M3/2023-00003',
+                // 'MR_Card_ID' => 'M3/2023-00003',
                 'Card_App_Address' => '',
                 'Card_App_Approval_Status' => 'UNTUK DILULUSKAN',
                 'Card_App_Delivery_Options' => 'PUNGUTAN',

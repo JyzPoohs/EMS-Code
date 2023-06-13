@@ -2,16 +2,20 @@
 @extends('layouts.userProfile')
 
 @section('content')
-    <div class="container-fluid py-4">
-        <div class="row mt-4 ">
-            <div class="card mb-4 col-md-12 pl-0 pr-0">
-                <div class="card-header pb-0" style="background-color: #819CCE">
-                    <h6>PENDAFTARAN NIKAH >> PERMOHONAN SIJIL DAN KAD NIKAH >> INFO</h6>
-                </div>
-                <div class="card-body p-3" style="background-color: #ECF3FF">
-                    <table class="table">
-                        <tbody>
-                            <tr>
+<div class="container-fluid py-4">
+    <div class="row mt-4 ">
+        <div class="card mb-4 col-md-12 pl-0 pr-0">
+            <div class="card-header pb-0" style="background-color: #819CCE">
+                <h6>PENDAFTARAN NIKAH >> PERMOHONAN SIJIL DAN KAD NIKAH >> INFO</h6>
+            </div>
+            <div class="card-body p-3" style="background-color: #ECF3FF">
+                <form method="POST" action="{{ route('user.createCardApp') }}">
+                <table class="table">
+                    <tbody>
+                        @csrf
+                    
+                        
+                        <tr>
                                 <td>No. Akuan Terima</td>
                                 <td>:</td>
                                 <td>KTN1M4/2022-00011</td>
@@ -47,7 +51,7 @@
                                 <td>:</td>
                                 <td>
                                     <select id="Card_App_Type" name="Card_App_Type" class="form-control">
-                                        <option selected value="KAD PERKHAWINAN">Select Jenis</option>
+                                        <option selected value="KAD PERKHAWINAN" disabled>Select Jenis</option>
                                         <option value="KAD PERKHAWINAN">KAD PERKHAWINAN</option>
                                         <option value="SIJIL PERKHAWINAN">SIJIL PERKHAWINAN</option>
                                         <option value="KAD & SIJIL PERKHAWINAN">KAD & SIJIL PERKHAWINAN</option>
@@ -58,7 +62,10 @@
                                 <td>No. Resit Bayaran</td>
                                 <td>:</td>
                                 <td>
-                                    <input type="text" id="name" name="Card_App_Payment_Receipt" class="form-control">
+                                    <input type="text" id="Card_App_Payment_Receipt" name="Card_App_Payment_Receipt"
+                                    class="form-control"
+                                    value="{{ old('Card_App_Payment_Receipt') }}" required autocomplete="name" autofocus>
+
                                 </td>
                             </tr>
                             <tr>
@@ -66,12 +73,12 @@
                                 <td>:</td>
                                 <td>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" id="radio1" name="Card_App_Delivery_Options"
+                                        <input type="radio" id="Card_App_Delivery_Options" name="Card_App_Delivery_Options"
                                             value="PENGHANTARAN" class="form-check-input">
                                         <label for="radio1" class="form-check-label">Penghantaran</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" id="radio2" name="Card_App_Delivery_Options"
+                                        <input type="radio" id="Card_App_Delivery_Options" name="Card_App_Delivery_Options"
                                             value="PUNGUTAN" class="form-check-input">
                                         <label for="radio2" class="form-check-label">Pungutan di Pejabat</label>
                                     </div>
@@ -116,6 +123,8 @@
                                     </select>
                                 </td>
                             </tr>
+                        
+                        
                         </tbody>
                     </table>
                     <br>
@@ -125,14 +134,17 @@
                                 style="background-color: #0050d1; border:none; color: white;">BACK</a>
                         </div>
                         <div class="col-md-3">
-                            <a href="#" class="btn btn-primary btn-block"
-                            style="background-color: #0050d1; border:none; color: white;">SAVE</a>
+                            <button type="submit" class="btn btn-primary btn-block" id="registerBtn"
+                                        style="background-color: #0050d1; border:none; color: white;">
+                                        {{ __('SAVE') }}
+                                    </button>
                         </div>
                         <div class="col-md-3">
                             <a href="#" class="btn btn-primary btn-block"
                             style="background-color: #0050d1; border:none; color: white;">SUBMIT</a>
                         </div>
                     </div>
+            </form>
                 </div>
             </div>
         </div>
