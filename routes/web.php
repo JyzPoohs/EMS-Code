@@ -10,6 +10,8 @@ use App\Http\Controllers\UserManageMarriageRegController;
 use App\Http\Controllers\UserManageCardAppController;
 use App\Http\Controllers\StaffManageMarriageRegController;
 use App\Http\Controllers\StaffManageCardAppController;
+use App\Http\Controllers\IncentiveController;
+use App\Http\Controllers\StaffManageIncentiveController;
 use Illuminate\Support\Facades\Auth;
 
 //Main page
@@ -41,6 +43,8 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::view('/profile', 'manageUserProfile.profile-view')->name('profile');
         Route::view('/consult', 'manageConsultation(user).consult')->name('consult');
+        Route::view('/userIncentive', 'manageIncentiveUser.userIncentive')->name('userIncentive');
+        Route::view('/userStatus', 'manageIncentiveUser.userStatus')->name('userStatus');
     });
     Route::put('/profile/{id}/update',  [UserController::class, 'update'])->name('update');
 
@@ -52,6 +56,13 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/eFormsMarriage', [UserManageMarriageRegController::class, 'eFormsMarriage'])->name('eFormsMarriage');
     Route::get('/manageMarriageCardApp', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');   
     Route::get('/marriageCardAppInfo', [UserManageCardAppController::class, 'fillCardAppUser'])->name('marriageCardAppInfo');   
+
+    //module 5
+    Route::get('/userUpload', [IncentiveController::class, 'userUpload'])->name('userUpload');
+    Route::get('userIncentive/tags', 'IncenticeController@tags');
+    Route::get('/download/{file}', 'IncentiveController@download');
+
+    
 });
 
 Route::prefix('staff')->name('staff.')->group(function () {
@@ -92,6 +103,12 @@ Route::prefix('staff')->name('staff.')->group(function () {
 
     Route::get('/manageMarriageCardApp', [StaffManageCardAppController::class, 'manageCardAppStaff'])->name('manageMarriageCardApp');
     Route::get('/approveMarriageCardApp', [StaffManageCardAppController::class, 'approveCardAppStaff'])->name('approveMarriageCardApp');
+
+    //Module 5
+    Route::get('/staffIncentive', [StaffManageIncentiveController::class, 'staffIncentive'])->name('staffIncentive');
+    Route::get('/userUpload','IncentiveController@index');
+    Route::post('/userUpload','IncentiveController@showUploadFile');
+
 });
 
 // Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');
@@ -100,4 +117,10 @@ require __DIR__ . '/auth.php';
 
 Route::get('/mregistration', function () {
     return view('module3.MR');
+
+
+
 });
+
+
+

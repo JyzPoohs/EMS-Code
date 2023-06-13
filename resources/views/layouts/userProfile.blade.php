@@ -89,7 +89,16 @@
                             <a href="{{ route('user.consult') }}">Aduan/Khidmat Nasihat</a>
                         </li>
                         <li>
-                            <a href="#">Insentif</a>
+                            <a href="#sideSubmenu" data-toggle="collapse" aria-expanded="false"
+                                class="dropdown-toggle">Insentif</a>
+                            <ul class="collapse list-unstyled" id="sideSubmenu">
+                                <li>
+                                    <a href="{{ route('user.userIncentive') }}">Mohon</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('user.userStatus') }}">Status</a>
+                                </li>
+                             </ul>
                         </li>
                         <li>
                             <form role="form" method="post" action="{{ route('logout') }}" id="logout-form">

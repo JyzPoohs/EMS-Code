@@ -107,7 +107,7 @@
                             <a href="#">Aduan/Khidmat Nasihat</a>
                         </li>
                         <li>
-                            <a href="#">Insentif</a>
+                            <a href="{{ route('staff.staffIncentive') }}">Insentif</a>
                         </li>
 
 
