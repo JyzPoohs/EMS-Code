@@ -19,9 +19,14 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'email' => 'required|email|unique:staffs,email,',
+            'email' => 'required|email|unique:users,email,',
             'name' => 'required|string',
-        ]);
+        ],
+        [
+            'email.unique' => 'The email has been registered',
+            'name.required' => 'The name cannot be empty'
+        ]
+    );
 
         User::find($id)->update($request->all());
 
