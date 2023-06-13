@@ -14,12 +14,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <h1 class="mt-5">Forget Password Email</h1>
+                <h1 class="mt-5">Forget Password for e-Munakahat (Mohon Daftar Nikah)</h1>
                 <div class="card mt-4">
                     <div class="card-body">
+                        <p class="card-text">Your password has been reset.</p>
                         <h5 class="card-title">Your new temporary password:</h5>
                         <p class="card-text">{{ $newPassword }}</p>
-                        <p class="card-text">Remember to reset your password.</p>
+                        <p class="card-text">Remember to change your password.</p>
                         <p class="card-text">You can reset your password using the link below:</p>
                         <a href="{{ route('change-password.get') }}" class="btn btn-primary">Reset Password</a>
                     </div>

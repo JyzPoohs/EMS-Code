@@ -8,14 +8,17 @@ use App\Models\Staff;
 
 class LoginController extends Controller
 {
+    //To show login page
     public function index()
     {
         return redirect()->route('login');
     }
 
+    //To validate and verify login credentials
+    //Based on role, redirect to different profile page
     public function loginUser(Request $request)
     {
-        
+        //If login as user
         if ($request->role == 'user') {
 
             $request->validate(
@@ -32,7 +35,7 @@ class LoginController extends Controller
                 $request->session()->regenerate();
                 return redirect()->route('user.profile')->with('success', 'You\'re logged in');
             }
-        } elseif ($request->role == 'staff') {
+        } elseif ($request->role == 'staff') { //Login as a staff
 
             $request->validate([
                 'role' => 'required',
@@ -40,6 +43,8 @@ class LoginController extends Controller
                 'password' => 'required|min:6|max:12'
             ]);
 
+            //To check whether the staff account status is allowed to login
+            //Status of 'PENDING' and 'REJECT' has no access to system
             $staff = Staff::where('ic', $request->ic)->first();
             if($staff->status === 'PENDING'){
                 return back()->withErrors([
@@ -63,6 +68,7 @@ class LoginController extends Controller
         ]);
     }
 
+    //Logout user
     public function logout(Request $request)
     {
         Auth::logout();

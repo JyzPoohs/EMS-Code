@@ -4,7 +4,9 @@
     @if (session('success'))
         <div class="alert alert-success mt-3">{{ session('success') }}</div>
     @endif
-    <form action="{{ route('user.update', Auth::guard('web')->user()->id) }}" method="post">
+    <form action="{{ route('user.update', auth()->user()->id) }}" method="post">
+
+
         @csrf
         @method('PUT')
         <div class="row mt-4" style="background-color: #cbdcf7;">
@@ -14,30 +16,42 @@
             <tr>
                 <th class="col-md-4">IC Number</th>
                 <td>:</td>
-                <td>{{ Auth::guard('web')->user()->ic }}</td>
+                <td>{{ auth()->user()->ic }}</td>
             </tr>
             <tr>
                 <th>Name</th>
                 <td>*:</td>
-                <td><input class="form-control" type="text" name="name" id="name"
-                        value="{{ strtoupper(Auth::guard('web')->user()->name) }}"></td>
-            </tr>
+                <td>
+                    <input class="form-control @error('name') is-invalid @enderror" type="text" name="name"
+                        id="name" value="{{ strtoupper(auth()->user()->name) }}">
+                    @error('name')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </td>
+
             <tr>
                 <th>Gender</th>
                 <td>:</td>
-                <td>{{ strtoupper(Auth::guard('web')->user()->gender) }}</td>
+                <td>{{ strtoupper(auth()->user()->gender) }}</td>
             </tr>
             <tr>
                 <th>Phone Number</th>
                 <td>*:</td>
-                <td>{{ Auth::guard('web')->user()->phone }}</td>
+                <td>{{ auth()->user()->phone }}</td>
             </tr>
             <tr>
                 <th>Email</th>
                 <td>*:</td>
                 <td>
-                    <input class="form-control" type="email" name="email" id="email"
-                        value="{{ Auth::guard('web')->user()->email }}">
+                    <input class="form-control @error('email') is-invalid @enderror" type="email" name="email"
+                        id="email" value="{{ auth()->user()->email }}">
+                    @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </td>
             </tr>
         </table>

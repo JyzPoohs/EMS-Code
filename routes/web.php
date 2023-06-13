@@ -54,9 +54,9 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/viewEFormsBrides', [UserManageMarriageRegController::class, 'viewEFormsBrides'])->name('viewEFormsBrides');
     Route::get('/viewEFormsMarriage', [UserManageMarriageRegController::class, 'viewEFormsMarriage'])->name('viewEFormsMarriage');
 
-    Route::get('/manageMarriageCardApp/{id}', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');   
-    Route::get('/editMarriageCardAppInfo/{id}', [UserManageCardAppController::class, 'fillCardAppUser'])->name('editMarriageCardAppInfo');   
-    Route::get('/viewMarriageCardAppInfo/{id}', [UserManageCardAppController::class, 'viewCardAppUser'])->where('id', '.*')->name('viewMarriageCardAppInfo');   
+    Route::get('/manageMarriageCardApp/{id}', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');
+    Route::get('/editMarriageCardAppInfo/{id}', [UserManageCardAppController::class, 'fillCardAppUser'])->name('editMarriageCardAppInfo');
+    Route::get('/viewMarriageCardAppInfo/{id}', [UserManageCardAppController::class, 'viewCardAppUser'])->where('id', '.*')->name('viewMarriageCardAppInfo');
 });
 
 Route::prefix('staff')->name('staff.')->group(function () {
@@ -67,24 +67,23 @@ Route::prefix('staff')->name('staff.')->group(function () {
         Route::get('/validateCode',  [RegisterController::class, 'validateCode'])->name('validateCode');
         Route::post('/create', [RegisterController::class, 'createStaff'])->name('create');
     });
-    Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth:staff'])->group(function () {
+        Route::view('/profile', 'manageStaffProfile.profile-view')->name('profile');
+        Route::put('/profile/{id}/update',  [StaffController::class, 'update'])->name('update');
+
+        //Module 1
+        Route::get('/userProfileList', [UserController::class, 'userProfileList'])->name('userProfileList');
+        Route::get('/viewUserProfile/{id}',  [UserController::class, 'profileView'])->name('viewUserProfile');
+        Route::get('/userList/profile/{id}/updateView',  [UserController::class, 'profileUpdateView'])->name('userProfileUpdateView');
+        Route::put('/userList/profile/{id}/update',  [UserController::class, 'profileUpdate'])->name('updateUserProfile');
+        Route::get('/userList/profile/{id}/delete',  [UserController::class, 'destroy'])->name('destroyUserProfile');
+
+        Route::get('/staffProfileList', [StaffController::class, 'staffProfileList'])->name('staffProfileList');
+        Route::get('/viewStaffProfile/{id}',  [StaffController::class, 'profileView'])->name('viewStaffProfile');
+        Route::get('/staffList/profile/{id}/updateView',  [StaffController::class, 'profileUpdateView'])->name('staffProfileUpdateView');
+        Route::put('/staffList/profile/{id}/update',  [StaffController::class, 'profileUpdate'])->name('updateStaffProfile');
+        Route::get('/staffList/profile/{id}/delete',  [StaffController::class, 'destroy'])->name('destroyStaffProfile');
     });
-    Route::view('/profile', 'manageStaffProfile.profile-view')->name('profile');
-    Route::put('/profile/{id}/update',  [StaffController::class, 'update'])->name('update');
-
-    //Module 1
-    Route::get('/userProfileList', [UserController::class, 'userProfileList'])->name('userProfileList');
-    Route::get('/viewUserProfile/{id}',  [UserController::class, 'profileView'])->name('viewUserProfile');
-    Route::get('/userList/profile/{id}/updateView',  [UserController::class, 'profileUpdateView'])->name('userProfileUpdateView');
-    Route::put('/userList/profile/{id}/update',  [UserController::class, 'profileUpdate'])->name('updateUserProfile');
-    Route::get('/userList/profile/{id}/delete',  [UserController::class, 'destroy'])->name('destroyUserProfile');
-
-    Route::get('/staffProfileList', [StaffController::class, 'staffProfileList'])->name('staffProfileList');
-    Route::get('/viewStaffProfile/{id}',  [StaffController::class, 'profileView'])->name('viewStaffProfile');
-    Route::get('/staffList/profile/{id}/updateView',  [StaffController::class, 'profileUpdateView'])->name('staffProfileUpdateView');
-    Route::put('/staffList/profile/{id}/update',  [StaffController::class, 'profileUpdate'])->name('updateStaffProfile');
-    Route::get('/staffList/profile/{id}/delete',  [StaffController::class, 'destroy'])->name('destroyStaffProfile');
-
 
     //Module 3
     Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'manage'])->name('manageMarriage');

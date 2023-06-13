@@ -10,6 +10,7 @@ class RegisterController extends Controller
 {
     public function createUser(Request $request)
     {
+        //Validate all user registration info
         $request->validate(
             [
                 'ic' => 'required|digits_between:12,12|unique:users',
@@ -32,7 +33,9 @@ class RegisterController extends Controller
             ]
         );
 
+        //If the password is same with repeat password
         if ($request->cpassword === $request->password) {
+            // Create a new User instance
             $user = new User();
             $user->ic = $request->ic;
             $user->name = $request->name;
@@ -74,7 +77,9 @@ class RegisterController extends Controller
             ]
         );
 
+        //If the password is same with repeat password
         if ($request->cpassword === $request->password) {
+            // Create a new Staff instance
             $staff = new Staff();
             $staff->ic = $request->ic;
             $staff->name = $request->name;
@@ -94,8 +99,13 @@ class RegisterController extends Controller
         return back()->with('fail', 'Registration is failed. Ensure your info are correct');
     }
 
+    //Check whether the access code is correct
     public function validateCode(Request $request)
     {
+        $request->validate([
+            'code' => 'required'
+        ]);
+
         if (strtoupper($request->code) === 'CODE')
             return redirect()->route('staff.register');
         else
