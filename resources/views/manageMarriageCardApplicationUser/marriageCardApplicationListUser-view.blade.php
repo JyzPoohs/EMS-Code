@@ -18,6 +18,7 @@
                     <thead>
                         <tr>
                             <th>Bil</th>
+                            <th>Marriage Card No</th>
                             <th>No. Pendaftaran/Sijil</th>
                             <th>No. K/P Nama Suami</th>
                             <th>No. K/P Nama Isteri</th>
@@ -28,22 +29,22 @@
                     </thead>
                     <tbody>
                         @php $counter = 0; @endphp
-                        @foreach ($datas as $data)
+                        @foreach ($datas as $data)                                                                                                                                                                                                          
                             @php $counter++; @endphp
                             <tr>
                                 <td>{{ $counter }}</td>
-                                <td>{{ $data->user->daftar->MR_noDaftarSijil }}</td>
+                                <td>{{ $data->MR_Card_ID }}</td>
+                                <td>{{ $data->MR_ID }}</td>
                                 <td>{{ $data->U_IC_No }} <br>
-                                    {{ strtoupper($data->user->name) }}</td>
-                                <td>{{ $data->user->daftar->MR_isteri_ic }} <br>
-                                    {{ $data->user->daftar->MR_isteri_nama }}</td>
+                                    {{ strtoupper($eform->U_Name) }}</td>
+                                <td>{{ $eform->Pasangan_IC_No }} <br>
+                                    {{ $eform->P_Name }}</td>
                                 <td>{{ $data->created_at->format('Y/m/d') }}</td>
-                                <td>{{ $data->user->daftar->MR_Status }}</td>
+                                <td>{{ $data->Card_App_Approval_Status }}</td>
                                 <td>
-                                    <a href="{{ route('user.viewMarriageCardAppInfo', ['id' => auth()->user()->ic]) }}"
+                                    <a href="{{ route('user.viewMarriageCardAppInfo', ['id' => $data->MR_Card_ID]) }}"
                                         class="btn btn-primary">
-                                        <i class="fas fa-eye"></i></a>
-                                    <a href="#" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                        <i class="fas fa-pencil-alt"></i></a>
                                     <form id="delete-form-{{ $data->MR_Card_ID }}"
                                         action="{{ route('user.deleteMarriageCardApp', $data->MR_Card_ID) }}" method="POST"
                                         style="display: none;">
@@ -55,8 +56,6 @@
                                         onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this record?')) { document.getElementById('delete-form-{{ $data->MR_Card_ID}}').submit(); }">
                                         <i class="fa fa-trash"></i>
                                     </a>
-                                    {{-- <a href="#" class="btn btn-danger"
-                                        onclick="return confirm('Confirm to delete?')"><i class="fas fa-trash-alt"></i></a> --}}
                                 </td>
                             </tr>
                         @endforeach

@@ -15,24 +15,24 @@
                             <tbody>
                                 <tr>
                                     <td>No. Kad Pengenalan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->U_IC_No}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Nama Suami</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->U_Name}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Tarikh Lahir</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="date" id="name" name="name" placeholder="" value="{{$eform->U_Name}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Umur</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Age}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Bangsa</td>
                                     <td>:
-                                        <select>
+                                        <select value="{{$eform->Ethnic}}" disabled>
                                             <option value="MELAYU">MELAYU</option>
                                             <option value="CINA">CINA</option>
                                             <option value="INDIA">INDIA</option>
@@ -43,12 +43,12 @@
                                 </tr>
                                 <tr>
                                     <td>Warganegara</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Rationality}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Taraf Pendidkan</td>
                                     <td>:
-                                        <select>
+                                        <select value="{{$eform->Edu_Level}}" disabled>
                                             <option value="UPSR">UPSR</option>
                                             <option value="PMR/PT3">PMR/PT3</option>
                                             <option value="SPM">SPM</option>
@@ -58,36 +58,36 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Perkerjaan/Jawatan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>Sektor Perkerjaan/Jawatan</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Employment_Sector}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Pendapatan</td>
-                                    <td>: RM <input type="float" id="name" name="name" placeholder=""></td>
+                                    <td>: RM <input type="float" id="name" name="name" placeholder="" value="{{$eform->Amount_Salary}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Perkerjaan/Jawatan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Job}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Dalam K/P</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->IC_Address}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Telefon</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Office_Phone}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Semasa</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Current_Address}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Status Sebelum Perkahwinan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Marriage_Status}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Sijil Kursus Pra Perkahwinan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->PrepCourse_ID}}" disabled></td>
                                 </tr>
                             </tbody>
                         </table>

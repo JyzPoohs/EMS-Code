@@ -30,8 +30,8 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>890930065551
-                                        SITI BINTI ABU BAKAR</td>
+                                    <td>{{$eform->Pasangan_IC_No}}
+                                        {{$eform->P_Name}}</td>
                                     <td>KTN1M4/2022-00011</td>
                                     <td>15/12/2022</td>
                                     <td>TELAH HANTAR</td>

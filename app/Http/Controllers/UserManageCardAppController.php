@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CardApplication;
+use App\Models\Marriage_Request;
 
 class UserManageCardAppController extends Controller
 {
-    public function manageCardAppUser($id)
+    public function manageCardAppUser()
     {
+        $id = auth()->user()->ic;
         $datas = CardApplication::where('U_IC_No', $id)->get();
-        return view("manageMarriageCardApplicationUser.marriageCardApplicationListUser-view", compact('datas'));
+        $eform = Marriage_Request::where('U_IC_No',$id)->first();
+        return view("manageMarriageCardApplicationUser.marriageCardApplicationListUser-view", compact('datas', 'eform'));
     }
 
     public function fillCardAppUser($id)
@@ -22,7 +25,8 @@ class UserManageCardAppController extends Controller
 
     public function viewCardAppUser($id)
     {
-        $data = CardApplication::where('U_IC_No', $id)->first();
+        $data = CardApplication::where('MR_Card_ID', $id)->first();
+        // dd($data,$id);
         return view("manageMarriageCardApplicationUser.viewMarriageCardApplicationInfo-view", compact('data'));
     }
 
@@ -67,7 +71,7 @@ class UserManageCardAppController extends Controller
         $id = auth()->user()->ic;
         // dd($request);
         CardApplication::create($request->all());
-        return redirect()->route('user.manageMarriageCardApp',$id);
+        return redirect()->route('user.manageMarriageCardApp');
     }
 
     public function destroy($id)
@@ -79,7 +83,11 @@ class UserManageCardAppController extends Controller
         }
         
         $card->delete();
-        $id = auth()->user()->ic;
-        return redirect()->route('user.manageMarriageCardApp',$id)->with('success', 'card deleted successfully.');
+        return redirect()->route('user.manageMarriageCardApp')->with('success', 'card deleted successfully.');
+    }
+    public function update(Request $request, $id){
+        CardApplication::where('MR_Card_ID', $id)->update($request->all());
+        return redirect()->route('user.manageMarriageCardApp')->with('success', 'card updated successfully.');
+        
     }
 }

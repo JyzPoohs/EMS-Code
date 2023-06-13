@@ -13,7 +13,9 @@
                     <h6>MAKLUMAT PERKAHWINAN</h6>
                 </div>
                 <div class="card mb-4">
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>
+                    <form method="POST" action="{{ route('user.storeMarriage') }}">
+                        @csrf
+                        <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <table>
                             <tbody>
                                 <tr>
@@ -22,19 +24,19 @@
                                 </tr>
                                 <tr>
                                     <td>Nama Suami</td>
-                                    <td>: ALI BIN IDRIS</td>
+                                    <td>: {{$eform->U_Name}}</td>
                                 </tr>
                                 <tr>
                                     <td>Nama Isteri</td>
-                                    <td>: SITI BIN ABU</td>
+                                    <td>: {{$eform->P_Name}}</td>
                                 </tr>
                                 <tr>
                                     <td>Kategori Perintah</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: KTN1M4/2022-00011</td>
                                 </tr>
                                 <tr>
                                     <td>Resit Pendaftaran Perkhawinan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="MR_Payment_Receipt" placeholder="" ></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -48,56 +50,56 @@
                             <tbody>
                                 <tr>
                                     <td>Tarikh Akad Nikah</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="date" id="name" name="name" placeholder="" value="{{$eform->Date_Nikah}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Masa Akad Nikah</td>
-                                    <td>: <input type="time" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="time" id="name" name="name" placeholder="" ></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Tempat Kahwin</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Marriage_Place}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Jenis Mas Kahwin</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Marriage_Dowry_Type}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Mas Kahwin</td>
-                                    <td>: RM <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: RM <input type="text" id="name" name="name" placeholder="" value="{{$eform->Marriage_Dowry}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Hantaran</td>
-                                    <td>: RM <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: RM <input type="text" id="name" name="name" placeholder="" value="{{$eform->Other_Grants}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Nama Jurunikah</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="MR_Jurunikah_Name" placeholder="" ></td>
                                 </tr>
                                 <tr>
                                     <td>No. Surat Perakuan Nikah</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Marriage_Dowry_Type}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Pendaftaran</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Slip_Mohon_Online}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Tarikh Pendaftaran</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="date" id="name" name="name" placeholder="" value="{{$eform->Date_Nikah}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Tempat Pendaftaran</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Marriage_Place}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Negara</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Marriage_Country}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Lafaz Ta’liq</td>
                                     <td>: 
-                                        <select>
+                                        <select name="MR_Lafaz_Taliq">
                                             <option value="YA">YA</option>
                                             <option value="TIDAK">TIDAK</option>
                                         </select>
@@ -115,31 +117,23 @@
                             <tbody>
                                 <tr>
                                     <td>Hubungan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Marriage_Country}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Nama Wali</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->W_Name}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Kad Pengenalan  Wali</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->W_IC_No}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Wali</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Tarikh Lahir Wali</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Umur Wali</td>
-                                    <td>: <input type="number" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->W_Address}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Telefon Wali</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->W_Phone}}" disabled></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -195,62 +189,24 @@
                         </table>
                     </div>
 
-                    <div class="card-header pb-0" style="background-color: #D9D9D9";>
-                        <h6>MAKLUMAT SAKSI (KELUARGA)</h6>
-                    </div>
+                    
                     <div class="card-body p-3" style="background-color: #ECF3FF";>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Nama Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Kad Pengenalan Saksi Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat Saksi Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Telefon Saksi Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Nama Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Kad Pengenalan Saksi Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat Saksi Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Telefon Saksi Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <br>
+                        
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
                                 <a href="{{ route('user.editEFormsBrides') }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
+
                             <div class="col-md-3">
-                                <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">SAVE</a>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">SUBMIT</a>
+                                <button type="submit" class="btn btn-primary btn-block" id="registerBtn"
+                                    style="background-color: #0050d1; border:none; color: white;">
+                                    {{ __('DAFTAR') }}
+                                </button>
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
 
             </div>
