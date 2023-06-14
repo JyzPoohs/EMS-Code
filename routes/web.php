@@ -178,6 +178,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
 
     //module 4
     Route::post('/submitForm', [ConsultationController::class, 'submitForm'])->name('user.submitForm');
+    Route::get('/edit/{id}', [ConsultationController::class, 'edit'])->name('user.editInformation');
     //Module 5
     Route::get('/staffIncentive', [StaffManageIncentiveController::class, 'staffIncentive'])->name('staffIncentive');
     Route::get('/userUpload', 'IncentiveController@index');

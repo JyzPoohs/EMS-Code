@@ -34,4 +34,9 @@ class ConsultationController extends Controller
         // Redirect back or to another page after form submission
         return redirect()->back()->with('success', 'Form submitted successfully!');
     }
+    public function edit($id)
+{
+    $aduan = Consultation::findOrFail($id);
+    return view('editInformation', compact('aduan'));
+}
 }
