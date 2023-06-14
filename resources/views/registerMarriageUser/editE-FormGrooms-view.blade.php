@@ -83,7 +83,7 @@
                                 </tr>
                                 <tr>
                                     <td>Status Sebelum Perkahwinan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Marriage_Status}}" disabled></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="BUJANG" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Sijil Kursus Pra Perkahwinan</td>

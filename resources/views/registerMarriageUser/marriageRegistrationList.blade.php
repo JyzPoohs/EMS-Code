@@ -35,7 +35,7 @@
                                         <td>{{ $counter }}</td>
                                         <td>{{ $data->mohon->Pasangan_IC_No }}
                                             {{ $data->mohon->P_Name }}</td>
-                                        <td>{{ $data->MR_Card_ID }}</td>
+                                        <td>MC{{ $data->MR_Card_ID }}</td>
                                         <td>15/12/2022</td>
                                         <td>TELAH HANTAR</td>
                                         <td class="text-center">
@@ -43,9 +43,16 @@
                                                 <i class="fas fa-eye"></i></a>
                                             <a href="{{ route('user.editEFormsGrooms') }}" class="btn btn-warning"><i
                                                     class="fas fa-pencil-alt"></i></a>
+                                            <form id="delete-form-{{ $data->MR_ID }}"
+                                                action="{{ route('user.deleteMarriageRegistration', $data->MR_ID) }}"
+                                                method="POST" style="display: none;">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
                                             <a href="#" class="btn btn-danger"
-                                                onclick="return confirm('Confirm to delete?')"><i
-                                                    class="fas fa-trash-alt"></i></a>
+                                                onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this record?')) { document.getElementById('delete-form-{{ $data->MR_ID }}').submit(); }">
+                                                <i class="fa fa-trash-alt"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach

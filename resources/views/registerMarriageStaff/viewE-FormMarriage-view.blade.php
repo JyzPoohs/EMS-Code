@@ -152,88 +152,47 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Saksi (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="MOHD KAHRUL" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Kad Pengenalan Saksi (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="791222033213" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Umur Saksi (1)</td>
-                                    <td>: <input type="number" id="name" name="name" placeholder=""> TAHUN</td>
+                                    <td>: <input type="number" id="name" name="name" placeholder="" value="44" disabled> TAHUN</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Saksi (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="91_L, TAMAN SAGA" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Telefon Saksi (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="01484188863" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Nama Saksi (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="SHARUL IFFAN" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Kad Pengenalan Saksi (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="881129020481" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Umur Saksi (2)</td>
-                                    <td>: <input type="number" id="name" name="name" placeholder=""> TAHUN</td>
+                                    <td>: <input type="number" id="name" name="name" placeholder="" value="35" disabled> TAHUN</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Saksi (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="1 TAMAN IMPIAN, KUANTAN" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Telefon Saksi (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="0184829125" disabled></td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-
-                    <div class="card-header pb-0" style="background-color: #D9D9D9";>
-                        <h6>MAKLUMAT SAKSI (KELUARGA)</h6>
-                    </div>
-                    <div class="card-body p-3" style="background-color: #e2fbfb";>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Nama Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Kad Pengenalan Saksi Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat Saksi Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Telefon Saksi Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Nama Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Kad Pengenalan Saksi Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat Saksi Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Telefon Saksi Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">

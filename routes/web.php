@@ -75,15 +75,18 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/viewEFormsGrooms', [UserManageMarriageRegController::class, 'viewEFormsGrooms'])->name('viewEFormsGrooms');
     Route::get('/viewEFormsBrides', [UserManageMarriageRegController::class, 'viewEFormsBrides'])->name('viewEFormsBrides');
     Route::get('/viewEFormsMarriage', [UserManageMarriageRegController::class, 'viewEFormsMarriage'])->name('viewEFormsMarriage');
+    //store
     Route::post('/storeMarriage/{id}', [UserManageMarriageRegController::class, 'store'])->name('storeMarriage');
-    
+    //delete
+    Route::delete('/deleteMR/{id}', [UserManageMarriageRegController::class, 'destroy'])->name('deleteMarriageRegistration');
+
     //Card Application
-    Route::delete('/deleteMarriageCardApp/{id}', [UserManageCardAppController::class, 'destroy'])->name('deleteMarriageCardApp');
     Route::get('/manageMarriageCardApp', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');
     Route::get('/editMarriageCardAppInfo/{id}', [UserManageCardAppController::class, 'fillCardAppUser'])->name('editMarriageCardAppInfo');
     Route::get('/viewMarriageCardAppInfo/{id}', [UserManageCardAppController::class, 'viewCardAppUser'])->where('id', '.*')->name('viewMarriageCardAppInfo');
     Route::post('/createCardApp', [UserManageCardAppController::class, 'createCardApp'])->name('createCardApp');
     Route::put('/{id}/updateCardApp', [UserManageCardAppController::class, 'update'])->name('updateCardApp');
+    Route::delete('/deleteMarriageCardApp/{id}', [UserManageCardAppController::class, 'destroy'])->name('deleteMarriageCardApp');
 
     Route::get('/manageMarriageCardApp', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');
     Route::get('/marriageCardAppInfo', [UserManageCardAppController::class, 'fillCardAppUser'])->name('marriageCardAppInfo');
