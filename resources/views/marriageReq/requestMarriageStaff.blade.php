@@ -40,10 +40,10 @@
                                     </tr>    
                                     <tr>
                                         <td>2</td>
-                                        <td>890930065551
-                                            SAFWAN BINTI ABU BAKAR</td>
-                                        <td>KTN1M4/2022-00011</td>
-                                        <td>15/12/2022</td>
+                                        <td>850325065551
+                                            AMAD BIN ALI</td>
+                                        <td>KTN1M6/2022-00025</td>
+                                        <td>20/12/2022</td>
                                         <td>BELUM SEMAK</td>
                                         <td>
                                             <a href="" class="btn btn-primary">
