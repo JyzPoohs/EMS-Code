@@ -63,6 +63,9 @@
                                 class="dropdown-toggle">Kebenaran Berkahwin</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <li>
+                                    <a href="{{ route('user.requestMarriageUser') }}">Kebenaran Berkahwin</a>
+                                </li>
+                                <li>
                                     <a href="#">Kursus Kahwin</a>
                                 </li>
                                 <li>
@@ -78,7 +81,7 @@
                                     <a href="{{ route('user.manageMarriageRegistration') }}">Mohon Pendaftaran Nikah</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('user.manageMarriageCardApp', ['id' => auth()->user()->ic]) }}">Mohon Sijil Dan Kad Nikah</a>
+                                    <a href="{{ route('user.manageMarriageCardApp')}}">Mohon Sijil Dan Kad Nikah</a>
                                 </li>
                             </ul>
                         </li>

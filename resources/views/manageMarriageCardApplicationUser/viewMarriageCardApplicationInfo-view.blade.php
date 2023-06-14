@@ -48,10 +48,16 @@
                                 <td>:</td>
                                 <td>
                                     <select id="Card_App_Type" name="Card_App_Type" class="form-control">
-                                        <option value="KAD PERKHAWINAN"{{ $data->Card_App_Type == 'KAD PERKHAWINAN' ? ' selected' : '' }}>KAD PERKHAWINAN</option>
-                                        <option value="SIJIL PERKHAWINAN"{{ $data->Card_App_Type == 'SIJIL PERKHAWINAN' ? ' selected' : '' }}>SIJIL PERKHAWINAN</option>
-                                        <option value="KAD & SIJIL PERKHAWINAN"{{ $data->Card_App_Type == 'KAD & SIJIL PERKHAWINAN' ? ' selected' : '' }}>KAD & SIJIL PERKHAWINAN</option>
-                                    </select>                                    
+                                        <option
+                                            value="KAD PERKHAWINAN"{{ $data->Card_App_Type == 'KAD PERKHAWINAN' ? ' selected' : '' }}>
+                                            KAD PERKHAWINAN</option>
+                                        <option
+                                            value="SIJIL PERKHAWINAN"{{ $data->Card_App_Type == 'SIJIL PERKHAWINAN' ? ' selected' : '' }}>
+                                            SIJIL PERKHAWINAN</option>
+                                        <option
+                                            value="KAD & SIJIL PERKHAWINAN"{{ $data->Card_App_Type == 'KAD & SIJIL PERKHAWINAN' ? ' selected' : '' }}>
+                                            KAD & SIJIL PERKHAWINAN</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
@@ -67,24 +73,25 @@
                                 <td>:</td>
                                 <td>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" id="radio1" name="Card_App_Delivery_Options" value="PENGHANTARAN"
-                                            class="form-check-input" {{ $data->Card_App_Delivery_Options == 'PENGHANTARAN' ? 'checked' : '' }}>
+                                        <input type="radio" id="radio1" name="Card_App_Delivery_Options"
+                                            value="PENGHANTARAN" class="form-check-input"
+                                            {{ $data->Card_App_Delivery_Options == 'PENGHANTARAN' ? 'checked' : '' }}>
                                         <label for="radio1" class="form-check-label">Penghantaran</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" id="radio2" name="Card_App_Delivery_Options" value="PUNGUTAN"
-                                            class="form-check-input" {{ $data->Card_App_Delivery_Options == 'PUNGUTAN' ? 'checked' : '' }}>
+                                        <input type="radio" id="radio2" name="Card_App_Delivery_Options"
+                                            value="PUNGUTAN" class="form-check-input"
+                                            {{ $data->Card_App_Delivery_Options == 'PUNGUTAN' ? 'checked' : '' }}>
                                         <label for="radio2" class="form-check-label">Pungutan di Pejabat</label>
                                     </div>
-                                    
+
                                 </td>
                             </tr>
                             <tr>
                                 <td>Alamat Penghantaran</td>
                                 <td>:</td>
                                 <td>
-                                    <textarea id="Card_App_Address" name="Card_App_Address"
-                                        class="form-control">{{ $data->Card_App_Address }}</textarea>
+                                    <textarea id="Card_App_Address" name="Card_App_Address" class="form-control">{{ $data->Card_App_Address }}</textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -101,22 +108,50 @@
                                 <td>
                                     <select name="Card_App_Redeem_Location" class="form-control">
                                         <option disabled>Select PAID</option>
-                                        <option value="PAID PEKAN" {{ $data->Card_App_Redeem_Location == 'PAID PEKAN' ? 'selected' : '' }}>PAID PEKAN</option>
-                                        <option value="PAID KUANTAN" {{ $data->Card_App_Redeem_Location == 'PAID KUANTAN' ? 'selected' : '' }}>PAID KUANTAN</option>
-                                        <option value="PAID ROMPIN" {{ $data->Card_App_Redeem_Location == 'PAID ROMPIN' ? 'selected' : '' }}>PAID ROMPIN</option>
-                                        <option value="PAID MUADZAM SHAH" {{ $data->Card_App_Redeem_Location == 'PAID MUADZAM SHAH' ? 'selected' : '' }}>PAID MUADZAM SHAH</option>
-                                        <option value="PAID MARAN" {{ $data->Card_App_Redeem_Location == 'PAID MARAN' ? 'selected' : '' }}>PAID MARAN</option>
-                                        <option value="PAID JENGKA" {{ $data->Card_App_Redeem_Location == 'PAID JENGKA' ? 'selected' : '' }}>PAID JENGKA</option>
-                                        <option value="PAID KUANTAN BARAT" {{ $data->Card_App_Redeem_Location == 'PAID KUANTAN BARAT' ? 'selected' : '' }}>PAID KUANTAN BARAT</option>
-                                        <option value="PAID TEMERLOH" {{ $data->Card_App_Redeem_Location == 'PAID TEMERLOH' ? 'selected' : '' }}>PAID TEMERLOH</option>
-                                        <option value="PAID BENTONG" {{ $data->Card_App_Redeem_Location == 'PAID BENTONG' ? 'selected' : '' }}>PAID BENTONG</option>
-                                        <option value="PAID JERANTUT" {{ $data->Card_App_Redeem_Location == 'PAID JERANTUT' ? 'selected' : '' }}>PAID JERANTUT</option>
-                                        <option value="PAID RAUB" {{ $data->Card_App_Redeem_Location == 'PAID RAUB' ? 'selected' : '' }}>PAID RAUB</option>
-                                        <option value="PAID KUALA LIPIS" {{ $data->Card_App_Redeem_Location == 'PAID KUALA LIPIS' ? 'selected' : '' }}>PAID KUALA LIPIS</option>
-                                        <option value="PAID BERA" {{ $data->Card_App_Redeem_Location == 'PAID BERA' ? 'selected' : '' }}>PAID BERA</option>
-                                        <option value="PAID CAMERON HIGHLAND" {{ $data->Card_App_Redeem_Location == 'PAID CAMERON HIGHLAND' ? 'selected' : '' }}>PAID CAMERON HIGHLAND</option>
+                                        <option value="PAID PEKAN"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID PEKAN' ? 'selected' : '' }}>PAID
+                                            PEKAN</option>
+                                        <option value="PAID KUANTAN"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID KUANTAN' ? 'selected' : '' }}>PAID
+                                            KUANTAN</option>
+                                        <option value="PAID ROMPIN"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID ROMPIN' ? 'selected' : '' }}>PAID
+                                            ROMPIN</option>
+                                        <option value="PAID MUADZAM SHAH"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID MUADZAM SHAH' ? 'selected' : '' }}>
+                                            PAID MUADZAM SHAH</option>
+                                        <option value="PAID MARAN"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID MARAN' ? 'selected' : '' }}>PAID
+                                            MARAN</option>
+                                        <option value="PAID JENGKA"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID JENGKA' ? 'selected' : '' }}>PAID
+                                            JENGKA</option>
+                                        <option value="PAID KUANTAN BARAT"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID KUANTAN BARAT' ? 'selected' : '' }}>
+                                            PAID KUANTAN BARAT</option>
+                                        <option value="PAID TEMERLOH"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID TEMERLOH' ? 'selected' : '' }}>PAID
+                                            TEMERLOH</option>
+                                        <option value="PAID BENTONG"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID BENTONG' ? 'selected' : '' }}>PAID
+                                            BENTONG</option>
+                                        <option value="PAID JERANTUT"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID JERANTUT' ? 'selected' : '' }}>PAID
+                                            JERANTUT</option>
+                                        <option value="PAID RAUB"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID RAUB' ? 'selected' : '' }}>PAID
+                                            RAUB</option>
+                                        <option value="PAID KUALA LIPIS"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID KUALA LIPIS' ? 'selected' : '' }}>
+                                            PAID KUALA LIPIS</option>
+                                        <option value="PAID BERA"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID BERA' ? 'selected' : '' }}>PAID
+                                            BERA</option>
+                                        <option value="PAID CAMERON HIGHLAND"
+                                            {{ $data->Card_App_Redeem_Location == 'PAID CAMERON HIGHLAND' ? 'selected' : '' }}>
+                                            PAID CAMERON HIGHLAND</option>
                                     </select>
-                                    
+
                                 </td>
                             </tr>
                         </tbody>
@@ -128,10 +163,15 @@
                                 class="btn btn-primary btn-block"
                                 style="background-color: #0050d1; border:none; color: white;">BACK</a>
                         </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-primary btn-block" id="registerBtn"
+                                style="background-color: #0050d1; border:none; color: white;">
+                                {{ __('UPDATE') }}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-

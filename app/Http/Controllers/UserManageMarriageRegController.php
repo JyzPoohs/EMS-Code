@@ -2,28 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Marriage_Registration;
+use App\Models\Marriage_Request;
 use Illuminate\Http\Request;
 
 class UserManageMarriageRegController extends Controller
 {
     public function manage()
     {
-        return view("registerMarriageUser.marriageRegistrationList"); 
+        $ic = auth()->user()->ic;
+        $datas = Marriage_Registration::where('U_IC_No',$ic)->get();
+        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
+        return view("registerMarriageUser.marriageRegistrationList", compact('datas', 'eform')); 
     }
-
+    
     public function editEFormsGrooms()
     {
-        return view('registerMarriageUser.editE-FormGrooms-view');
+        $ic = auth()->user()->ic;
+        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
+        return view('registerMarriageUser.editE-FormGrooms-view',compact('eform'));
     }
 
     public function editEFormsBrides()
     {
-        return view('registerMarriageUser.editE-FormBrides-view');
+        $ic = auth()->user()->ic;
+        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
+        return view('registerMarriageUser.editE-FormBrides-view',compact('eform'));
     }
 
     public function editEFormsMarriage()
     {
-        return view('registerMarriageUser.editE-FormMarriage-view');
+        $ic = auth()->user()->ic;
+        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
+        return view('registerMarriageUser.editE-FormMarriage-view',compact('eform'));
     }
   
     public function viewEFormsGrooms()
@@ -39,5 +50,15 @@ class UserManageMarriageRegController extends Controller
     public function viewEFormsMarriage()
     {
         return view('registerMarriageUser.viewE-FormMarriage-view');
+    }
+
+    public function store(Request $request)
+    {
+        $request->merge([
+         'U_IC_No' => auth()->user()->ic,   
+        ]);
+        // dd($request);
+        Marriage_Registration::create($request->all());
+        return redirect()->route('user.manageMarriageRegistration');
     }
 }

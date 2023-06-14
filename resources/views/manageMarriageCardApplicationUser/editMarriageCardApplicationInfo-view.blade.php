@@ -136,12 +136,8 @@
                         <div class="col-md-3">
                             <button type="submit" class="btn btn-primary btn-block" id="registerBtn"
                                         style="background-color: #0050d1; border:none; color: white;">
-                                        {{ __('SAVE') }}
+                                        {{ __('MOHON') }}
                                     </button>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="btn btn-primary btn-block"
-                            style="background-color: #0050d1; border:none; color: white;">SUBMIT</a>
                         </div>
                     </div>
             </form>
