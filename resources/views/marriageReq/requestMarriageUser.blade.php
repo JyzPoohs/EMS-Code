@@ -10,13 +10,13 @@
                     </div>
                     <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <div class="row justify-content-center text-center">
-                            <form action="/search" method="GET">
+                            {{-- <form action="/search" method="GET">
                                 <input type="text" name="query" placeholder="Cari..." />
                                 <button type="submit" style="background-color: #0050d1; border:none; color: white;">Cari</button>
-                              </form>
+                              </form> --}}
                             <div class="col-md-3">
-                                <a href="{{ route('user.FormsBrides') }}" class="btn btn-primary"
-                                type="submit"style="background-color: #0050d1; border:none; color: white;">Daftar Baru</a>
+                                <a href=" {{route('user.FormBrides')}}" class="btn btn-primary"
+                                style="background-color: #0050d1; border:none; color: white;">Daftar Baru</a>
                             </div>
                         </div>                        
                         <div class="mt-2">

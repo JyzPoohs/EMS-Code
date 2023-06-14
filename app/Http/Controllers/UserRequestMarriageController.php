@@ -28,6 +28,6 @@ class UserRequestMarriageController extends Controller
 
     public function Document()
     {
-        return view('marriageReq.FormMarriage');
+        return view('marriageReq.Document');
     }
 }

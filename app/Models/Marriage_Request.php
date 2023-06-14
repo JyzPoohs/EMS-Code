@@ -10,6 +10,7 @@ class Marriage_Request extends Model
     use HasFactory;
     protected $table = 'Marriage_Mohon';
     protected $fillable = [
+        //Marriage_Mohon
         'Slip_Mohon_Online',
         'U_IC_No',
         'U_Name',
@@ -32,6 +33,7 @@ class Marriage_Request extends Model
         'Status_Saudara_Baru',
         'Request_Status',
 
+        //MM_Other_info
         'created_at',
         'updated_at',
         'Request_Status',
@@ -49,6 +51,7 @@ class Marriage_Request extends Model
         'W_Phone',
         'W_Category_Nikah',
 
+        //MM_Pasangan_Info
         'Pasangan_IC_No',
         'P_Name',
         'P_Date_of_Birth',
