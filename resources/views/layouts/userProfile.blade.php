@@ -66,10 +66,10 @@
                                     <a href="{{ route('user.requestMarriageUser') }}">Kebenaran Berkahwin</a>
                                 </li>
                                 <li>
-                                    <a href="#">Kursus Kahwin</a>
+                                <a href="{{route('user.editFormGrooms')}}">Kursus Kahwin</a>
                                 </li>
                                 <li>
-                                    <a href="#">Senarai Pemohon</a>
+                                    <a href="{{route('user.prepCourseInformation')}}">Senarai Pemohon Kursus Kahwin</a>
                                 </li>
                             </ul>
                         </li>      

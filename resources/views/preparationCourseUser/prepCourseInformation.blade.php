@@ -6,27 +6,17 @@
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card mb-4">
                     <div class="card-header pb-0" style="background-color: #819CCE";>
-                        <h6>PERMOHONAN PERKAHWINAN</h6>
+                        <h6>PERMOHONAN KURSUS KAHWIN</h6>
                     </div>
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>
-                        <div class="row justify-content-center text-center">
-                            {{-- <form action="/search" method="GET">
-                                <input type="text" name="query" placeholder="Cari..." />
-                                <button type="submit" style="background-color: #0050d1; border:none; color: white;">Cari</button>
-                              </form> --}}
-                            <div class="col-md-3">
-                                <a href=" {{route('user.FormGrooms')}}" class="btn btn-primary"
-                                style="background-color: #0050d1; border:none; color: white;">Daftar Baru</a>
-                            </div>
-                        </div>                        
+                    <div class="card-body p-3" style="background-color: #ECF3FF";>                     
                         <div class="mt-2">
-                            <table class="table w-100" id="list">
+                            <table class="table w-100" >
                                 <thead>
                                     <tr>
                                         <th>Bil</th>
-                                        <th>No. KP/Nama Isteri</th>
-                                        <th>No. AKaun Terima</th>
-                                        <th>Tarikh Mohon</th>
+                                        <th>Nama</th>
+                                        <th>No. Siri Kursus</th>
+                                        <th>Tarikh</th>
                                         <th>Status</th>
                                         <th class="col-md-2">Operasi</th>
                                     </tr>
@@ -34,11 +24,11 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>890930065551
+                                        <td>
                                             SITI BINTI ABU BAKAR</td>
                                         <td>KTN1M4/2022-00011</td>
                                         <td>15/12/2022</td>
-                                        <td>BELUM HANTAR</td>
+                                        <td>SEDANG DIPROSES</td>
                                         <td>
                                             <a href="#" class="btn btn-primary">
                                                 <i class="fas fa-eye"></i></a>
