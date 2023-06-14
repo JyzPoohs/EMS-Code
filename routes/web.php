@@ -14,6 +14,7 @@ use App\Http\Controllers\StaffManageMarriageRegController;
 use App\Http\Controllers\StaffManageCardAppController;
 use App\Http\Controllers\IncentiveController;
 use App\Http\Controllers\StaffManageIncentiveController;
+use App\Http\Controllers\UserManageCourseController;
 use Illuminate\Support\Facades\Auth;
 
 //Main page
@@ -56,6 +57,9 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/FormBrideS', [UserRequestMarriageController::class, 'FormBrides'])->name('FormBrides');
     Route::get('/FormMarriage', [UserRequestMarriageController::class, 'FormMarriage'])->name('FormMarriage');
     Route::get('/Document', [UserRequestMarriageController::class, 'Document'])->name('Document');
+
+    Route::get('editFormGrooms', [UserManageCourseController::class, 'editFormGrooms'])->name('editFormGrooms');
+    Route::get('prepCourseInformation', [UserManageCourseController::class, 'prepCourseInformation'])->name('prepCourseInformation');
 
     //Module 3
     //Marriage Reigstration

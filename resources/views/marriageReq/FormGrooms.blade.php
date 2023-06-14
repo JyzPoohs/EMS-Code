@@ -61,20 +61,20 @@
                                 </tr>
                                 <tr>
                                     <td>Alamat Semasa</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="Current_Address" placeholder=""></td>
                                 </tr>
                                 <tr>
                                     <td>No. Telefon Bimbit</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="Home_Num" placeholder=""></td>
                                 </tr>
                                 <tr>
                                     <td>No. Telefon Rumah</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="Home_Num" placeholder=""></td>
                                 </tr>
                                 <tr>
                                     <td>Taraf Pendidkan</td>
                                     <td>:
-                                        <select>
+                                        <select name="Edu_Level">
                                             <option value="UPSR">UPSR</option>
                                             <option value="PMR/PT3">PMR/PT3</option>
                                             <option value="SPM">SPM</option>
@@ -85,7 +85,7 @@
                                 </tr>
                                 <tr>
                                     <td>Sektor Pekerjaan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="" placeholder=""></td>
                                 </tr>
                                 <tr>
                                     <td>Perkerjaan/Jawatan</td>
