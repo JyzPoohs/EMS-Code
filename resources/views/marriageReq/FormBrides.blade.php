@@ -5,7 +5,7 @@
         <div class="row mt-4">
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card-header pb-0" style="background-color: #819CCE";>
-                    <h6>MAKLUMAT PERKAHWINAN</h6>
+                    <h6>MAKLUMAT PASANGAN</h6>
                 </div>
                 <br>
                 <div class="card mb-4">
@@ -14,11 +14,11 @@
                             <tbody>
                                 <tr>
                                     <td>No. Kad Pengenalan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="P_IC_No" placeholder="" ></td>
                                 </tr>
                                 <tr>
                                     <td>Nama Pasangan </td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="P_Name" placeholder=""></td>
                                 </tr>
                                 <tr>
                                     <td>Tarikh Lahir</td>
@@ -31,15 +31,14 @@
                                 <tr>
                                     <td>Jantina</td>
                                     <td>:
-                                        <select>
-                                            <option value="LELAKI">LELAKI</option>
-                                            <option value="PEREMPUAN">PEREMPUAN</option>
+                                        <input disabled type="text" name="gender" value="{{ (auth()->user()->gender === 'FEMALE') ? 'FEMALE' : 'MALE' }}" readonly>
+
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Bangsa</td>
                                     <td>:
-                                        <select>
+                                        <select name="Ethnic">
                                             <option value="MELAYU">MELAYU</option>
                                             <option value="CINA">CINA</option>
                                             <option value="INDIA">INDIA</option>

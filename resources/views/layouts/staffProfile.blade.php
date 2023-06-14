@@ -80,7 +80,7 @@
                                 class="dropdown-toggle">Kebenaran Berkahwin</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <li>
-                                    <a href="#">Kebenaran Berkahwin</a>
+                                    <a href="{{ route('staff.requestMarriageStaff') }}">Kebenaran Berkahwin</a>
                                 </li>
                                 <li>
                                     <a href="#">Kursus Kahwin</a>

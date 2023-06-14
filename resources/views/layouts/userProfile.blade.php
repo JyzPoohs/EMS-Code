@@ -81,7 +81,7 @@
                                     <a href="{{ route('user.manageMarriageRegistration') }}">Mohon Pendaftaran Nikah</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('user.manageMarriageCardApp')}}">Mohon Sijil Dan Kad Nikah</a>
+                                    <a href="{{ route('user.manageMarriageCardApp', ['id' => auth()->user()->id])}}">Mohon Sijil Dan Kad Nikah</a>
                                 </li>
                             </ul>
                         </li>

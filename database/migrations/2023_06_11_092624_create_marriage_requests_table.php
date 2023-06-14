@@ -14,12 +14,11 @@ return new class extends Migration
         Schema::create('Marriage_Mohon', function (Blueprint $table) {
             $table->id('Slip_Mohon_Online');
             $table->string('U_IC_No')->nullable();
-            $table->string('U_Name')->nullable();
             $table->string('MM_Other_Info_ID')->nullable();
             $table->string('Birthday')->nullable();
             $table->integer('Age')->nullable();
             $table->string('Ethnic')->nullable();
-            $table->string('Rationality')->nullable();
+            $table->string('Nationality')->nullable();
             $table->string('IC_Address')->nullable();
             $table->string('Home_Num')->nullable();
             $table->string('Current_Address')->nullable();
@@ -34,6 +33,21 @@ return new class extends Migration
             $table->string('PrepCourse_ID')->nullable();
             $table->string('Status_Saudara_Baru')->nullable();
             $table->timestamps();
+
+            $table->string('Request_Status')->nullable();
+            $table->date('Date_Request')->nullable();
+            $table->date('Date_Nikah')->nullable();
+            $table->string('Marriage_Place')->nullable();
+            $table->string('Marriage_Country')->nullable();
+            $table->string('Marriage_Place_Address')->nullable();
+            $table->string('Marriage_Dowry_Type')->nullable();
+            $table->string('Marriage_Dowry')->nullable();
+            $table->string('Other_Grants')->nullable();
+            $table->string('W_IC_No')->nullable();
+            $table->string('W_Name')->nullable();
+            $table->string('W_Address')->nullable();
+            $table->string('W_Phone')->nullable();
+            $table->string('W_Category_Nikah')->nullable();
 
             $table->string('Pasangan_IC_No')->nullable();
             $table->string('P_Name')->nullable();

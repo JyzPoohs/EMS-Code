@@ -19,13 +19,12 @@ class MarriageRequestSeeder extends Seeder
         $datas = [
             [
                 'U_IC_No' => '111111111111',
-                'U_Name' => 'HADI BIN EFFIZ',
                 // 'Slip_Mohon_Online' => "S001",
                 'MM_Other_Info_ID' => "MMO1",
                 'Birthday' => "11/11/11",
                 'Age' => "21",
                 'Ethnic' => "MELAYU",
-                'Rationality' => "MALAYSIA",
+                'Nationality' => "MALAYSIA",
                 'IC_Address' => '123-A, TAMAN TAS, KUANTAN, PAHANG',
                 'Current_Address' => '123-A, TAMAN TAS, KUANTAN, PAHANG',
                 'Home_Num' => "037809990",
@@ -42,7 +41,6 @@ class MarriageRequestSeeder extends Seeder
 
                 // 'created_at' => "14/6/2023",
                 // 'updated_at' => "14/6/2023",
-                'Request_Status' => "SUBMITED",
                 // 'Date_Request' => "14/6/2023",
                 // 'Date_Nikah' => "10/6/2023",
                 'Marriage_Place' => "KUANTAN",

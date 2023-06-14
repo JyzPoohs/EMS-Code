@@ -5,7 +5,7 @@
         <div class="alert alert-success mt-3">
             {{ session('success') }}</div>
     @endif
-    <form action="{{ route('staff.update', auth()->user()->id) }}" method="post">
+    <form action="{{ route('staff.update', Auth::guard('staff')->user()->id) }}" method="post">
         @csrf
         @method('PUT')
 
