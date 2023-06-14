@@ -19,27 +19,27 @@ class UserManageCardAppController extends Controller
     public function fillCardAppUser($id)
     {
         $data = auth()->user();
+        $eform = Marriage_Request::where('U_IC_No',$id)->first();
         // $data = CardApplication::where('U_IC_No', $id)->first();
-        return view("manageMarriageCardApplicationUser.editMarriageCardApplicationInfo-view", compact('data'));
+        return view("manageMarriageCardApplicationUser.editMarriageCardApplicationInfo-view", compact('data', 'eform'));
     }
 
     public function viewCardAppUser($id)
-    {
+    {   
+
+        $eform = Marriage_Request::where('U_IC_No',auth()->user()->ic)->first();
         $data = CardApplication::where('MR_Card_ID', $id)->first();
-        // dd($data,$id);
-        return view("manageMarriageCardApplicationUser.viewMarriageCardApplicationInfo-view", compact('data'));
+        return view("manageMarriageCardApplicationUser.viewMarriageCardApplicationInfo-view", compact('data', 'eform'));
     }
 
     public function createCardApp(Request $request)
     {
+
+        //dd($request);
         $request->validate(
             [
                 'Card_App_Type' => 'required',
                 'Card_App_Payment_Receipt' => 'required',
-                'Card_App_Delivery_Options' => '',
-                'Card_App_Address' => '',
-                'Card_App_Redeem_Date' => '',
-                'Card_App_Redeem_Location' => '',
             ],
             [
                 'Card_App_Type.required' => 'Marriage card type is required.',
@@ -47,30 +47,23 @@ class UserManageCardAppController extends Controller
             ]
         );
 
-        // $card = new CardApplication();
-        // $card->Card_App_Type = $request->Card_App_Type;
-        // $card->Card_App_Payment_Receipt = $request->Card_App_Payment_Receipt;
-        // $card->Card_App_Delivery_Options = $request->Card_App_Delivery_Options;
-        // $card->Card_App_Address = $request->Card_App_Address;
-        // $card->Card_App_Redeem_Date = $request->Card_App_Redeem_Date;
-        // $card->Card_App_Redeem_Location = $request->Card_App_Redeem_Location;
+        $card = new CardApplication();
+        $card->Card_App_Type = $request->Card_App_Type;
+        $card->Card_App_Payment_Receipt = $request->Card_App_Payment_Receipt;
+        $card->Card_App_Delivery_Options = $request->Card_App_Delivery_Options;
+        $card->Card_App_Address = $request->Card_App_Address;
+        $card->Card_App_Redeem_Date = $request->Card_App_Redeem_Date;
+        $card->Card_App_Redeem_Location = $request->Card_App_Redeem_Location;
+        $card->U_IC_No = auth()->user()->ic;
+        $card->Card_App_Approval_Status = $request->Card_App_Approval_Status;
+        $card->save();
 
-        // $card([
-        //     'Card_App_Type' = $request->Card_App_Type;
-        //     'Card_App_Payment_Receipt' = $request->Card_App_Payment_Receipt;
-        //     'Card_App_Delivery_Options' = $request->Card_App_Delivery_Options;
-        //     'Card_App_Address' = $request->Card_App_Address;
-        //     'Card_App_Redeem_Date' = $request->Card_App_Redeem_Date;
-        //     'Card_App_Redeem_Location' = $request->Card_App_Redeem_Location;
-
+        // $request->merge([
+        //     'U_IC_No' => auth()->user()->ic,
         // ]);
-
-        $request->merge([
-            'U_IC_No' => Auth()->user()->ic,
-        ]);
-        $id = auth()->user()->ic;
-        // dd($request);
-        CardApplication::create($request->all());
+        // $id = auth()->user()->ic;
+        // // dd($request);
+        // CardApplication::create($request->all());
         return redirect()->route('user.manageMarriageCardApp');
     }
 

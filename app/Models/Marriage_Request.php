@@ -83,11 +83,4 @@ class Marriage_Request extends Model
     {
         return $this->belongsTo(User::class, 'MR_suami_ic', 'ic');
     }
-
-    //To link mm_other_info
-    public function other()
-    {
-        return $this->belongsTo();
-    }
-   
 }

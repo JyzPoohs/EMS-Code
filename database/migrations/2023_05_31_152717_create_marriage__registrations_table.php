@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('MR_Approval_Status')->nullable();
             $table->string('MR_Submit_Status')->nullable();
             $table->string('U_IC_No')->nullable();
+            $table->foreignId('request_id')->nullable();
         });
     }
 

@@ -28,13 +28,13 @@
                             <tr>
                                 <td>Nama Isteri</td>
                                 <td>:</td>
-                                <td>{{ $data->daftar->MR_isteri_nama }}
-                                    ({{ $data->daftar->MR_isteri_ic }})</td>
+                                <td>{{ $eform->P_Name }}
+                                    ({{ $eform->Pasangan_IC_No }})</td>
                             </tr>
                             <tr>
                                 <td>No.Pendaftaran/Sijil</td>
                                 <td>:</td>
-                                <td>{{ $data->daftar->MR_noDaftarSijil }}</td>
+                                <td>{{ $data->MR_ID }}</td>
                             </tr>
                             <tr>
                                 <td>No. Permohonan Online</td>
@@ -44,7 +44,7 @@
                             <tr>
                                 <td>Status Pendaftaran Nikah</td>
                                 <td>:</td>
-                                <td>{{ $data->daftar->MR_Status }}</td>
+                                <td>{{ $data->MR_Status }}</td>
                             </tr>
                             <tr>
                                 <td>Pilihan Sijil Dan Kad Nikah</td>
@@ -122,6 +122,7 @@
                                         <option value="PAID CAMERON HIGHLAND">PAID CAMERON HIGHLAND</option>
                                     </select>
                                 </td>
+                                <input hidden type="text" name="Card_App_Approval_Status" value="UNTUK DILULUSKAN">
                             </tr>
                         
                         

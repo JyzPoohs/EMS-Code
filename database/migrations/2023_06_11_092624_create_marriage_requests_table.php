@@ -33,6 +33,20 @@ return new class extends Migration
             $table->string('PrepCourse_ID')->nullable();
             $table->string('Status_Saudara_Baru')->nullable();
             $table->timestamps();
+            $table->string('Request_Status')->nullable();
+            $table->date('Date_Request')->nullable();
+            $table->date('Date_Nikah')->nullable();
+            $table->string('Marriage_Place')->nullable();
+            $table->string('Marriage_Country')->nullable();
+            $table->string('Marriage_Place_Address')->nullable();
+            $table->string('Marriage_Dowry_Type')->nullable();
+            $table->string('Marriage_Dowry')->nullable();
+            $table->string('Other_Grants')->nullable();
+            $table->string('W_IC_No')->nullable();
+            $table->string('W_Name')->nullable();
+            $table->string('W_Address')->nullable();
+            $table->string('W_Phone')->nullable();
+            $table->string('W_Category_Nikah')->nullable();
 
             $table->string('Request_Status')->nullable();
             $table->date('Date_Request')->nullable();

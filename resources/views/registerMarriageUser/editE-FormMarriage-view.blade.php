@@ -13,7 +13,7 @@
                     <h6>MAKLUMAT PERKAHWINAN</h6>
                 </div>
                 <div class="card mb-4">
-                    <form method="POST" action="{{ route('user.storeMarriage') }}">
+                    <form method="POST" action="{{ route('user.storeMarriage', ['id' => $eform->Slip_Mohon_Online]) }}">
                         @csrf
                         <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <table>
