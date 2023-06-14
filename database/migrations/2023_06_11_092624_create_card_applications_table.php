@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('Card_App_Comment')->nullable();
             $table->string('U_IC_No');
             $table->timestamps();
+            $table->foreignId('registration_id')->nullable();
 
             // $table->foreign('U_IC_No')->references('ic')->on('users');
         });

@@ -16,7 +16,6 @@
                                     <tr>
                                         <th>Bil</th>
                                         <th>Marriage Card No</th>
-                                        <th>No. Pendaftaran /Sijil</th>
                                         <th>No. KP/Nama Suami</th>
                                         <th>No. KP/Nama Isteri</th>
                                         <th>Tarikh Terima</th>
@@ -32,8 +31,7 @@
                                         @endphp
                                         <tr>
                                             <td>{{ $counter }}</td>
-                                            <td>{{ $data['MR_Card_ID'] }}</td>
-                                            <td>{{ $register['MR_ID'] }}</td>
+                                            <td>MC{{ $data['MR_Card_ID'] }}</td>
                                             <td>{{ $data['U_IC_No'] }} <br>
                                                 {{ strtoupper($eform['U_Name']) }}</td>
                                             <td>{{ $eform['Pasangan_IC_No'] }} <br>

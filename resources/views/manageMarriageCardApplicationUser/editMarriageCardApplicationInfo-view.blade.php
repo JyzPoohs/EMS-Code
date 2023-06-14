@@ -12,9 +12,7 @@
                 <form method="POST" action="{{ route('user.createCardApp') }}">
                 <table class="table">
                     <tbody>
-                        @csrf
-                    
-                        
+                        @csrf                   
                         <tr>
                                 <td>No. Akuan Terima</td>
                                 <td>:</td>

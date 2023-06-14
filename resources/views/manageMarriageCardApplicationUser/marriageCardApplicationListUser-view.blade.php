@@ -20,7 +20,6 @@
                         <tr>
                             <th>Bil</th>
                             <th>Marriage Card No</th>
-                            <th>No. Pendaftaran /Sijil</th>
                             <th>No. K/P Nama Suami</th>
                             <th>No. K/P Nama Isteri</th>
                             <th>Tarikh Mohon</th>
@@ -35,8 +34,7 @@
                             <tr>
                                 {{-- {{dd($data)}} --}}
                                 <td>{{ $counter }}</td>
-                                <td>{{ $data->MR_Card_ID }}</td>
-                                <td>{{ $data->MR_ID }}</td>
+                                <td>MC{{ $data->MR_Card_ID }}</td>
                                 <td>{{ $data->U_IC_No }} <br>
                                     {{ strtoupper($eform->U_Name) }}</td>
                                 <td>{{ $eform->Pasangan_IC_No }} <br>

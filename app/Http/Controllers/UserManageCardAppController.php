@@ -12,22 +12,22 @@ class UserManageCardAppController extends Controller
     {
         $id = auth()->user()->ic;
         $datas = CardApplication::where('U_IC_No', $id)->get();
-        $eform = Marriage_Request::where('U_IC_No',$id)->first();
+        $eform = Marriage_Request::where('U_IC_No', $id)->first();
         return view("manageMarriageCardApplicationUser.marriageCardApplicationListUser-view", compact('datas', 'eform'));
     }
 
     public function fillCardAppUser($id)
     {
         $data = auth()->user();
-        $eform = Marriage_Request::where('U_IC_No',$id)->first();
+        $eform = Marriage_Request::where('U_IC_No', $id)->first();
         // $data = CardApplication::where('U_IC_No', $id)->first();
         return view("manageMarriageCardApplicationUser.editMarriageCardApplicationInfo-view", compact('data', 'eform'));
     }
 
     public function viewCardAppUser($id)
-    {   
+    {
 
-        $eform = Marriage_Request::where('U_IC_No',auth()->user()->ic)->first();
+        $eform = Marriage_Request::where('U_IC_No', auth()->user()->ic)->first();
         $data = CardApplication::where('MR_Card_ID', $id)->first();
         return view("manageMarriageCardApplicationUser.viewMarriageCardApplicationInfo-view", compact('data', 'eform'));
     }
@@ -69,18 +69,19 @@ class UserManageCardAppController extends Controller
 
     public function destroy($id)
     {
-        $card = CardApplication::where('MR_Card_ID',$id);
-        
+        $card = CardApplication::where('MR_Card_ID', $id);
+
         if (!$card) {
             return redirect()->back()->with('error', 'card not found.');
         }
-        
+
         $card->delete();
         return redirect()->route('user.manageMarriageCardApp')->with('success', 'card deleted successfully.');
     }
-    public function update(Request $request, $id){
-        CardApplication::where('MR_Card_ID', $id)->update($request->all());
+    public function update(Request $request, $id)
+    {
+        CardApplication::where('MR_Card_ID', $id)->update($request->only('Card_App_Type', 'Card_App_Payment_Receipt', 
+        'Card_App_Delivery_Options', 'Card_App_Address', 'Card_App_Redeem_Date', 'Card_App_Redeem_Location'));
         return redirect()->route('user.manageMarriageCardApp')->with('success', 'card updated successfully.');
-        
     }
 }

@@ -19,11 +19,17 @@ class CardApplication extends Model
         'Card_App_Redeem_Date',
         'Card_App_Redeem_Location',
         'U_IC_No',
+        'registration_id'
     ];
 
 
     public function user()
     {
         return $this->belongsTo(User::class, 'U_IC_No', 'ic');
+    }
+
+    public function registration()
+    {
+        return $this->belongsTo(Marriage_Registration::class, 'MR_ID', 'registration_id');
     }
 }
