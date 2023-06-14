@@ -18,19 +18,19 @@
                                 </tr>
                                 <tr style="background-color: #ffffff00;">
                                     <td>Nama Suami</td>
-                                    <td>: ALI BIN IDRIS (870930065551)</td>
+                                    <td>: {{strtoupper($data->user->name)}} ({{$data->U_IC_No}})</td>
                                 </tr>
                                 <tr style="background-color: #ffffff00;">
                                     <td>Nama Isteri</td>
-                                    <td>: SITI BINTI ABU BAKAR (890930065551)</td>
+                                    <td>: {{$data->user->daftar->MR_isteri_nama}} ({{$data->user->daftar->MR_isteri_ic}})</td>
                                 </tr>
                                 <tr style="background-color: #ffffff00;">
                                     <td>No.Pendaftaran/Sijil</td>
-                                    <td>: (PN)MS/0077/2022-D1-SN06220001</td>
+                                    <td>: {{$data->user->daftar->MR_noDaftarSijil}}</td>
                                 </tr>
                                 <tr style="background-color: #ffffff00;">
                                     <td>Status Pendaftaran Nikah</td>
-                                    <td>: LULUS</td>
+                                    <td>: {{$data->user->daftar->MR_Status}}</td>
                                 </tr>
                                 <tr style="background-color: #ffffff00;">
                                     <td>No. Permohonan Online</td>
@@ -38,24 +38,26 @@
                                 </tr>
                                 <tr style="background-color: #ffffff00;">
                                     <td>No. Resit Bayaran</td>
-                                    <td>: RB-00130-001</td>
+                                    <td>: {{$data->Card_App_Payment_Receipt}}</td>
                                 </tr>
                                 <tr style="background-color: #ffffff00;">
                                     <td>Status mohon sijil/kad nikah</td>
                                     <td>:
-                                        <select>
-                                            <option value="LULUS">LULUS</option>
-                                            <option value="GAGAL">GAGAL</option>
+                                        <select name="Card_App_Approval_Status">
+                                            <option value="LULUS" @if($data->Card_App_Approval_Status == 'LULUS') selected @endif>LULUS</option>
+                                            <option value="GAGAL" @if($data->Card_App_Approval_Status == 'GAGAL') selected @endif>GAGAL</option>
                                         </select>
+                                        
                                     </td>
                                 </tr>
                                 <tr style="background-color: #ffffff00;">
                                     <td>Tarikh Kelulusan</td>
-                                    <td>: <input type="date"></td>
+                                    <td>: <input type="date" name="Card_App_Approval_Date" value="{{ $data->Card_App_Approval_Date }}">
+
                                 </tr>
                                 <tr style="background-color: #ffffff00;">
                                     <td>Komment</td>
-                                    <td>: <input type="text" style="height: 100px; width: 400px;"></td>
+                                    <td>: <input name="Card_App_Comment" type="text" style="height: 100px; width: 400px;">{{$data->Card_App_Comment}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -64,7 +66,7 @@
                             <div class="col-md-3">
                                 <a href="{{ route('staff.manageMarriageCardApp') }}" class="btn btn-primary btn-block"
                                     style="background-color: #179591; border:none; color: white;">BACK</a>
-                            </div>                            
+                            </div>
                             <div class="col-md-3">
                                 <button class="btn btn-primary btn-block" type="button"
                                     style="background-color: #179591; border:none; color: white;">SAVE</button>

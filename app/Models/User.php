@@ -54,4 +54,14 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
+    public function daftar()
+    {
+        return $this->belongsTo(Marriage_Registration::class, 'ic', 'MR_suami_ic');
+    }
+
+    public function card()
+    {
+        return $this->hasMany(CardApplication::class, 'ic', 'U_IC_No');
+    }
 }

@@ -6,24 +6,20 @@
         <div class="row mt-4">
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card-header pb-0" style="background-color: #819CCE";>
-                    <h6>PERMOHONAN PENDAFTARAN PERKHAWINAN >> E-FORMS >> GROOMS</h6>
+                    <h6>PERMOHONAN PENDAFTARAN PERKHAWINAN >> E-FORMS >> BRIDES</h6>
                 </div>
                 <br>
                 <div class="card mb-4">
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>               
+                    <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <table>
                             <tbody>
                                 <tr>
                                     <td>No. Kad Pengenalan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Polis/Tentera </td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: 011111111</td>
                                 </tr>
                                 <tr>
                                     <td>Nama Suami</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: SITI</td>
                                 </tr>
                                 <tr>
                                     <td>Tarikh Lahir</td>
@@ -98,15 +94,11 @@
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
-                                <a href="{{ route('user.manageMarriageRegistration') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.viewEFormsGrooms') }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
-                                <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">SAVE</a>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="{{ route('user.eFormsBrides') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.viewEFormsMarriage') }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">NEXT</a>
                             </div>
                         </div>

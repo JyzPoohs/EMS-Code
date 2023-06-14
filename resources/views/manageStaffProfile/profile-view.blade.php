@@ -5,7 +5,7 @@
         <div class="alert alert-success mt-3">
             {{ session('success') }}</div>
     @endif
-    <form action="{{ route('staff.update', Auth::guard('staff')->user()->id) }}" method="post">
+    <form action="{{ route('staff.update', auth()->user()->id) }}" method="post">
         @csrf
         @method('PUT')
 
@@ -24,7 +24,7 @@
             <tr>
                 <th>Name</th>
                 <td>*:</td>
-                <td><input class="form-control" type="text" name="name" id="name"
+                <td><input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name"
                         value="{{ strtoupper(Auth::guard('staff')->user()->name) }}">
                     @error('name')
                         <span class="invalid-feedback" role="alert">

@@ -2,32 +2,63 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Marriage_Registration;
+use App\Models\Marriage_Request;
 use Illuminate\Http\Request;
 
 class UserManageMarriageRegController extends Controller
 {
     public function manage()
     {
-        return view("registerMarriageUser.manageMarriageRegistrationMain"); 
+        $ic = auth()->user()->ic;
+        $datas = Marriage_Registration::where('U_IC_No',$ic)->get();
+        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
+        return view("registerMarriageUser.marriageRegistrationList", compact('datas', 'eform')); 
+    }
+    
+    public function editEFormsGrooms()
+    {
+        $ic = auth()->user()->ic;
+        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
+        return view('registerMarriageUser.editE-FormGrooms-view',compact('eform'));
     }
 
-    public function marriageRegistrationWithApproval()
+    public function editEFormsBrides()
     {
-        return view('registerMarriageUser.marriageRegistrationWithApproval');
+        $ic = auth()->user()->ic;
+        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
+        return view('registerMarriageUser.editE-FormBrides-view',compact('eform'));
     }
 
-    public function eFormsGrooms()
+    public function editEFormsMarriage()
     {
-        return view('registerMarriageUser.e-FormGrooms');
+        $ic = auth()->user()->ic;
+        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
+        return view('registerMarriageUser.editE-FormMarriage-view',compact('eform'));
+    }
+  
+    public function viewEFormsGrooms()
+    {
+        return view('registerMarriageUser.viewE-FormGrooms-view');
     }
 
-    public function eFormsBrides()
+    public function viewEFormsBrides()
     {
-        return view('registerMarriageUser.e-FormBrides');
+        return view('registerMarriageUser.viewE-FormBrides-view');
     }
 
-    public function eFormsMarriage()
+    public function viewEFormsMarriage()
     {
-        return view('registerMarriageUser.e-FormMarriage');
+        return view('registerMarriageUser.viewE-FormMarriage-view');
+    }
+
+    public function store(Request $request)
+    {
+        $request->merge([
+         'U_IC_No' => auth()->user()->ic,   
+        ]);
+        // dd($request);
+        Marriage_Registration::create($request->all());
+        return redirect()->route('user.manageMarriageRegistration');
     }
 }

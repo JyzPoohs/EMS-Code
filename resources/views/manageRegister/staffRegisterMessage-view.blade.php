@@ -13,6 +13,7 @@
                         <div class="row">
                             <p class="text-center">
                                 {{ 'You registration request has been sent.' }} <br>
+                                {{ 'You request will be processed within a week.' }} <br>
                                 {{ 'Please check your email to know the approval status.' }} <br>
                                 {{ 'Click <<Login>> to return to login page.' }}
                             </p>
