@@ -169,6 +169,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
 
     Route::get('/manageMarriageCardApp', [StaffManageCardAppController::class, 'manageCardAppStaff'])->name('manageMarriageCardApp');
     Route::get('/approveMarriageCardApp', [StaffManageCardAppController::class, 'approveCardAppStaff'])->name('approveMarriageCardApp');
+    Route::put('/{id}/updateCardApp', [StaffManageCardAppController::class, 'update'])->name('updateCardApp');
 
     //Module 5
     Route::get('/staffIncentive', [StaffManageIncentiveController::class, 'staffIncentive'])->name('staffIncentive');
