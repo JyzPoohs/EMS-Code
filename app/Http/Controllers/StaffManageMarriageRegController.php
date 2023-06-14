@@ -12,26 +12,26 @@ class StaffManageMarriageRegController extends Controller
     {
         $datas = Marriage_Registration::orderBy('created_at', 'desc')->get();
 
-        return view("registerMarriageStaff.manageMarriageRegistrationList", compact('datas'));
+        return view("registerMarriageStaff.marriageRegistrationList", compact('datas'));
     }
 
     public function eFormsGrooms()
     {
-        return view('registerMarriageStaff.e-FormGrooms');
+        return view('registerMarriageStaff.viewE-FormGrooms-view');
     }
 
     public function eFormsBrides()
     {
-        return view('registerMarriageStaff.e-FormBrides');
+        return view('registerMarriageStaff.viewE-FormBrides-view');
     }
 
     public function eFormsMarriage()
     {
-        return view('registerMarriageStaff.e-FormMarriage');
+        return view('registerMarriageStaff.viewE-FormMarriage-view');
     }
     
     public function approveMarriageRegistration()
     {
-        return view('registerMarriageStaff.approveMarriageRegistration');
+        return view('registerMarriageStaff.editApprovalMarriageRegistration-view');
     }
 }

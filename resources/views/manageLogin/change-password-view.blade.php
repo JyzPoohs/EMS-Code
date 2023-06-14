@@ -18,7 +18,6 @@
 
                         <form method="POST" action="{{ route('change-password.post') }}">
                             @csrf
-                            {{-- <input type="hidden" name="token" value="{{$token}}"> --}}
 
                             <div class="row mb-3">
                                 <label style="padding-top: 0px" for="role"

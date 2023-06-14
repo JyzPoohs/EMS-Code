@@ -38,7 +38,7 @@ Route::prefix('user')->name('user.')->group(function () {
 
         Route::view('/register', 'manageRegister.userRegister-view')->name('register');
         Route::view('/register/message', 'manageRegister.registerMessage-view')->name('registerMessage');
-        Route::post('/create', [UserController::class, 'create'])->name('create');
+        Route::post('/create', [RegisterController::class, 'createUser'])->name('create');
     });
     Route::middleware(['auth'])->group(function () {
         Route::view('/profile', 'manageUserProfile.profile-view')->name('profile');
@@ -56,13 +56,6 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/eFormsMarriage', [UserManageMarriageRegController::class, 'eFormsMarriage'])->name('eFormsMarriage');
     Route::get('/manageMarriageCardApp', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');   
     Route::get('/marriageCardAppInfo', [UserManageCardAppController::class, 'fillCardAppUser'])->name('marriageCardAppInfo');   
-
-    //module 5
-    Route::get('/userUpload', [IncentiveController::class, 'userUpload'])->name('userUpload');
-    Route::get('userIncentive/tags', 'IncenticeController@tags');
-    Route::get('/download/{file}', 'IncentiveController@download');
-
-    
 });
 
 Route::prefix('staff')->name('staff.')->group(function () {
@@ -71,27 +64,25 @@ Route::prefix('staff')->name('staff.')->group(function () {
         Route::view('/register/message', 'manageRegister.staffRegisterMessage-view')->name('registerMessage');
         Route::view('/accessCode', 'manageRegister.accessCode-view')->name('accessCode');
         Route::get('/validateCode',  [RegisterController::class, 'validateCode'])->name('validateCode');
-        Route::post('/create', [StaffController::class, 'create'])->name('create');
+        Route::post('/create', [RegisterController::class, 'createStaff'])->name('create');
     });
-    Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth:staff'])->group(function () {
+        Route::view('/profile', 'manageStaffProfile.profile-view')->name('profile');
+        Route::put('/profile/{id}/update',  [StaffController::class, 'update'])->name('update');
+
+        //Module 1
+        Route::get('/userProfileList', [UserController::class, 'userProfileList'])->name('userProfileList');
+        Route::get('/viewUserProfile/{id}',  [UserController::class, 'profileView'])->name('viewUserProfile');
+        Route::get('/userList/profile/{id}/updateView',  [UserController::class, 'profileUpdateView'])->name('userProfileUpdateView');
+        Route::put('/userList/profile/{id}/update',  [UserController::class, 'profileUpdate'])->name('updateUserProfile');
+        Route::get('/userList/profile/{id}/delete',  [UserController::class, 'destroy'])->name('destroyUserProfile');
+
+        Route::get('/staffProfileList', [StaffController::class, 'staffProfileList'])->name('staffProfileList');
+        Route::get('/viewStaffProfile/{id}',  [StaffController::class, 'profileView'])->name('viewStaffProfile');
+        Route::get('/staffList/profile/{id}/updateView',  [StaffController::class, 'profileUpdateView'])->name('staffProfileUpdateView');
+        Route::put('/staffList/profile/{id}/update',  [StaffController::class, 'profileUpdate'])->name('updateStaffProfile');
+        Route::get('/staffList/profile/{id}/delete',  [StaffController::class, 'destroy'])->name('destroyStaffProfile');
     });
-    Route::view('/profile', 'manageStaffProfile.profile-view')->name('profile');
-    // Route::view('/admin/profile', 'manageStaffProfile.adminProfile-view')->name('admin.profile');
-    Route::put('/profile/{id}/update',  [StaffController::class, 'update'])->name('update');
-
-    //Module 1
-    Route::get('/userProfileList', [UserController::class, 'userProfileList'])->name('userProfileList');
-    Route::get('/viewUserProfile/{id}',  [UserController::class, 'profileView'])->name('viewUserProfile');
-    Route::get('/userList/profile/{id}/updateView',  [UserController::class, 'profileUpdateView'])->name('userProfileUpdateView');
-    Route::put('/userList/profile/{id}/update',  [UserController::class, 'profileUpdate'])->name('updateUserProfile');
-    Route::get('/userList/profile/{id}/delete',  [UserController::class, 'destroy'])->name('destroyUserProfile');
-
-    Route::get('/staffProfileList', [StaffController::class, 'staffProfileList'])->name('staffProfileList');
-    Route::get('/viewStaffProfile/{id}',  [StaffController::class, 'profileView'])->name('viewStaffProfile');
-    Route::get('/staffList/profile/{id}/updateView',  [StaffController::class, 'profileUpdateView'])->name('staffProfileUpdateView');
-    Route::put('/staffList/profile/{id}/update',  [StaffController::class, 'profileUpdate'])->name('updateStaffProfile');
-    Route::get('/staffList/profile/{id}/delete',  [StaffController::class, 'destroy'])->name('destroyStaffProfile');
-
 
     //Module 3
     Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'manage'])->name('manageMarriage');
@@ -103,12 +94,6 @@ Route::prefix('staff')->name('staff.')->group(function () {
 
     Route::get('/manageMarriageCardApp', [StaffManageCardAppController::class, 'manageCardAppStaff'])->name('manageMarriageCardApp');
     Route::get('/approveMarriageCardApp', [StaffManageCardAppController::class, 'approveCardAppStaff'])->name('approveMarriageCardApp');
-
-    //Module 5
-    Route::get('/staffIncentive', [StaffManageIncentiveController::class, 'staffIncentive'])->name('staffIncentive');
-    Route::get('/userUpload','IncentiveController@index');
-    Route::post('/userUpload','IncentiveController@showUploadFile');
-
 });
 
 // Route::get('/staff/manageMarriage',[StaffManageMarriageRegController::class,'index'])->name('staff.manageMarriage');

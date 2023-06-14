@@ -31,30 +31,8 @@
                                     <td>Kategori Perintah</td>
                                     <td>: <input type="text" id="name" name="name" placeholder=""></td>
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="card-header pb-0" style="background-color: #D9D9D9";>
-                        <h6>MAKLUMAT PEMOHON</h6>
-                    </div>
-                    <div class="card-body p-3" style="background-color: #e2fbfb";>
-                        <table>
-                            <tbody>
                                 <tr>
-                                    <td>Nama Permohon</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. K/P Permohon</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat Permohon</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Telefon Pemohon</td>
+                                    <td>Resit Pendaftaran Perkhawinan</td>
                                     <td>: <input type="text" id="name" name="name" placeholder=""></td>
                                 </tr>
                             </tbody>
@@ -90,10 +68,6 @@
                                 <tr>
                                     <td>Hantaran</td>
                                     <td>: RM <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Pemberian Lain</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
                                 </tr>
                                 <tr>
                                     <td>Nama Jurunikah</td>
@@ -265,10 +239,6 @@
                             <div class="col-md-3">
                                 <a href="{{ route('staff.eFormsBrides') }}" class="btn btn-primary btn-block"
                                     style="background-color: #179591; border:none; color: white;">BACK</a>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #179591; border:none; color: white;">SAVE</a>
                             </div>
                             <div class="col-md-3">
                                 <a href="{{ route('staff.approveMarriageRegistration') }}" class="btn btn-primary btn-block"

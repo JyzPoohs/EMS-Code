@@ -7,7 +7,7 @@
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card mb-4">
                     <div class="card-header pb-0 " style="background-color: #66bdba";>
-                        <h6>PERMOHONAN PENDAFTPERKHAWINAN >> E-FORMS >> GROOMS</h6>
+                        <h6>PERMOHONAN PENDAFTARAN PERKHAWINAN >> E-FORMS >> GROOMS</h6>
                     </div>
                     <div class="card-body p-3" style="background-color: #e2fbfb";>               
                         <div>
@@ -15,10 +15,6 @@
                             <tbody>
                                 <tr>
                                     <td>No. Kad Pengenalan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Polis/Tentera </td>
                                     <td>: <input type="text" id="name" name="name" placeholder=""></td>
                                 </tr>
                                 <tr>
@@ -101,10 +97,6 @@
                             <div class="col-md-3">
                                 <a href="{{ route('staff.manageMarriage') }}" class="btn btn-primary btn-block"
                                     style="background-color: #179591; border:none; color: white;">BACK</a>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="#" class="btn btn-primary btn-block"
-                                    style="background-color: #179591; border:none; color: white;">SAVE</a>
                             </div>
                             <div class="col-md-3">
                                 <a href="{{ route('staff.eFormsBrides') }}" class="btn btn-primary btn-block"

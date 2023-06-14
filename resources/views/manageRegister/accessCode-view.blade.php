@@ -21,8 +21,13 @@
 
                                 <div class="col-md-6">
                                     <input id="code" type="password"
-                                        class="form-control @error('fail') is-invalid @enderror" name="code"
+                                        class="form-control @error('code') is-invalid @enderror" name="code"
                                         value="{{ old('code') }}" required autocomplete="code" autofocus>
+                                    @error('code')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="row justify-content-center">

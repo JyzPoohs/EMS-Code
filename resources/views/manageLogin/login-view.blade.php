@@ -85,7 +85,7 @@
                                         {{ __('Login') }}
                                     </button>
                                 </div>
-                                <div class="col-md-10 offset-md-2  password">
+                                <div class="col-md-10 offset-md-2 password mt-4">
                                     @if (Route::has('change-password.get'))
                                         <a class="btn btn-link"
                                             href="{{ route('change-password.get') }}">
