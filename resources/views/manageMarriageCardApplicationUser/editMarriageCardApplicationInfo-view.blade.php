@@ -21,35 +21,40 @@
                             <tr>
                                 <td>Nama Suami</td>
                                 <td>:</td>
-                                <td>{{ strtoupper($data->name) }} ({{ $data->U_IC_No }})</td>
+                                <td>{{ strtoupper($data->name) }} ({{ $eform->U_IC_No }})</td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td>Nama Isteri</td>
                                 <td>:</td>
                                 <td>{{ $eform->P_Name }}
                                     ({{ $eform->Pasangan_IC_No }})</td>
-                            </tr>
-                            <tr>
-                                <td>No.Pendaftaran/Sijil</td>
-                                <td>:</td>
-                                <td>{{ $data->MR_ID }}</td>
-                            </tr>
-                            <tr>
-                                <td>No. Permohonan Online</td>
-                                <td>:</td>
-                                <td>M3/2022-00001</td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <td>Status Pendaftaran Nikah</td>
                                 <td>:</td>
-                                <td>{{ $data->MR_Status }}</td>
+                                <td>LULUS</td>
+                            </tr>
+                            <tr>
+                                <td>Pilihan Pendaftaran Perkhawinan</td>
+                                <td>:</td>
+                                <td>
+                                    <div class="form-group focused">
+                                        <select class="form-control" name="registration_id" required>
+                                            <option value="" disabled selected>Select spouse</option>
+                                            @foreach ($registrations as $register)
+                                                <option value="{{ $register->MR_ID }}">{{ $register->mohon->P_Name }} ({{ $register->mohon->Pasangan_IC_No }})
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Pilihan Sijil Dan Kad Nikah</td>
                                 <td>:</td>
                                 <td>
                                     <select id="Card_App_Type" name="Card_App_Type" class="form-control">
-                                        <option selected value="KAD PERKHAWINAN" disabled>Select Jenis</option>
+                                        <option selected value="KAD PERKHAWINAN" disabled>Pilih Jenis</option>
                                         <option value="KAD PERKHAWINAN">KAD PERKHAWINAN</option>
                                         <option value="SIJIL PERKHAWINAN">SIJIL PERKHAWINAN</option>
                                         <option value="KAD & SIJIL PERKHAWINAN">KAD & SIJIL PERKHAWINAN</option>
