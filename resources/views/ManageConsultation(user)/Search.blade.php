@@ -20,7 +20,7 @@
                                         <th>Bil</th>
 
                                         <th>No. K/P Nama Suami</th>
-
+                                        <th>Status</th>
                                         <th class="col-md-2">Operasi</th>
                                     </tr>
                                 </thead>
@@ -35,21 +35,21 @@
                                         <td>
                                             <a href=""{{ route('user.ViewInformation') }}"" class="btn btn-primary">
                                                 <i class="fas fa-eye"></i></a>
-
-
                                         </td>
                                     </tr>
 
                                 </tbody>
                             </table>
-                            <div class="col-md-3">
-                                <a href="">
-                                <button class="btn btn-primary btn-block" type="button"style="background-color: #179591; border:none; color: white;">MOHON KHIDMAT NASIHAT</button>
-                            </div>
+
                         </div>
+
             </div>
         </div>
 
+    </div>
+    <div class="col-md-5">
+        <a href="{{ route('user.CreateComplaint') }}">
+        <button class="btn btn-primary btn-block" type="button"style="background-color: #179591; border:none; color: white;"> MOHON KHIDMAT NASIHAT</button>
     </div>
 
 </div>

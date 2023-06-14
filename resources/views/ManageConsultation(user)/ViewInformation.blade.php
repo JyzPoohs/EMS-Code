@@ -119,7 +119,6 @@
                                             PAID Pekan
                                         </td>
                                     </tr>
-
                                     <tr style="background-color: #ffffff00;">
                                         <td>Kounselor Pilihan</td>
                                         <td>: Wanita</td>
@@ -130,9 +129,10 @@
                     </div>
 
                 </div>
-                <a href="{{route('user.consult')}}" class="btn btn-primary">KEMBALI</a>
+
 
             </div>
-
+            <a href="{{route('user.Search')}}" class="btn btn-primary">KEMBALI</a>
         </div>
+    </div>
     @endsection

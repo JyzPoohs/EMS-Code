@@ -41,7 +41,7 @@
         <tr>
             <div class="row justify-content-center text-center">
                 <div class="col-md-3">
-                    <a href="{{ route('user.consult') }}" class="btn btn-primary btn-block">BACK</a>
+                    <a href="{{ route('user.Search') }}" class="btn btn-primary btn-block">BACK</a>
 
                 </div>
                 <div class="col-md-3">

@@ -72,7 +72,7 @@
                                     <a href="{{route('user.prepCourseInformation')}}">Senarai Pemohon Kursus Kahwin</a>
                                 </li>
                             </ul>
-                        </li>      
+                        </li>
                         <li>
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
                                 class="dropdown-toggle">Pendaftaran Nikah</a>
@@ -86,7 +86,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ route('user.consult') }}">Aduan/Khidmat Nasihat</a>
+                            <a href="{{ route('user.Search') }}">Aduan/Khidmat Nasihat</a>
                         </li>
                         <li>
                             <a href="#sideSubmenu" data-toggle="collapse" aria-expanded="false"

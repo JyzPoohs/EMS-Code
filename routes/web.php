@@ -17,6 +17,9 @@ use App\Http\Controllers\StaffManageIncentiveController;
 use App\Http\Controllers\UserManageCourseController;
 use App\Http\Controllers\StaffManageCourseController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ConsultationController;
+
+Route::post('/submitForm', [Consultation::class, 'submitForm'])->name('user.submitForm');
 
 //Main page
 Route::get('/', function () {
@@ -46,8 +49,8 @@ Route::prefix('user')->name('user.')->group(function () {
     });
     Route::middleware(['auth'])->group(function () {
         Route::view('/profile', 'manageUserProfile.profile-view')->name('profile');
-        Route::view('/consult', 'manageConsultation(user).consult')->name('consult');
-        Route::view('/appliedconsult', 'manageConsultation(user).appliedconsult')->name('appliedconsult');
+        Route::view('/Search', 'manageConsultation(user).Search')->name('Search');
+        Route::view('/CreateComplaint', 'manageConsultation(user).CreateComplaint')->name('CreateComplaint');
         Route::view('/Viewinformation', 'manageConsultation(user).Viewinformation')->name('ViewInformation');
         Route::view('/userIncentive', 'manageIncentiveUser.userIncentive')->name('userIncentive');
         Route::view('/userStatus', 'manageIncentiveUser.userStatus')->name('userStatus');
@@ -71,7 +74,7 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/eFormsGrooms', [UserManageMarriageRegController::class, 'eFormsGrooms'])->name('eFormsGrooms');
     Route::get('/eFormsBrides', [UserManageMarriageRegController::class, 'eFormsBrides'])->name('eFormsBrides');
     Route::get('/eFormsMarriage', [UserManageMarriageRegController::class, 'eFormsMarriage'])->name('eFormsMarriage');
-    
+
     Route::get('/editEFormsGrooms', [UserManageMarriageRegController::class, 'editEFormsGrooms'])->name('editEFormsGrooms');
     Route::get('/editEFormsBrides', [UserManageMarriageRegController::class, 'editEFormsBrides'])->name('editEFormsBrides');
     Route::get('/editEFormsMarriage', [UserManageMarriageRegController::class, 'editEFormsMarriage'])->name('editEFormsMarriage');
@@ -93,7 +96,7 @@ Route::prefix('user')->name('user.')->group(function () {
 
     Route::get('/manageMarriageCardApp', [UserManageCardAppController::class, 'manageCardAppUser'])->name('manageMarriageCardApp');
     Route::get('/marriageCardAppInfo', [UserManageCardAppController::class, 'fillCardAppUser'])->name('marriageCardAppInfo');
-    
+
     //module 5
     Route::get('/userUpload', [IncentiveController::class, 'userUpload'])->name('userUpload');
     Route::get('userIncentive/tags', 'IncenticeController@tags');
@@ -127,6 +130,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
 
         Route::view('/Viewinformation', 'manageConsultation(staff).ViewInformation')->name('ViewInformation');
         Route::view('/ConsultationApplicationList', 'manageConsultation(staff).ConsultationApplicationList')->name('ConsultationApplicationList');
+
     });
 
 
@@ -171,6 +175,9 @@ Route::prefix('staff')->name('staff.')->group(function () {
     Route::get('/approveMarriageCardApp', [StaffManageCardAppController::class, 'approveCardAppStaff'])->name('approveMarriageCardApp');
     Route::put('/{id}/updateCardApp', [StaffManageCardAppController::class, 'update'])->name('updateCardApp');
 
+
+    //module 4
+    Route::post('/submitForm', [ConsultationController::class, 'submitForm'])->name('user.submitForm');
     //Module 5
     Route::get('/staffIncentive', [StaffManageIncentiveController::class, 'staffIncentive'])->name('staffIncentive');
     Route::get('/userUpload', 'IncentiveController@index');
