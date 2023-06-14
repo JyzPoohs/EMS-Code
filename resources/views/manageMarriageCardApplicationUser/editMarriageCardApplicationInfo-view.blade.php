@@ -72,7 +72,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Pilihan Penghantaran</td>
+                                <td>Pilihan Penghantaran (Pilih satu)</td>
                                 <td>:</td>
                                 <td>
                                     <div class="form-check form-check-inline">
@@ -88,7 +88,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Alamat Penghantaran</td>
+                                <td>Alamat Penghantaran (Untuk Penghantaran)</td>
                                 <td>:</td>
                                 <td>
                                     <textarea id="Card_App_Address" name="Card_App_Address"
@@ -96,7 +96,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Tarikh Pungutan</td>
+                                <td>Tarikh Pungutan (Untuk Pungutan)</td>
                                 <td>:</td>
                                 <td>
                                     <input type="date" id="Card_App_Redeem_Date" name="Card_App_Redeem_Date"
@@ -104,7 +104,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Pejabat Pungutan</td>
+                                <td>Pejabat Pungutan (Untuk Pungutan)</td>
                                 <td>:</td>
                                 <td>
                                     <select name="Card_App_Redeem_Location" class="form-control">

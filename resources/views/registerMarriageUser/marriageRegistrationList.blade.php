@@ -33,11 +33,11 @@
                                     @php $counter++; @endphp
                                     <tr>
                                         <td>{{ $counter }}</td>
-                                        <td>{{ $data->mohon->Pasangan_IC_No }}
+                                        <td>{{ $data->mohon->Pasangan_IC_No }} <br>
                                             {{ $data->mohon->P_Name }}</td>
-                                        <td>MC{{ $data->MR_Card_ID }}</td>
+                                        <td>MR00{{ $data->MR_ID }}</td>
                                         <td>15/12/2022</td>
-                                        <td>TELAH HANTAR</td>
+                                        <td>{{ $data->MR_Approval_Status }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('user.viewEFormsGrooms') }}" class="btn btn-primary">
                                                 <i class="fas fa-eye"></i></a>

@@ -34,14 +34,9 @@
                                         ({{ $eform->Pasangan_IC_No }})</td>
                                 </tr>
                                 <tr>
-                                    <td>No.Pendaftaran/Sijil</td>
-                                    <td>:</td>
-                                    <td>{{ $data->MR_ID }}</td>
-                                </tr>
-                                <tr>
                                     <td>Status Pendaftaran Nikah</td>
                                     <td>:</td>
-                                    <td>{{ $data->MR_Status }}</td>
+                                    <td>LULUS</td>
                                 </tr>
                                 <tr>
                                     <td>Pilihan Sijil Dan Kad Nikah</td>

@@ -29,11 +29,11 @@
                                 </tr>
                                 <tr>
                                     <td>Kategori Perintah</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: KN001</td>
                                 </tr>
                                 <tr>
                                     <td>Resit Pendaftaran Perkhawinan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: RS0002</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -47,51 +47,51 @@
                             <tbody>
                                 <tr>
                                     <td>Tarikh Akad Nikah</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
+                                    <td>: 25/2/23</td>
                                 </tr>
                                 <tr>
                                     <td>Masa Akad Nikah</td>
-                                    <td>: <input type="time" id="name" name="name" placeholder=""></td>
+                                    <td>: 9am</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Tempat Kahwin</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: KUANTAN</td>
                                 </tr>
                                 <tr>
                                     <td>Jenis Mas Kahwin</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: TUNAI</td>
                                 </tr>
                                 <tr>
                                     <td>Mas Kahwin</td>
-                                    <td>: RM <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: RM 12000</td>
                                 </tr>
                                 <tr>
                                     <td>Hantaran</td>
-                                    <td>: RM <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: RM 2000</td>
                                 </tr>
                                 <tr>
                                     <td>Nama Jurunikah</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: BALQIS</td>
                                 </tr>
                                 <tr>
                                     <td>No. Surat Perakuan Nikah</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: MN3432</td>
                                 </tr>
                                 <tr>
                                     <td>No. Pendaftaran</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: MR001</td>
                                 </tr>
                                 <tr>
                                     <td>Tarikh Pendaftaran</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
+                                    <td>: 25/2/2023</td>
                                 </tr>
                                 <tr>
                                     <td>Tempat Pendaftaran</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: A2,  KUANTAN</td>
                                 </tr>
                                 <tr>
                                     <td>Negara</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: MALAYSIA</td>
                                 </tr>
                                 <tr>
                                     <td>Lafaz Ta’liq</td>
