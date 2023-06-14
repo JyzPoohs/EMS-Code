@@ -10,6 +10,7 @@ use App\Http\Controllers\UserManageMarriageRegController;
 use App\Http\Controllers\UserManageCardAppController;
 use App\Http\Controllers\StaffManageMarriageRegController;
 use App\Http\Controllers\StaffManageCardAppController;
+use App\Http\Controllers\UserRequestMarriageController;
 use Illuminate\Support\Facades\Auth;
 
 //Main page
@@ -43,6 +44,13 @@ Route::prefix('user')->name('user.')->group(function () {
         Route::view('/consult', 'manageConsultation(user).consult')->name('consult');
     });
     Route::put('/profile/{id}/update',  [UserController::class, 'update'])->name('update');
+
+    //Module 2
+    Route::get('/requestMarriageUser', [UserRequestMarriageController::class, 'view'])->name('requestMarriageUser');
+    Route::get('/FormGrooms', [UserRequestMarriageController::class, 'FormGrooms'])->name('FormGrooms');
+    Route::get('/FormBrideS', [UserRequestMarriageController::class, 'FormBrides'])->name('FormBrides');
+    Route::get('/FormMarriage', [UserRequestMarriageController::class, 'FormMarriage'])->name('FormMarriage');
+    Route::get('/Document', [UserRequestMarriageController::class, 'Document'])->name('Document');
 
     //Module 3
     Route::get('/manageMarriageRegistration', [UserManageMarriageRegController::class, 'manage'])->name('manageMarriageRegistration');
@@ -81,6 +89,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
     Route::put('/staffList/profile/{id}/update',  [StaffController::class, 'profileUpdate'])->name('updateStaffProfile');
     Route::get('/staffList/profile/{id}/delete',  [StaffController::class, 'destroy'])->name('destroyStaffProfile');
 
+    //Module 2
 
     //Module 3
     Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'manage'])->name('manageMarriage');
