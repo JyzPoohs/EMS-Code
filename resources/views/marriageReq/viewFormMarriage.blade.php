@@ -174,7 +174,7 @@
                             </div>
                             <div class="col-md-3">
                                 <a href="{{route('staff.viewDocuments')}}" class="btn btn-primary btn-block"
-                                    style="background-color: #0050d1; border:none; color: white;">LIST PAGE</a>
+                                    style="background-color: #0050d1; border:none; color: white;">NEXT</a>
                             </div>
                         </div>
                     </div>

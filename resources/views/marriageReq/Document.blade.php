@@ -4,10 +4,10 @@
 
 @section('content')
 <div class="card mt-3">
-    <div class="card-header text-center" style="background-color: #7abdbd";>
+    <div class="card-header text-center" style="background-color: #819CCE";>
         <h3>Document</h3>
     </div>
-    <div class="card-body" style="background-color: #e2fbfb";>
+    <div class="card-body" style="background-color: white";>
         <div class="row">
             <label class="col-md-4" for="">Nama Pemohon: </label> 
             <p class="col-md-4" name="">{{"HADI BIN EFFIZ"}}</p>

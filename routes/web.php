@@ -15,6 +15,7 @@ use App\Http\Controllers\StaffManageCardAppController;
 use App\Http\Controllers\IncentiveController;
 use App\Http\Controllers\StaffManageIncentiveController;
 use App\Http\Controllers\UserManageCourseController;
+use App\Http\Controllers\StaffManageCourseController;
 use Illuminate\Support\Facades\Auth;
 
 //Main page
@@ -147,6 +148,11 @@ Route::prefix('staff')->name('staff.')->group(function () {
     Route::get('/viewFormBrides', [StaffRequestMarriageController::class, 'viewFormBrides'])->name('viewFormBrides');
     Route::get('/viewFormMarriage', [StaffRequestMarriageController::class, 'viewFormMarriage'])->name('viewFormMarriage');
     Route::get('/viewDocuments', [StaffRequestMarriageController::class, 'viewDocuments'])->name('viewDocuments');
+
+    Route::get('staffPrepCourseList', [StaffManageCourseController::class, 'staffPrepCourseList'])->name('staffPrepCourseList');
+    Route::get('editEPrepCourseInformation', [StaffManageCourseController::class, 'editEPrepCourseInformation'])->name('editEPrepCourseInformation');
+    Route::get('viewEListGroomsPrepCourse', [StaffManageCourseController::class, 'viewEListGroomsPrepCourse'])->name('viewEListGroomsPrepCourse');
+    Route::get('viewEGroomsInformation', [StaffManageCourseController::class, 'viewEGroomsInformation'])->name('viewEGroomsInformation');
 
     //Module 3
     Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'manage'])->name('manageMarriage');

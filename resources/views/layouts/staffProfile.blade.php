@@ -83,10 +83,10 @@
                                     <a href="{{ route('staff.requestMarriageStaff') }}">Kebenaran Berkahwin</a>
                                 </li>
                                 <li>
-                                    <a href="#">Kursus Kahwin</a>
+                                    <a href="{{ route('staff.staffPrepCourseList') }}">Kursus Kahwin</a>
                                 </li>
                                 <li>
-                                    <a href="#">Senarai Pemohon</a>
+                                    <a href="{{ route('staff.viewEListGroomsPrepCourse') }}">Senarai Pemohon</a>
                                 </li>
                             </ul>
                         </li>
