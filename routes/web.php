@@ -14,7 +14,6 @@ use App\Http\Controllers\StaffManageMarriageRegController;
 use App\Http\Controllers\StaffManageCardAppController;
 use App\Http\Controllers\IncentiveController;
 use App\Http\Controllers\StaffManageIncentiveController;
-use App\Http\Controllers\UserRequestMarriageController;
 use Illuminate\Support\Facades\Auth;
 
 //Main page
