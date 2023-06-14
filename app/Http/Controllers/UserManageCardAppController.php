@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CardApplication;
+use App\Models\Marriage_Registration;
 use App\Models\Marriage_Request;
 
 class UserManageCardAppController extends Controller
@@ -20,8 +21,9 @@ class UserManageCardAppController extends Controller
     {
         $data = auth()->user();
         $eform = Marriage_Request::where('U_IC_No', $id)->first();
+        $registrations = Marriage_Registration::where('U_IC_No',$id)->get();
         // $data = CardApplication::where('U_IC_No', $id)->first();
-        return view("manageMarriageCardApplicationUser.editMarriageCardApplicationInfo-view", compact('data', 'eform'));
+        return view("manageMarriageCardApplicationUser.editMarriageCardApplicationInfo-view", compact('data', 'eform', 'registrations'));
     }
 
     public function viewCardAppUser($id)
@@ -56,6 +58,7 @@ class UserManageCardAppController extends Controller
         $card->Card_App_Redeem_Location = $request->Card_App_Redeem_Location;
         $card->U_IC_No = auth()->user()->ic;
         $card->Card_App_Approval_Status = $request->Card_App_Approval_Status;
+        $card->registration_id = $request->registration_id;
         $card->save();
 
         // $request->merge([
