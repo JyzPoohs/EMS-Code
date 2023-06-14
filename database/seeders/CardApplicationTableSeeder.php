@@ -30,7 +30,7 @@ class CardApplicationTableSeeder extends Seeder
                 'Card_App_Comment' => '',
                 'U_IC_No' => '870930065551',
                 'created_at' => '2023-3-15',
-                'registration_id' => 22,
+                'registration_id' => 1,
             ],
             [
                 // 'MR_Card_ID' => 'M3/2023-00002',
@@ -46,7 +46,7 @@ class CardApplicationTableSeeder extends Seeder
                 'Card_App_Comment' => '',
                 'U_IC_No' => '990909060331',
                 'created_at' => '2023-5-15',
-                'registration_id' => 12,
+                'registration_id' => 1,
             ],
             [
                 // 'MR_Card_ID' => 'M3/2023-00003',
