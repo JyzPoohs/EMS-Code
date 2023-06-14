@@ -10,7 +10,7 @@
                     <h6>PENDAFTARAN NIKAH >> PERMOHONAN SIJIL DAN KAD NIKAH >> INFO</h6>
                 </div>
                 <div class="card-body p-3" style="background-color: #ECF3FF">
-                    <form action="{{ route('user.updateCardApp',  eform()-> ) }}" method="post">
+                    <form action="{{ route('user.updateCardApp',  ['id' => $data->MR_Card_ID] ) }}" method="post">
 
 
                         @csrf
