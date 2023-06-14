@@ -102,7 +102,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
         Route::put('/staffList/profile/{id}/update',  [StaffController::class, 'profileUpdate'])->name('updateStaffProfile');
         Route::get('/staffList/profile/{id}/delete',  [StaffController::class, 'destroy'])->name('destroyStaffProfile');
     });
-<<<<<<< HEAD
+
 
     Route::view('/profile', 'manageStaffProfile.profile-view')->name('profile');
     // Route::view('/admin/profile', 'manageStaffProfile.adminProfile-view')->name('admin.profile');
@@ -123,8 +123,7 @@ Route::prefix('staff')->name('staff.')->group(function () {
 
     //Module 2
 
-=======
->>>>>>> 62fa64dde7de95276fdddedf43d3c88036ec28d0
+
 
     //Module 3
     Route::get('/manageMarriage', [StaffManageMarriageRegController::class, 'manage'])->name('manageMarriage');
