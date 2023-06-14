@@ -9,69 +9,47 @@
                     <h6>PERMOHONAN KHIDMAT NASIHAT</h6>
                 </div>
                 <div class="card-body p-3" style="background-color: #e2fbfb;">
-                    <table>
-                        <tbody>
-                            <tr style="background-color: #ffffff00;">
-                                <td>No. Akuan Terima</td>
-                                <td>: KTN1M4/2022-00011</td>
-                            </tr>
-                            <tr style="background-color: #ffffff00;">
-                                <td>Nama Suami</td>
-                                <td>: ALI BIN IDRIS (870930065551)</td>
-                            </tr>
-                            <tr style="background-color: #ffffff00;">
-                                <td>Nama Isteri</td>
-                                <td>: SITI BINTI ABU BAKAR (890930065551)</td>
-                            </tr>
-                            <tr style="background-color: #ffffff00;">
-                                <td>No.Pendaftaran/Sijil</td>
-                                <td>: (PN)MS/0077/2022-D1-SN06220001</td>
-                            </tr>
-                            <tr style="background-color: #ffffff00;">
-                                <td>Status Pendaftaran Nikah</td>
-                                <td>: LULUS</td>
-                            </tr>
-                            <tr style="background-color: #ffffff00;">
-                                <td>No. Permohonan Online</td>
-                                <td>: M3/2022-00001</td>
-                            </tr>
-                            <tr style="background-color: #ffffff00;">
-                                <td>No. Resit Bayaran</td>
-                                <td>: RB-00130-001</td>
-                            </tr>
-                            <tr style="background-color: #ffffff00;">
-                                <td>Status mohon sijil/kad nikah</td>
-                                <td>:
-                                    <select>
-                                        <option value="LULUS">LULUS</option>
-                                        <option value="GAGAL">GAGAL</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr style="background-color: #ffffff00;">
-                                <td>Tarikh Kelulusan</td>
-                                <td>: <input type="date"></td>
-                            </tr>
-                            <tr style="background-color: #ffffff00;">
-                                <td>Komment</td>
-                                <td>: <input type="text" style="height: 100px; width: 400px;"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <div class="row justify-content-center text-center">
-                        <div class="col-md-3">
-                            <a href="{{ route('staff.manageMarriageCardApp') }}" class="btn btn-primary btn-block"
-                                style="background-color: #179591; border:none; color: white;">BACK</a>
+                    <tr>Nombor Kad Pengenalan Pasangan:  <input></input> <button>SEMAK</button>
+                        <break>
                         </div>
-                        <div class="col-md-3">
-                            <button class="btn btn-primary btn-block" type="button"
-                                style="background-color: #179591; border:none; color: white;">SAVE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
+                        <div class="mt-2">
+                            <table class="table w-100" id="list">
+                                <thead>
+                                    <tr>
+                                        <th>Bil</th>
+
+                                        <th>No. K/P Nama Suami</th>
+
+                                        <th class="col-md-2">Operasi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+
+                                        <td>870930065551
+                                            ALI BIN IDRIS</td>
+
+
+                                        <td>UNTUK DILULUSKAN</td>
+                                        <td>
+                                            <a href=""{{ route('user.ViewInformation') }}"" class="btn btn-primary">
+                                                <i class="fas fa-eye"></i></a>
+
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="col-md-3">
+                                <a href="">
+                                < class="btn btn-primary btn-block" type="button"
+                                    style="background-color: #179591; border:none; color: white;">MOHON KHIDMAT NASIHAT</>
+                            </div>
+                        </div>
+            </div>
         </div>
 
     </div>
