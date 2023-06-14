@@ -47,6 +47,8 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::view('/profile', 'manageUserProfile.profile-view')->name('profile');
         Route::view('/consult', 'manageConsultation(user).consult')->name('consult');
+        Route::view('/appliedconsult', 'manageConsultation(user).appliedconsult')->name('appliedconsult');
+        Route::view('/Viewinformation', 'manageConsultation(user).Viewinformation')->name('ViewInformation');
         Route::view('/userIncentive', 'manageIncentiveUser.userIncentive')->name('userIncentive');
         Route::view('/userStatus', 'manageIncentiveUser.userStatus')->name('userStatus');
     });
@@ -122,6 +124,9 @@ Route::prefix('staff')->name('staff.')->group(function () {
         Route::get('/staffList/profile/{id}/updateView',  [StaffController::class, 'profileUpdateView'])->name('staffProfileUpdateView');
         Route::put('/staffList/profile/{id}/update',  [StaffController::class, 'profileUpdate'])->name('updateStaffProfile');
         Route::get('/staffList/profile/{id}/delete',  [StaffController::class, 'destroy'])->name('destroyStaffProfile');
+
+        Route::view('/Viewinformation', 'manageConsultation(staff).ViewInformation')->name('ViewInformation');
+        Route::view('/ConsultationApplicationList', 'manageConsultation(staff).ConsultationApplicationList')->name('ConsultationApplicationList');
     });
 
 

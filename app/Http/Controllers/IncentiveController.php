@@ -27,44 +27,45 @@ class IncentiveController extends Controller
         $user = User::find(auth()->user()->id);
         return view('manageUserProfile.profile-view', compact('user'));
     }
-    
+
     //download borang insentif
-    public function download($file_name) 
+    public function download($file_name)
     {
-        $file_path = public_path('files/'.$file_name);
+        $file_path = public_path('files/' . $file_name);
         return response()->download($file_path);
     }
 
     //upload borang
-    public function index() {
+    public function index()
+    {
         return view('userUpload');
-     }
-     public function showUploadFile(Request $request) {
+    }
+
+    public function showUploadFile(Request $request)
+    {
         $file = $request->file('image');
-     
+
         //Display File Name
-        echo 'File Name: '.$file->getClientOriginalName();
+        echo 'File Name: ' . $file->getClientOriginalName();
         echo '<br>';
-     
+
         //Display File Extension
-        echo 'File Extension: '.$file->getClientOriginalExtension();
+        echo 'File Extension: ' . $file->getClientOriginalExtension();
         echo '<br>';
-     
+
         //Display File Real Path
-        echo 'File Real Path: '.$file->getRealPath();
+        echo 'File Real Path: ' . $file->getRealPath();
         echo '<br>';
-     
+
         //Display File Size
-        echo 'File Size: '.$file->getSize();
+        echo 'File Size: ' . $file->getSize();
         echo '<br>';
-     
+
         //Display File Mime Type
-        echo 'File Mime Type: '.$file->getMimeType();
-     
+        echo 'File Mime Type: ' . $file->getMimeType();
+
         //Move Uploaded File
         $destinationPath = 'uploads';
-        $file->move($destinationPath,$file->getClientOriginalName());
-     }
-
-
+        $file->move($destinationPath, $file->getClientOriginalName());
+    }
 }

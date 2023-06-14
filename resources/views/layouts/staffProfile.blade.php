@@ -103,11 +103,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Semakan Ruju'</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Aduan/Khidmat Nasihat</a>
+                            <a href="{{route('staff.ConsultationApplicationList')}}">Aduan/Khidmat Nasihat</a>
                         </li>
                         <li>
                             <a href="{{ route('staff.staffIncentive') }}">Insentif</a>

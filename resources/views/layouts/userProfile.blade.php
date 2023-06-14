@@ -86,10 +86,6 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Semakan Ruju'</a>
-                        </li>
-
-                        <li>
                             <a href="{{ route('user.consult') }}">Aduan/Khidmat Nasihat</a>
                         </li>
                         <li>
