@@ -20,8 +20,9 @@ class UserManageMarriageRegController extends Controller
     public function editEFormsGrooms()
     {
         $ic = auth()->user()->ic;
-        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
-        return view('registerMarriageUser.editE-FormGrooms-view',compact('eform'));
+        $data = Marriage_Registration::where('U_IC_No', $ic)->with('mohon.user')->first();
+        // dd($data);
+        return view('registerMarriageUser.editE-FormGrooms-view',compact('data'));
     }
 
     public function editEFormsBrides()
@@ -41,8 +42,8 @@ class UserManageMarriageRegController extends Controller
     public function viewEFormsGrooms()
     {
         $ic = auth()->user()->ic;
-        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
-        return view('registerMarriageUser.viewE-FormGrooms-view',compact('eform'));
+        $data = Marriage_Registration::where('U_IC_No', $ic)->with('mohon.user')->first();
+        return view('registerMarriageUser.viewE-FormGrooms-view',compact('data'));
     }
 
     public function viewEFormsBrides()

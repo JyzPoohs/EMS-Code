@@ -11,8 +11,6 @@
                     </div>
                     <div class="card-body p-3" style="background-color: #e2fbfb";>
                         <div class="mt-2">
-                            <a href="{{ route('staff.eFormsGrooms') }}" class="btn btn-primary">
-                                <i class="fas fa-eye"></i></a>
                             <table class="table w-100" id="list">
                                 <thead>
                                     <tr>
@@ -20,7 +18,6 @@
                                         <th>No. Pendaftaran /Sijil</th>
                                         <th>No. KP/Nama Suami</th>
                                         <th>No. KP/Nama Isteri</th>
-                                        <th>No. AKaun Terima</th>
                                         <th>Tarikh Terima</th>
                                         <th>Status</th>
                                         <th class="col-md-2">Operasi</th>
@@ -33,27 +30,22 @@
                                         <tr>
                                             <td>{{ $counter }}</td>
                                             <td>
-                                                {{ $data['MR_noDaftarSijil'] }}
+                                                MR00{{ $data->MR_ID }}
                                             </td>
                                             <td>
-                                                {{ $data['MR_suami_ic'] }} <br> {{ strtoupper($data['MR_suami_nama']) }}
+                                                {{ $data->mohon->U_IC_No }} <br> {{ strtoupper($data->mohon->user->name) }}
                                             </td>
                                             <td>
-                                                {{ $data['MR_isteri_ic'] }} <br> {{ strtoupper($data['MR_isteri_nama']) }}
-                                            </td>
-                                            <td>
-                                                {{ $data['MR_noAkaunTerima'] }}
+                                                {{ $data->mohon->Pasangan_IC_No }} <br> {{ strtoupper($data->mohon->P_Name) }}
                                             </td>
                                             <td>
                                                 {{ $data['created_at']->format('Y/m/d') }}
                                             </td>
                                             <td>
-                                                {{ $data['MR_Status'] }}
+                                                {{ $data->MR_Approval_Status }}
                                             </td>
                                             <td>
-                                                <a href="#" class="btn btn-primary">
-                                                    <i class="fas fa-eye"></i></a>
-                                                <a href="#" class="btn btn-warning"><i
+                                                <a href="{{ route('staff.eFormsGrooms') }}" class="btn btn-warning"><i
                                                         class="fas fa-pencil-alt"></i></a>
                                                 <a href="#" class="btn btn-danger"
                                                     onclick="return confirm('Confirm to delete?')"><i

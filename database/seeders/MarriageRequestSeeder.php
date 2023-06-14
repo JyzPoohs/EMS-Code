@@ -19,8 +19,6 @@ class MarriageRequestSeeder extends Seeder
         $datas = [
             [
                 'U_IC_No' => '111111111111',
-                // 'Slip_Mohon_Online' => "S001",
-                'MM_Other_Info_ID' => "MMO1",
                 'Birthday' => "11/11/11",
                 'Age' => "21",
                 'Ethnic' => "MELAYU",

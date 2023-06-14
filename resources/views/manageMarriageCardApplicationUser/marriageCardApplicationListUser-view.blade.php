@@ -34,9 +34,9 @@
                             <tr>
                                 {{-- {{dd($data)}} --}}
                                 <td>{{ $counter }}</td>
-                                <td>MC{{ $data->MR_Card_ID }}</td>
+                                <td>MC00{{ $data->MR_Card_ID }}</td>
                                 <td>{{ $data->U_IC_No }} <br>
-                                    {{ strtoupper($eform->U_Name) }}</td>
+                                    {{ strtoupper($eform->user->name) }}</td>
                                 <td>{{ $eform->Pasangan_IC_No }} <br>
                                     {{ $eform->P_Name }}</td>
                                 <td>{{ $data->created_at->format('Y/m/d') }}</td>
