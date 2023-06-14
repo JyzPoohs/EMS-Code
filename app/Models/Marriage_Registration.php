@@ -25,11 +25,16 @@ class Marriage_Registration extends Model
         'MR_noAkaunTerima',
         'MR_Status',
         'U_IC_No',
+        'request_id',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class, 'MR_suami_ic', 'ic');
+    }
+    public function mohon()
+    {
+        return $this->belongsTo(Marriage_Request::class,'request_id', 'Slip_Mohon_Online');
     }
    
 }

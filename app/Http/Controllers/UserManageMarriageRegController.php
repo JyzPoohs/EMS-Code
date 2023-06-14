@@ -11,9 +11,10 @@ class UserManageMarriageRegController extends Controller
     public function manage()
     {
         $ic = auth()->user()->ic;
-        $datas = Marriage_Registration::where('U_IC_No',$ic)->get();
-        $eform = Marriage_Request::where('U_IC_No',$ic)->first();
-        return view("registerMarriageUser.marriageRegistrationList", compact('datas', 'eform')); 
+        $datas = Marriage_Registration::where('U_IC_No', $ic)->with('mohon')->get();
+        // return dd($datas->toArray());
+        // $eform = Marriage_Request::where('U_IC_No',$ic)->first();
+        return view("registerMarriageUser.marriageRegistrationList", compact('datas')); 
     }
     
     public function editEFormsGrooms()
@@ -52,11 +53,13 @@ class UserManageMarriageRegController extends Controller
         return view('registerMarriageUser.viewE-FormMarriage-view');
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $request->merge([
          'U_IC_No' => auth()->user()->ic,   
+         'request_id' => $id,
         ]);
+
         // dd($request);
         Marriage_Registration::create($request->all());
         return redirect()->route('user.manageMarriageRegistration');

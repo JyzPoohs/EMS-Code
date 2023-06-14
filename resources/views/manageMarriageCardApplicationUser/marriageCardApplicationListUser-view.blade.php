@@ -10,8 +10,9 @@
             <div class="card-body p-3" style="background-color: #ECF3FF">
                 <div class="row justify-content-center text-center">
                     <div class="col-md-3">
-                        <a href="{{ route('user.editMarriageCardAppInfo', ['id' => auth()->user()->ic]) }}" class="btn btn-primary"
-                            style="background-color: #0050d1; border:none; color: white;">Daftar Baru</a>
+                        <a href="{{ route('user.editMarriageCardAppInfo', ['id' => auth()->user()->ic]) }}"
+                            class="btn btn-primary" style="background-color: #0050d1; border:none; color: white;">Daftar
+                            Baru</a>
                     </div>
                 </div>
                 <table class="table mt-3" id="list">
@@ -19,7 +20,7 @@
                         <tr>
                             <th>Bil</th>
                             <th>Marriage Card No</th>
-                            <th>No. Pendaftaran/Sijil</th>
+                            <th>No. Pendaftaran /Sijil</th>
                             <th>No. K/P Nama Suami</th>
                             <th>No. K/P Nama Isteri</th>
                             <th>Tarikh Mohon</th>
@@ -29,9 +30,10 @@
                     </thead>
                     <tbody>
                         @php $counter = 0; @endphp
-                        @foreach ($datas as $data)                                                                                                                                                                                                          
+                        @foreach ($datas as $data)
                             @php $counter++; @endphp
                             <tr>
+                                {{-- {{dd($data)}} --}}
                                 <td>{{ $counter }}</td>
                                 <td>{{ $data->MR_Card_ID }}</td>
                                 <td>{{ $data->MR_ID }}</td>
@@ -46,14 +48,14 @@
                                         class="btn btn-primary">
                                         <i class="fas fa-pencil-alt"></i></a>
                                     <form id="delete-form-{{ $data->MR_Card_ID }}"
-                                        action="{{ route('user.deleteMarriageCardApp', $data->MR_Card_ID) }}" method="POST"
-                                        style="display: none;">
+                                        action="{{ route('user.deleteMarriageCardApp', $data->MR_Card_ID) }}"
+                                        method="POST" style="display: none;">
                                         @csrf
                                         @method('DELETE')
                                     </form>
 
                                     <a href="#" class="btn btn-danger"
-                                        onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this record?')) { document.getElementById('delete-form-{{ $data->MR_Card_ID}}').submit(); }">
+                                        onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this record?')) { document.getElementById('delete-form-{{ $data->MR_Card_ID }}').submit(); }">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </td>
