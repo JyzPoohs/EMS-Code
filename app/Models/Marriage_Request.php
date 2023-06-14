@@ -13,7 +13,6 @@ class Marriage_Request extends Model
         //Marriage_Mohon
         'Slip_Mohon_Online',
         'U_IC_No',
-        'U_Name',
         'MM_Other_Info_ID',
         'Birthday',
         'Age',
@@ -84,6 +83,13 @@ class Marriage_Request extends Model
     {
         return $this->belongsTo(User::class, 'MR_suami_ic', 'ic');
     }
+
+    //To link mm_other_info
+    public function other()
+    {
+        return $this->belongsTo();
+    }
+   
 
     
    

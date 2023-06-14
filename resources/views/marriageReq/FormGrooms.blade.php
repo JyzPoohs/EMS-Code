@@ -14,19 +14,21 @@
                             <tbody>
                                 <tr>
                                     <td>No. Kad Pengenalan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input disabled type="text" id="name" name="U_IC_No" value="{{auth()->user()->ic}}"></td>
                                 </tr>
                                 <tr>
                                     <td>Nama Pemohon </td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input disabled type="text" id="name" name="name" value="{{auth()->user()->name}}"></td>
                                 </tr>
                                 <tr>
                                     <td>Tarikh Lahir</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="date" id="name" name="Birthday" placeholder=""  required></td>
+
                                 </tr>
+                                
                                 <tr>
                                     <td>Umur</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="Age" placeholder=""></td>
                                 </tr>
                                 <tr>
                                     <td>Jantina</td>
@@ -34,12 +36,13 @@
                                         <select>
                                             <option value="LELAKI">LELAKI</option>
                                             <option value="PEREMPUAN">PEREMPUAN</option>
+                                        </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Bangsa</td>
                                     <td>:
-                                        <select>
+                                        <select name="Ethnic">
                                             <option value="MELAYU">MELAYU</option>
                                             <option value="CINA">CINA</option>
                                             <option value="INDIA">INDIA</option>
@@ -50,11 +53,11 @@
                                 </tr>
                                 <tr>
                                     <td>Warganegara</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="Nationality" placeholder=""></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat dalam K/P</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="IC_Address" placeholder=""></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Semasa</td>
