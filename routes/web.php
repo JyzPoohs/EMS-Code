@@ -78,9 +78,9 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::get('/editEFormsGrooms', [UserManageMarriageRegController::class, 'editEFormsGrooms'])->name('editEFormsGrooms');
     Route::get('/editEFormsBrides', [UserManageMarriageRegController::class, 'editEFormsBrides'])->name('editEFormsBrides');
     Route::get('/editEFormsMarriage', [UserManageMarriageRegController::class, 'editEFormsMarriage'])->name('editEFormsMarriage');
-    Route::get('/viewEFormsGrooms', [UserManageMarriageRegController::class, 'viewEFormsGrooms'])->name('viewEFormsGrooms');
-    Route::get('/viewEFormsBrides', [UserManageMarriageRegController::class, 'viewEFormsBrides'])->name('viewEFormsBrides');
-    Route::get('/viewEFormsMarriage', [UserManageMarriageRegController::class, 'viewEFormsMarriage'])->name('viewEFormsMarriage');
+    Route::get('/viewEFormsGrooms/{id}', [UserManageMarriageRegController::class, 'viewEFormsGrooms'])->name('viewEFormsGrooms');
+    Route::get('/viewEFormsBrides/{id}', [UserManageMarriageRegController::class, 'viewEFormsBrides'])->name('viewEFormsBrides');
+    Route::get('/viewEFormsMarriage/{id}', [UserManageMarriageRegController::class, 'viewEFormsMarriage'])->name('viewEFormsMarriage');
     //store
     Route::post('/storeMarriage/{id}', [UserManageMarriageRegController::class, 'store'])->name('storeMarriage');
     //delete

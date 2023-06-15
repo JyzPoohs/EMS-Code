@@ -18,7 +18,7 @@
                                     <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Pasangan_IC_No}}" disabled></td>
                                 </tr>
                                 <tr>
-                                    <td>Nama Suami</td>
+                                    <td>Nama Isteri</td>
                                     <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->P_Name}}" disabled></td>
                                 </tr>
                                 <tr>
@@ -94,11 +94,11 @@
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
-                                <a href="{{ route('user.viewEFormsGrooms') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.viewEFormsGrooms', $id) }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
-                                <a href="{{ route('user.viewEFormsMarriage') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.viewEFormsMarriage', $id) }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">NEXT</a>
                             </div>
                         </div>

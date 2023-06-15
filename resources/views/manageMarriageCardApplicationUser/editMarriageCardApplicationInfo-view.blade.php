@@ -38,15 +38,13 @@
                                 <td>Pilihan Pendaftaran Perkhawinan</td>
                                 <td>:</td>
                                 <td>
-                                    <div class="form-group focused">
-                                        <select class="form-control" name="registration_id" required>
-                                            <option value="" disabled selected>Select spouse</option>
-                                            @foreach ($registrations as $register)
-                                                <option value="{{ $register->MR_ID }}">{{ $register->mohon->P_Name }} ({{ $register->mohon->Pasangan_IC_No }})
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                    <select class="form-control" name="registration_id" required>
+                                        <option value="" disabled selected>Select spouse</option>
+                                        @foreach ($registrations as $register)
+                                            <option value="{{ $register->MR_ID }}">{{ $register->mohon->P_Name }} ({{ $register->mohon->Pasangan_IC_No }})
+                                            </option>
+                                        @endforeach
+                                    </select> 
                                 </td>
                             </tr>
                             <tr>

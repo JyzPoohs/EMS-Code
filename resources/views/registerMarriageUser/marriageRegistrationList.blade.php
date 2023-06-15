@@ -37,14 +37,16 @@
                                             {{ $data->mohon->P_Name }}</td>
                                         <td>MR00{{ $data->MR_ID }}</td>
                                         <td>15/12/2022</td>
-                                        <td>{{ $data->MR_Approval_Status }}</td>
+                                        <td>{{ $data->MR_Approval_Status == 'LULUS'? 'LULUS': 'UNTUK DILULUSKAN' }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('user.viewEFormsGrooms') }}" class="btn btn-primary">
+                                            <a href="{{ route('user.viewEFormsGrooms', $data->MR_ID) }}" class="btn btn-primary">
                                                 <i class="fas fa-eye"></i></a>
-                                            <a href="{{ route('user.editEFormsGrooms') }}" class="btn btn-warning"><i
-                                                    class="fas fa-pencil-alt"></i></a>
+                                            @if ($data->MR_Approval_Status != 'LULUS')
+                                                <a href="{{ route('user.editEFormsGrooms') }}" class="btn btn-warning"><i
+                                                        class="fas fa-pencil-alt"></i></a>
+                                            @endif
                                             <form id="delete-form-{{ $data->MR_ID }}"
-                                                action="{{ route('user.deleteMarriageRegistration', $data->MR_ID) }}"
+                                                action="{{ route('user.deleteMarriageRegistration', ['id' => $data->MR_ID]) }}"
                                                 method="POST" style="display: none;">
                                                 @csrf
                                                 @method('DELETE')

@@ -98,7 +98,7 @@
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
-                                <a href="{{ route('user.viewEFormsBrides') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.viewEFormsBrides', ['id' => $data->MR_ID]) }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">NEXT</a>
                             </div>
                         </div>
