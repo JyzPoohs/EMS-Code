@@ -4,31 +4,31 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserRequestMarriageController extends Controller
+class UserManageMarriageReqController extends Controller
 {
     public function view()
     {
-        return view('marriageReq.requestMarriageUser');
+        return view('requestMarriageUser.requestMarriageList');
     }
 
     public function FormGrooms()
     {
-        return view('marriageReq.FormGrooms');
+        return view('requestMarriageUser.editE-FormGrooms-view');
     }
     
     public function FormBrides(Request $request)
     {
         //$request = new Marriage_Request();
-        return view('marriageReq.FormBrides');
+        return view('requestMarriageUser.editE-FormBrides-view');
     }
     
     public function FormMarriage()
     {
-        return view('marriageReq.FormMarriage');
+        return view('requestMarriageUser.editE-FormMarriage-view');
     }
 
     public function Document()
     {
-        return view('marriageReq.Document');
+        return view('requestMarriageUser.editE-Document');
     }
 }

@@ -63,13 +63,13 @@
                                 class="dropdown-toggle">Kebenaran Berkahwin</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <li>
-                                    <a href="{{ route('user.requestMarriageUser') }}">Kebenaran Berkahwin</a>
+                                    <a href="{{ route('user.requestMarriageList') }}">Kebenaran Berkahwin</a>
                                 </li>
                                 <li>
-                                <a href="{{route('user.editFormGrooms')}}">Kursus Kahwin</a>
+                                <a href="{{route('user.editE-FormGrooms-view')}}">Kursus Kahwin</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('user.prepCourseInformation')}}">Senarai Pemohon Kursus Kahwin</a>
+                                    <a href="{{route('user.prepCourseList')}}">Senarai Pemohon Kursus Kahwin</a>
                                 </li>
                             </ul>
                         </li>      

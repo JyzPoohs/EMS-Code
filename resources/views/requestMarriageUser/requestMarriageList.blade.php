@@ -15,7 +15,7 @@
                                 <button type="submit" style="background-color: #0050d1; border:none; color: white;">Cari</button>
                               </form> --}}
                             <div class="col-md-3">
-                                <a href=" {{route('user.FormGrooms')}}" class="btn btn-primary"
+                                <a href=" {{route('user.editE-FormGrooms-view')}}" class="btn btn-primary"
                                 style="background-color: #0050d1; border:none; color: white;">Daftar Baru</a>
                             </div>
                         </div>                        

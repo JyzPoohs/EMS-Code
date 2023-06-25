@@ -129,7 +129,7 @@
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
-                                <a href="{{ route('user.requestMarriageUser') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.requestMarriageList') }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
@@ -137,7 +137,7 @@
                                     style="background-color: #0050d1; border:none; color: white;">SAVE</a>
                             </div>
                             <div class="col-md-3">
-                                <a href="{{ route('user.FormBrides') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.editE-FormBrides-view') }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">NEXT</a>
                             </div>
                         </div>

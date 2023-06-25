@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class StaffRequestMarriageController extends Controller
+class StaffManageMarriageReqController extends Controller
 {
     public function views()
     {

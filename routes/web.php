@@ -6,8 +6,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\StaffController;
-use App\Http\Controllers\UserRequestMarriageController;
-use App\Http\Controllers\StaffRequestMarriageController;
+use App\Http\Controllers\UserManageMarriageReqController;
+use App\Http\Controllers\StaffManageMarriageReqController;
 use App\Http\Controllers\UserManageMarriageRegController;
 use App\Http\Controllers\UserManageCardAppController;
 use App\Http\Controllers\StaffManageMarriageRegController;
@@ -53,11 +53,11 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::put('/profile/{id}/update',  [UserController::class, 'update'])->name('update');
 
     //Module 2
-    Route::get('/requestMarriageUser', [UserRequestMarriageController::class, 'view'])->name('requestMarriageUser');
-    Route::get('/FormGrooms', [UserRequestMarriageController::class, 'FormGrooms'])->name('FormGrooms');
-    Route::get('/FormBrideS', [UserRequestMarriageController::class, 'FormBrides'])->name('FormBrides');
-    Route::get('/FormMarriage', [UserRequestMarriageController::class, 'FormMarriage'])->name('FormMarriage');
-    Route::get('/Document', [UserRequestMarriageController::class, 'Document'])->name('Document');
+    Route::get('/requestMarriageUser', [UserManageMarriageReqController::class, 'view'])->name('requestMarriageUser');
+    Route::get('/FormGrooms', [UserManageMarriageReqController::class, 'FormGrooms'])->name('FormGrooms');
+    Route::get('/FormBrideS', [UserManageMarriageReqController::class, 'FormBrides'])->name('FormBrides');
+    Route::get('/FormMarriage', [UserManageMarriageReqController::class, 'FormMarriage'])->name('FormMarriage');
+    Route::get('/Document', [UserManageMarriageReqController::class, 'Document'])->name('Document');
 
     Route::get('editFormGrooms', [UserManageCourseController::class, 'editFormGrooms'])->name('editFormGrooms');
     Route::get('prepCourseInformation', [UserManageCourseController::class, 'prepCourseInformation'])->name('prepCourseInformation');
@@ -140,11 +140,11 @@ Route::prefix('staff')->name('staff.')->group(function () {
     Route::get('/staffList/profile/{id}/delete',  [StaffController::class, 'destroy'])->name('destroyStaffProfile');
 
     //Module 2
-    Route::get('/requestMarriageStaff', [StaffRequestMarriageController::class, 'views'])->name('requestMarriageStaff');
-    Route::get('/viewFormGrooms', [StaffRequestMarriageController::class, 'viewFormGrooms'])->name('viewFormGrooms');
-    Route::get('/viewFormBrides', [StaffRequestMarriageController::class, 'viewFormBrides'])->name('viewFormBrides');
-    Route::get('/viewFormMarriage', [StaffRequestMarriageController::class, 'viewFormMarriage'])->name('viewFormMarriage');
-    Route::get('/viewDocuments', [StaffRequestMarriageController::class, 'viewDocuments'])->name('viewDocuments');
+    Route::get('/requestMarriageStaff', [StaffManageMarriageReqController::class, 'views'])->name('requestMarriageStaff');
+    Route::get('/viewFormGrooms', [StaffManageMarriageReqController::class, 'viewFormGrooms'])->name('viewFormGrooms');
+    Route::get('/viewFormBrides', [StaffManageMarriageReqController::class, 'viewFormBrides'])->name('viewFormBrides');
+    Route::get('/viewFormMarriage', [StaffManageMarriageReqController::class, 'viewFormMarriage'])->name('viewFormMarriage');
+    Route::get('/viewDocuments', [StaffManageMarriageReqController::class, 'viewDocuments'])->name('viewDocuments');
 
     Route::get('staffPrepCourseList', [StaffManageCourseController::class, 'staffPrepCourseList'])->name('staffPrepCourseList');
     Route::get('editEPrepCourseInformation', [StaffManageCourseController::class, 'editEPrepCourseInformation'])->name('editEPrepCourseInformation');

@@ -151,11 +151,11 @@
         </table>
         <div class="d-flex justify-content-between">
                 <div class="text-left">
-                    <a href="{{ route('user.FormMarriage') }}" class="btn btn-primary"
+                    <a href="{{ route('user.editE-FormMarriage-view.') }}" class="btn btn-primary"
                         style="background-color: #0050d1; border:none; color: white;">KEMBALI</a>
                 </div>
             <div class="text-centre">
-                <a href="{{ route('user.requestMarriageUser') }}" class="btn btn-primary"
+                <a href="{{ route('user.requestMarriageList') }}" class="btn btn-primary"
                     style="background-color: #0050d1; border:none; color: white;">SIMPAN</a>
             </div>
             <div class="text-right">
