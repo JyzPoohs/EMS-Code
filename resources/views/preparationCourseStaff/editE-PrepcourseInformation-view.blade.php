@@ -44,7 +44,7 @@
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
-                                <a href="{{ route('staff.editEPrepCourseInformation') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('staff.prepCourseInformation') }}" class="btn btn-primary btn-block"
                                     style="background-color: #179591; border:none; color: white;">TAMBAH</a>
                             </div>
 
