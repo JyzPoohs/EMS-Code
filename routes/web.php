@@ -50,6 +50,8 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::view('/profile', 'manageUserProfile.profile-view')->name('profile');
         Route::view('/Search', 'manageConsultation(user).Search')->name('Search');
+        Route::view('/Search', 'manageConsultation(Staff).Search')->name('Search');
+        Route::view('/Viewinformation', 'manageConsultation(Staff).Viewinformation')->name('ViewInformation');
         Route::view('/CreateComplaint', 'manageConsultation(user).CreateComplaint')->name('CreateComplaint');
         Route::view('/Viewinformation', 'manageConsultation(user).Viewinformation')->name('ViewInformation');
         Route::view('/userIncentive', 'manageIncentiveUser.userIncentive')->name('userIncentive');
