@@ -24,7 +24,7 @@
                                     </tr>
                                     <tr>
                                         <td>Nama Suami</td>
-                                        <td>: {{ $eform->U_Name }}</td>
+                                        <td>: {{ auth()->user()->name }}</td>
                                     </tr>
                                     <tr>
                                         <td>Nama Isteri</td>
@@ -37,6 +37,14 @@
                                     <tr>
                                         <td>Resit Pendaftaran Perkhawinan</td>
                                         <td>: <input type="text" id="name" name="MR_Payment_Receipt" placeholder="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Dokumen Resit Pendaftaran Perkhawinan
+                                        </td>
+                                        <td>
+                                            : <input type="file">
                                         </td>
                                     </tr>
                                 </tbody>

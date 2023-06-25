@@ -11,7 +11,7 @@ class StaffManageCardAppController extends Controller
 {
     public function manageCardAppStaff()
     {
-        $datas = CardApplication::with('registration.mohon')->orderBy('created_at', 'desc')->get();
+        $datas = CardApplication::with('registration.mohon.user')->orderBy('created_at', 'desc')->get();
         // dd($datas->toArray());
 
         // dd($datas->toArray(),$eforms->toArray(),$registers->toArray());

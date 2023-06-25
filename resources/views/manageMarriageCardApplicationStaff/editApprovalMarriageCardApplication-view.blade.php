@@ -63,22 +63,24 @@
                                     <tr style="background-color: #ffffff00;">
                                         <td>Komment</td>
                                         <td>: <input name="Card_App_Comment" type="text"
-                                                style="height: 100px; width: 400px;" value="{{ $data->Card_App_Comment }}"></td>
+                                                style="height: 100px; width: 400px;" value="{{ $data->Card_App_Comment }}">
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                             <br>
                             <div class="row justify-content-center text-center">
-                                <div class="col-md-3">
-                                    <a href="{{ route('staff.manageMarriageCardApp') }}" class="btn btn-primary btn-block"
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-primary btn-block col-md-4" id="registerBtn"
+                                        style="background-color: #179591; border:none; color: white;">
+                                        {{ __('UPDATE') }}
+                                    </button>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="{{ route('staff.manageMarriageCardApp') }}" class="btn btn-primary btn-block col-md-4"
                                         style="background-color: #179591; border:none; color: white;">BACK</a>
                                 </div>
-                                <div class="col-md-3">
-                                    <button type="submit" class="btn btn-primary btn-block" id="registerBtn"
-                                    style="background-color: #179591; border:none; color: white;">
-                                    {{ __('UPDATE') }}
-                                </button>
-                            </div>
+
                             </div>
                         </form>
                     </div>

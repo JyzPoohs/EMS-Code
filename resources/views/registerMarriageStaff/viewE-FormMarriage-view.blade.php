@@ -21,11 +21,11 @@
                                 </tr>
                                 <tr>
                                     <td>Nama Suami</td>
-                                    <td>: ALI BIN IDRIS</td>
+                                    <td>: HADI BIN EFFIZ</td>
                                 </tr>
                                 <tr>
                                     <td>Nama Isteri</td>
-                                    <td>: SITI BIN ABU</td>
+                                    <td>: SITI</td>
                                 </tr>
                                 <tr>
                                     <td>Kategori Perintah</td>

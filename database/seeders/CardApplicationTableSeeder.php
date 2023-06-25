@@ -17,37 +17,7 @@ class CardApplicationTableSeeder extends Seeder
         $tableName = 'MM_Card_Applications';
 
         $datas = [
-            [
-                // 'MR_Card_ID' => 'M3/2023-00001',
-                'Card_App_Address' => '123-A, TAMAN TAS, KUANTAN, PAHANG',
-                'Card_App_Approval_Status' => 'LULUS',
-                'Card_App_Delivery_Options' => 'PENGHANTARAN',
-                'Card_App_Type' => 'KAD PERKHAWINAN',
-                'Card_App_Submit_Status' => 'SUBMIT',
-                'Card_App_Redeem_Location' => '',
-                'Card_App_Payment_Receipt' => 'RB-00130-001 ',
-                'Card_App_Approval_Date' => '2023-3-21',
-                'Card_App_Comment' => '',
-                'U_IC_No' => '870930065551',
-                'created_at' => '2023-3-15',
-                'registration_id' => 1,
-            ],
-            [
-                // 'MR_Card_ID' => 'M3/2023-00002',
-                'Card_App_Address' => '',
-                'Card_App_Approval_Status' => 'LULUS',
-                'Card_App_Delivery_Options' => 'PUNGUTAN',
-                'Card_App_Type' => 'KAD & SIJIL PERKHAWINAN',
-                'Card_App_Redeem_Date' => '2023-05-22',
-                'Card_App_Submit_Status' => 'SUBMIT',
-                'Card_App_Redeem_Location' => 'PAID KUANTAN ',
-                'Card_App_Payment_Receipt' => 'RB-00130-002 ',
-                'Card_App_Approval_Date' => '2023-05-17',
-                'Card_App_Comment' => '',
-                'U_IC_No' => '990909060331',
-                'created_at' => '2023-5-15',
-                'registration_id' => 1,
-            ],
+
             [
                 // 'MR_Card_ID' => 'M3/2023-00003',
                 'Card_App_Address' => '',

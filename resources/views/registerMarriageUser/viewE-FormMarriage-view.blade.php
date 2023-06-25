@@ -22,7 +22,7 @@
                                 </tr>
                                 <tr>
                                     <td>Nama Suami</td>
-                                    <td>: {{ $eform->U_Name }}</td>
+                                    <td>: {{ auth()->user()->name }}</td>
                                 </tr>
                                 <tr>
                                     <td>Nama Isteri</td>
@@ -45,6 +45,7 @@
                         <h6>MAKLUMAT CADANGAN MAJLIS AKAD NIKAH</h6>
                     </div>
                     <div class="card-body p-3" style="background-color: #ECF3FF";>
+
                         <table>
                             <tbody>
                                 <tr>
@@ -54,7 +55,7 @@
                                 </tr>
                                 <tr>
                                     <td>Masa Akad Nikah</td>
-                                    <td>: <input type="time" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="time" id="name" name="name" placeholder="" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Tempat Kahwin</td>
@@ -109,7 +110,7 @@
                                 <tr>
                                     <td>Lafaz Ta’liq</td>
                                     <td>:
-                                        <select name="MR_Lafaz_Taliq">
+                                        <select name="MR_Lafaz_Taliq" disabled>
                                             <option value="YA">YA</option>
                                             <option value="TIDAK">TIDAK</option>
                                         </select>
@@ -205,7 +206,7 @@
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
-                                <a href="{{ route('user.viewEFormsBrides') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.viewEFormsBrides', ['id' => $data->MR_ID]) }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">

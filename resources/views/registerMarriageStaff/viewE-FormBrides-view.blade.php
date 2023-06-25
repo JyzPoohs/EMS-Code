@@ -14,19 +14,19 @@
                             <tbody>
                                 <tr>
                                     <td>No. Kad Pengenalan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""value="011011020202" disabledvalue="011011020202" disabled></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""value="011011020202" disabled value="011011020202" disabled></td>
                                 </tr>
                                 <tr>
-                                    <td>Nama Suami</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""value="011011020202" disabledvalue="011011020202" disabled></td>
+                                    <td>Nama Isteri</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" disabled value="SITI" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Tarikh Lahir</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""value="11/10/2001" disabledvalue="011011020202" disabled></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""value="11/10/2001" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Umur</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""value="22" disabledvalue="011011020202" disabled></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder=""value="22" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Bangsa</td>

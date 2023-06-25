@@ -18,7 +18,7 @@
                                     <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->Pasangan_IC_No}}" disabled></td>
                                 </tr>
                                 <tr>
-                                    <td>Nama Suami</td>
+                                    <td>Nama Isteri</td>
                                     <td>: <input type="text" id="name" name="name" placeholder="" value="{{$eform->P_Name}}" disabled></td>
                                 </tr>
                                 <tr>
