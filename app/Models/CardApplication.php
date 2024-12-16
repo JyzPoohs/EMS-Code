@@ -30,6 +30,6 @@ class CardApplication extends Model
 
     public function registration()
     {
-        return $this->belongsTo(Marriage_Registration::class, 'MR_ID', 'registration_id');
+        return $this->belongsTo(Marriage_Registration::class, 'registration_id', 'MR_ID');
     }
 }

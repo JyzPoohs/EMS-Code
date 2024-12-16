@@ -21,35 +21,38 @@
                             <tr>
                                 <td>Nama Suami</td>
                                 <td>:</td>
-                                <td>{{ strtoupper($data->name) }} ({{ $data->U_IC_No }})</td>
+                                <td>{{ strtoupper($data->name) }} ({{ $eform->U_IC_No }})</td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td>Nama Isteri</td>
                                 <td>:</td>
                                 <td>{{ $eform->P_Name }}
                                     ({{ $eform->Pasangan_IC_No }})</td>
-                            </tr>
-                            <tr>
-                                <td>No.Pendaftaran/Sijil</td>
-                                <td>:</td>
-                                <td>{{ $data->MR_ID }}</td>
-                            </tr>
-                            <tr>
-                                <td>No. Permohonan Online</td>
-                                <td>:</td>
-                                <td>M3/2022-00001</td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <td>Status Pendaftaran Nikah</td>
                                 <td>:</td>
-                                <td>{{ $data->MR_Status }}</td>
+                                <td>LULUS</td>
+                            </tr>
+                            <tr>
+                                <td>Pilihan Pendaftaran Perkhawinan</td>
+                                <td>:</td>
+                                <td>
+                                    <select class="form-control" name="registration_id" required>
+                                        <option value="" disabled selected>Select spouse</option>
+                                        @foreach ($registrations as $register)
+                                            <option value="{{ $register->MR_ID }}">{{ $register->mohon->P_Name }} ({{ $register->mohon->Pasangan_IC_No }})
+                                            </option>
+                                        @endforeach
+                                    </select> 
+                                </td>
                             </tr>
                             <tr>
                                 <td>Pilihan Sijil Dan Kad Nikah</td>
                                 <td>:</td>
                                 <td>
                                     <select id="Card_App_Type" name="Card_App_Type" class="form-control">
-                                        <option selected value="KAD PERKHAWINAN" disabled>Select Jenis</option>
+                                        <option selected value="KAD PERKHAWINAN" disabled>Pilih Jenis</option>
                                         <option value="KAD PERKHAWINAN">KAD PERKHAWINAN</option>
                                         <option value="SIJIL PERKHAWINAN">SIJIL PERKHAWINAN</option>
                                         <option value="KAD & SIJIL PERKHAWINAN">KAD & SIJIL PERKHAWINAN</option>
@@ -67,7 +70,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Pilihan Penghantaran</td>
+                                <td>Pilihan Penghantaran (Pilih satu)</td>
                                 <td>:</td>
                                 <td>
                                     <div class="form-check form-check-inline">
@@ -83,7 +86,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Alamat Penghantaran</td>
+                                <td>Alamat Penghantaran (Untuk Penghantaran)</td>
                                 <td>:</td>
                                 <td>
                                     <textarea id="Card_App_Address" name="Card_App_Address"
@@ -91,7 +94,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Tarikh Pungutan</td>
+                                <td>Tarikh Pungutan (Untuk Pungutan)</td>
                                 <td>:</td>
                                 <td>
                                     <input type="date" id="Card_App_Redeem_Date" name="Card_App_Redeem_Date"
@@ -99,7 +102,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Pejabat Pungutan</td>
+                                <td>Pejabat Pungutan (Untuk Pungutan)</td>
                                 <td>:</td>
                                 <td>
                                     <select name="Card_App_Redeem_Location" class="form-control">

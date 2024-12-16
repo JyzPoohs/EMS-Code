@@ -81,6 +81,6 @@ class Marriage_Request extends Model
     
     public function user()
     {
-        return $this->belongsTo(User::class, 'MR_suami_ic', 'ic');
+        return $this->belongsTo(User::class, 'U_IC_No', 'ic');
     }
 }

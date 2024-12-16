@@ -25,34 +25,34 @@
                                 </thead>
                                 <tbody>
                                     @php $counter = 0; @endphp
-                                    @foreach (array_map(null, $datas->toArray(), $eforms->toArray(),$registers->toArray()) as [$data, $eform,$register])
+                                    @foreach ($datas as $data)
                                         @php $counter++;
-                                        // $eform = $eforms[$key]; 
+                                        // $data->registration->mohon = $data->registration->mohons[$key]; 
                                         @endphp
                                         <tr>
                                             <td>{{ $counter }}</td>
-                                            <td>MC{{ $data['MR_Card_ID'] }}</td>
-                                            <td>{{ $data['U_IC_No'] }} <br>
-                                                {{ strtoupper($eform['U_Name']) }}</td>
-                                            <td>{{ $eform['Pasangan_IC_No'] }} <br>
-                                                {{ $eform['P_Name'] }}</td>
-                                            <td>{{ $data['created_at']}}</td>
-                                            <td>{{ $data['Card_App_Approval_Status'] }}</td>
+                                            <td>MC{{ $data->MR_Card_ID }}</td>
+                                            <td>{{ $data->U_IC_No }} <br>
+                                                {{ strtoupper($data->registration->mohon->user->name) }}</td>
+                                            <td>{{ $data->registration->mohon->Pasangan_IC_No }} <br>
+                                                {{ $data->registration->mohon->P_Name }}</td>
+                                            <td>{{ $data->created_at->format('Y/m/d')}}</td>
+                                            <td>{{ $data->Card_App_Approval_Status }}</td>
                                             <td>
-                                                <a href="{{ route('staff.approveMarriageCardApp', ['id' => $data['MR_Card_ID']]) }}"
+                                                <a href="{{ route('staff.approveMarriageCardApp', ['id'=> $data->MR_Card_ID]) }}"
                                                     class="btn btn-primary">
                                                     <i class="fas fa-pencil-alt"></i></a>
-                                                <form id="delete-form-{{ $data['MR_Card_ID'] }}"
-                                                    action="{{ route('user.deleteMarriageCardApp', $data['MR_Card_ID']) }}"
+                                                {{-- <form id="delete-form-{{ $data->MR_Card_ID }}"
+                                                    action="{{ route('staff.deleteMarriageCardApp', $data->MR_Card_ID) }}"
                                                     method="POST" style="display: none;">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
 
                                                 <a href="#" class="btn btn-danger"
-                                                    onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this record?')) { document.getElementById('delete-form-{{ $data['MR_Card_ID'] }}').submit(); }">
+                                                    onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this record?')) { document.getElementById('delete-form-{{ $data->MR_Card_ID }}').submit(); }">
                                                     <i class="fa fa-trash"></i>
-                                                </a>
+                                                </a> --}}
                                             </td>
                                         </tr>
                                     @endforeach

@@ -10,29 +10,29 @@
                 </div>
                 <br>
                 <div class="card mb-4">
-                    <div class="card-body p-3" style="background-color: #ECF3FF";>               
+                    <div class="card-body p-3" style="background-color: #ECF3FF";>
                         <table>
                             <tbody>
                                 <tr>
                                     <td>No. Kad Pengenalan</td>
-                                    <td>: 012345678</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->U_IC_No}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Nama Suami</td>
-                                    <td>: ALI</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->user->name}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Tarikh Lahir</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->Birthday}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Umur</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->Age}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Bangsa</td>
                                     <td>:
-                                        <select>
+                                        <select value="{{$data->mohon->Ethnic}}" disabled>
                                             <option value="MELAYU">MELAYU</option>
                                             <option value="CINA">CINA</option>
                                             <option value="INDIA">INDIA</option>
@@ -43,12 +43,12 @@
                                 </tr>
                                 <tr>
                                     <td>Warganegara</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->Nationality}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Taraf Pendidkan</td>
                                     <td>:
-                                        <select>
+                                        <select value="{{$data->mohon->Edu_Level}}" disabled>
                                             <option value="UPSR">UPSR</option>
                                             <option value="PMR/PT3">PMR/PT3</option>
                                             <option value="SPM">SPM</option>
@@ -58,36 +58,36 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Perkerjaan/Jawatan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>Sektor Perkerjaan/Jawatan</td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->Employment_Sector}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Pendapatan</td>
-                                    <td>: RM <input type="float" id="name" name="name" placeholder=""></td>
+                                    <td>: RM <input type="float" id="name" name="name" placeholder="" value="{{$data->mohon->Amount_Salary}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Perkerjaan/Jawatan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->Job}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Dalam K/P</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->IC_Address}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Telefon</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->Office_Phone}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Semasa</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->Current_Address}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Status Sebelum Perkahwinan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->Marriage_Status}}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Sijil Kursus Pra Perkahwinan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="{{$data->mohon->PrepCourse_ID}}" disabled></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -98,7 +98,7 @@
                                     style="background-color: #0050d1; border:none; color: white;">BACK</a>
                             </div>
                             <div class="col-md-3">
-                                <a href="{{ route('user.viewEFormsBrides') }}" class="btn btn-primary btn-block"
+                                <a href="{{ route('user.viewEFormsBrides', ['id' => $data->MR_ID]) }}" class="btn btn-primary btn-block"
                                     style="background-color: #0050d1; border:none; color: white;">NEXT</a>
                             </div>
                         </div>

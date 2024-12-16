@@ -33,19 +33,28 @@
                                     @php $counter++; @endphp
                                     <tr>
                                         <td>{{ $counter }}</td>
-                                        <td>{{ $data->mohon->Pasangan_IC_No }}
+                                        <td>{{ $data->mohon->Pasangan_IC_No }} <br>
                                             {{ $data->mohon->P_Name }}</td>
-                                        <td>{{ $data->MR_Card_ID }}</td>
+                                        <td>MR00{{ $data->MR_ID }}</td>
                                         <td>15/12/2022</td>
-                                        <td>TELAH HANTAR</td>
+                                        <td>{{ $data->MR_Approval_Status == 'LULUS'? 'LULUS': 'UNTUK DILULUSKAN' }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('user.viewEFormsGrooms') }}" class="btn btn-primary">
+                                            <a href="{{ route('user.viewEFormsGrooms', $data->MR_ID) }}" class="btn btn-primary">
                                                 <i class="fas fa-eye"></i></a>
-                                            <a href="{{ route('user.editEFormsGrooms') }}" class="btn btn-warning"><i
-                                                    class="fas fa-pencil-alt"></i></a>
+                                            @if ($data->MR_Approval_Status != 'LULUS')
+                                                <a href="{{ route('user.editEFormsGrooms') }}" class="btn btn-warning"><i
+                                                        class="fas fa-pencil-alt"></i></a>
+                                            @endif
+                                            <form id="delete-form-{{ $data->MR_ID }}"
+                                                action="{{ route('user.deleteMarriageRegistration', ['id' => $data->MR_ID]) }}"
+                                                method="POST" style="display: none;">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
                                             <a href="#" class="btn btn-danger"
-                                                onclick="return confirm('Confirm to delete?')"><i
-                                                    class="fas fa-trash-alt"></i></a>
+                                                onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this record?')) { document.getElementById('delete-form-{{ $data->MR_ID }}').submit(); }">
+                                                <i class="fa fa-trash-alt"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach

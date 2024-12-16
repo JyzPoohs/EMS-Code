@@ -9,7 +9,7 @@
             <div class="col-lg-12 mb-lg-0 mb-4">
                 <div class="card mb-4">
                     <div class="card-header pb-0" style="background-color: #66bdba";>
-                        <h6>PERMOHONAN PENDAFTARAN NIKAH >> SENARAI PERMOHONAN</h6>
+                        <h6>PERMOHONAN KHAS INSENTIF >> SENARAI PERMOHONAN</h6>
                     </div>
                  </div>
                  <div class="card-body p-3" style="background-color: #F0D7A8";>

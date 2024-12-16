@@ -21,19 +21,19 @@
                                 </tr>
                                 <tr>
                                     <td>Nama Suami</td>
-                                    <td>: ALI BIN IDRIS</td>
+                                    <td>: HADI BIN EFFIZ</td>
                                 </tr>
                                 <tr>
                                     <td>Nama Isteri</td>
-                                    <td>: SITI BIN ABU</td>
+                                    <td>: SITI</td>
                                 </tr>
                                 <tr>
                                     <td>Kategori Perintah</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: KN001</td>
                                 </tr>
                                 <tr>
                                     <td>Resit Pendaftaran Perkhawinan</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: RS0002</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -47,51 +47,51 @@
                             <tbody>
                                 <tr>
                                     <td>Tarikh Akad Nikah</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
+                                    <td>: 25/2/23</td>
                                 </tr>
                                 <tr>
                                     <td>Masa Akad Nikah</td>
-                                    <td>: <input type="time" id="name" name="name" placeholder=""></td>
+                                    <td>: 9am</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Tempat Kahwin</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: KUANTAN</td>
                                 </tr>
                                 <tr>
                                     <td>Jenis Mas Kahwin</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: TUNAI</td>
                                 </tr>
                                 <tr>
                                     <td>Mas Kahwin</td>
-                                    <td>: RM <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: RM 12000</td>
                                 </tr>
                                 <tr>
                                     <td>Hantaran</td>
-                                    <td>: RM <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: RM 2000</td>
                                 </tr>
                                 <tr>
                                     <td>Nama Jurunikah</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: BALQIS</td>
                                 </tr>
                                 <tr>
                                     <td>No. Surat Perakuan Nikah</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: MN3432</td>
                                 </tr>
                                 <tr>
                                     <td>No. Pendaftaran</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: MR001</td>
                                 </tr>
                                 <tr>
                                     <td>Tarikh Pendaftaran</td>
-                                    <td>: <input type="date" id="name" name="name" placeholder=""></td>
+                                    <td>: 25/2/2023</td>
                                 </tr>
                                 <tr>
                                     <td>Tempat Pendaftaran</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: A2,  KUANTAN</td>
                                 </tr>
                                 <tr>
                                     <td>Negara</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: MALAYSIA</td>
                                 </tr>
                                 <tr>
                                     <td>Lafaz Ta’liq</td>
@@ -152,88 +152,47 @@
                             <tbody>
                                 <tr>
                                     <td>Nama Saksi (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="MOHD KAHRUL" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Kad Pengenalan Saksi (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="791222033213" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Umur Saksi (1)</td>
-                                    <td>: <input type="number" id="name" name="name" placeholder=""> TAHUN</td>
+                                    <td>: <input type="number" id="name" name="name" placeholder="" value="44" disabled> TAHUN</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Saksi (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="91_L, TAMAN SAGA" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Telefon Saksi (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="01484188863" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Nama Saksi (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="SHARUL IFFAN" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Kad Pengenalan Saksi (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="881129020481" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>Umur Saksi (2)</td>
-                                    <td>: <input type="number" id="name" name="name" placeholder=""> TAHUN</td>
+                                    <td>: <input type="number" id="name" name="name" placeholder="" value="35" disabled> TAHUN</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat Saksi (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="1 TAMAN IMPIAN, KUANTAN" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>No. Telefon Saksi (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
+                                    <td>: <input type="text" id="name" name="name" placeholder="" value="0184829125" disabled></td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-
-                    <div class="card-header pb-0" style="background-color: #D9D9D9";>
-                        <h6>MAKLUMAT SAKSI (KELUARGA)</h6>
-                    </div>
-                    <div class="card-body p-3" style="background-color: #e2fbfb";>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Nama Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Kad Pengenalan Saksi Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat Saksi Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Telefon Saksi Keluarga (1)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Nama Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Kad Pengenalan Saksi Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat Saksi Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                                <tr>
-                                    <td>No. Telefon Saksi Keluarga (2)</td>
-                                    <td>: <input type="text" id="name" name="name" placeholder=""></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    
                         <br>
                         <div class="row justify-content-center text-center">
                             <div class="col-md-3">
